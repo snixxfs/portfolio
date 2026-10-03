@@ -1,635 +1,413 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Ayush S Kulkarni</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ayush S Kulkarni | AI Products and Partnerships</title>
+<meta name="description" content="BTech CSE student building AI products and driving partnerships. ₹13L in sponsorships (₹2.8L cash + ₹10.2L in kind) from 20 brands, 10K+ Telegram community, 220+ team hackathon lead.">
+<meta property="og:type" content="website"><meta property="og:title" content="Ayush S Kulkarni"><meta property="og:description" content="BTech CSE student building AI products and driving partnerships. ₹13L in sponsorships (₹2.8L cash + ₹10.2L in kind) from 20 brands, 10K+ Telegram community, 220+ team hackathon lead."><meta property="og:url" content="https://ayushkulkarni.vercel.app/"><meta property="og:image" content="https://ayushkulkarni.vercel.app/og.png"><meta name="twitter:card" content="summary_large_image"><meta name="theme-color" content="#07070b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg:#05050a;
-  --s1:#09090f;
-  --s2:#0d0d14;
-  --b1:#181824;
-  --b2:#242434;
-  --acc:#e8c547;
-  --acc2:#f5d96b;
-  --dim:rgba(232,197,71,.08);
-  --w1:#f2ede4;
-  --w2:#c4bfb4;
-  --w3:#807b72;
-  --w4:#3e3a36;
-}
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;background:var(--bg);color:var(--w1);overflow-x:hidden;cursor:none;-webkit-font-smoothing:antialiased}
-
-/* CURSOR */
-#c1{width:5px;height:5px;background:var(--acc);border-radius:50%;position:fixed;pointer-events:none;z-index:9999;top:0;left:0;transition:transform .1s}
-#c2{width:24px;height:24px;border:1px solid rgba(232,197,71,.35);border-radius:50%;position:fixed;pointer-events:none;z-index:9998;top:0;left:0;transition:width .22s,height .22s,border-color .22s}
-.cx{width:44px!important;height:44px!important;border-color:var(--acc)!important}
-
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:58px;padding:0 56px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--b1);background:rgba(5,5,10,.93);backdrop-filter:blur(18px)}
-.logo{font-family:Georgia,serif;font-size:18px;font-style:italic;color:var(--w1);letter-spacing:-.3px}
-.logo b{color:var(--acc);font-style:normal}
-.nav-links{display:flex;align-items:center;gap:36px}
-.nav-links a{font-family:Consolas,'Courier New',monospace;font-size:10px;color:var(--w4);text-decoration:none;letter-spacing:2px;text-transform:uppercase;transition:color .15s}
-.nav-links a:hover{color:var(--w2)}
-
-/* HERO */
-.hero{min-height:100vh;padding:0 56px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
-.grid-bg{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(232,197,71,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(232,197,71,.022) 1px,transparent 1px);background-size:72px 72px;mask-image:radial-gradient(ellipse 90% 80% at 50% 50%,#000 20%,transparent 100%)}
-.glow{position:absolute;border-radius:50%;pointer-events:none}
-.g1{width:900px;height:900px;top:-350px;right:-250px;background:radial-gradient(circle,rgba(232,197,71,.065) 0%,transparent 55%)}
-.g2{width:500px;height:500px;bottom:-150px;left:-50px;background:radial-gradient(circle,rgba(232,197,71,.035) 0%,transparent 60%)}
-
-.h-inner{position:relative;z-index:1;max-width:900px;padding-top:58px}
-.h-tag{display:inline-flex;align-items:center;gap:8px;padding:4px 14px 4px 10px;border:1px solid var(--b2);font-family:Consolas,monospace;font-size:10.5px;color:var(--w3);margin-bottom:44px;letter-spacing:.5px}
-.pip{width:5px;height:5px;border-radius:50%;background:#4ade80;box-shadow:0 0 8px #4ade80;animation:blink 2.5s ease-in-out infinite}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
-
-.h-name{font-family:Georgia,'Times New Roman',serif;font-size:clamp(60px,9.5vw,122px);font-weight:400;line-height:.87;letter-spacing:-4px;margin-bottom:36px}
-.h-name em{color:var(--acc);font-style:italic;display:block}
-
-.h-sub{font-size:18px;color:var(--w3);line-height:1.78;max-width:520px;margin-bottom:52px}
-.h-sub strong{color:var(--w1);font-weight:500}
-.h-sub em{color:var(--acc);font-style:normal}
-
-.h-btns{display:flex;gap:10px;flex-wrap:wrap}
-.btn-fill{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;background:var(--acc);color:var(--bg);font-size:13px;font-weight:600;text-decoration:none;transition:all .18s}
-.btn-fill:hover{background:var(--acc2);transform:translateY(-2px)}
-.btn-out{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border:1px solid var(--b2);color:var(--w2);font-size:13px;text-decoration:none;transition:all .18s}
-.btn-out:hover{border-color:var(--acc);color:var(--acc);transform:translateY(-2px)}
-
-.h-foot{position:absolute;bottom:48px;left:56px;right:56px;display:flex;justify-content:space-between;align-items:flex-end;z-index:1}
-.scroll-hint{display:flex;align-items:center;gap:10px;font-family:Consolas,monospace;font-size:9px;color:var(--w4);letter-spacing:3px}
-.s-line{width:28px;height:1px;background:var(--w4);animation:sline 2s ease-in-out infinite}
-@keyframes sline{0%,100%{width:28px;opacity:.4}50%{width:56px;opacity:.9}}
-.stats{display:flex;gap:56px}
-.st{text-align:right}
-.st-n{font-family:Georgia,serif;font-size:36px;color:var(--acc);line-height:1;display:block;font-style:italic}
-.st-l{font-family:Consolas,monospace;font-size:8px;color:var(--w4);letter-spacing:2.5px;text-transform:uppercase;margin-top:5px;display:block}
-
-/* TICKER */
-.ticker{border-top:1px solid var(--b1);border-bottom:1px solid var(--b1);padding:11px 0;overflow:hidden;background:var(--s1)}
-.t-track{display:flex;animation:tick 28s linear infinite;white-space:nowrap}
-.t-item{font-family:Consolas,monospace;font-size:10px;color:var(--w4);padding:0 32px;letter-spacing:2.5px;text-transform:uppercase}
-.t-item span{color:var(--acc);margin-right:32px;opacity:.6}
-@keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-
-/* SECTIONS */
-.sec{padding:108px 56px}
-.sec-dark{background:var(--s1);border-top:1px solid var(--b1);border-bottom:1px solid var(--b1)}
-.ey{font-family:Consolas,monospace;font-size:9px;color:var(--acc);letter-spacing:4px;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:12px}
-.ey::before{content:'';width:14px;height:1px;background:var(--acc)}
-.sec-title{font-family:Georgia,serif;font-size:clamp(38px,5.2vw,62px);font-weight:400;letter-spacing:-2px;line-height:.92;margin-bottom:72px}
-.sec-title em{color:var(--acc);font-style:italic}
-
-/* ABOUT */
-.about-layout{display:grid;grid-template-columns:1fr 380px;gap:88px;align-items:start}
-.about-text p{font-size:15.5px;color:var(--w3);line-height:1.84;margin-bottom:22px}
-.about-text p strong{color:var(--w1);font-weight:500}
-.about-text p em{color:var(--acc);font-style:normal}
-.sk-label{font-family:Consolas,monospace;font-size:9px;color:var(--w4);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:14px;margin-top:4px}
-.sk-grid{display:grid;grid-template-columns:1fr 1fr;gap:5px;margin-bottom:24px}
-.chip{padding:8px 12px;border:1px solid var(--b1);font-family:Consolas,monospace;font-size:10.5px;color:var(--w3);transition:all .15s;cursor:default;letter-spacing:.2px}
-.chip:hover{border-color:var(--acc);color:var(--acc);background:var(--dim)}
-
-/* EXPERIENCE */
-.exp-list{border-top:1px solid var(--b1)}
-.exp-item{display:grid;grid-template-columns:210px 1fr;gap:52px;padding:36px 0;border-bottom:1px solid var(--b1);transition:all .2s;position:relative}
-.exp-item::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1.5px;background:var(--acc);transform:scaleY(0);transform-origin:bottom;transition:transform .35s ease}
-.exp-item:hover{padding-left:22px;background:var(--dim)}
-.exp-item:hover::before{transform:scaleY(1)}
-.ex-date{font-family:Consolas,monospace;font-size:9.5px;color:var(--w4);margin-bottom:8px;letter-spacing:.3px}
-.ex-org{font-family:Georgia,serif;font-size:14px;color:var(--acc);font-style:italic}
-.ex-title{font-size:16.5px;font-weight:600;margin-bottom:11px;line-height:1.3;color:var(--w1)}
-.ex-desc{font-size:13.5px;color:var(--w3);line-height:1.75}
-
-/* HACKATHON WIN CALLOUT */
-.win-banner{margin-bottom:72px;padding:32px 36px;border:1px solid rgba(232,197,71,.25);background:linear-gradient(135deg,rgba(232,197,71,.07) 0%,rgba(232,197,71,.02) 100%);position:relative;overflow:hidden}
-.win-banner::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--acc),transparent)}
-.win-top{display:flex;align-items:center;gap:14px;margin-bottom:18px}
-.win-badge{font-family:Consolas,monospace;font-size:9px;color:var(--bg);background:var(--acc);padding:3px 10px;letter-spacing:2px;text-transform:uppercase;font-weight:600}
-.win-title{font-family:Georgia,serif;font-size:22px;color:var(--w1);font-style:italic}
-.win-sub{font-size:13px;color:var(--w3);margin-bottom:20px;line-height:1.7}
-.win-features{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:20px}
-.win-feat{padding:10px 12px;border:1px solid var(--b2);font-size:12px;color:var(--w2);line-height:1.4;background:var(--s2)}
-.win-feat span{display:block;font-family:Consolas,monospace;font-size:9px;color:var(--acc);margin-bottom:4px;letter-spacing:.5px}
-.win-quote{font-size:13.5px;color:var(--w3);line-height:1.72;font-style:italic;border-left:2px solid var(--acc);padding-left:16px}
-
-/* PROJECTS */
-.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--b1);border:1px solid var(--b1)}
-.pcard{background:var(--s2);padding:28px 28px 32px;position:relative;overflow:hidden;transition:background .2s}
-.pcard::after{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:var(--acc);transform:scaleX(0);transform-origin:left;transition:transform .3s ease}
-.pcard:hover{background:#111120}
-.pcard:hover::after{transform:scaleX(1)}
-.pcard.wide{grid-column:span 2}
-.pcard.wide.alt{grid-column:span 1}
-.p-num{font-family:Consolas,monospace;font-size:9px;color:var(--w4);margin-bottom:18px;letter-spacing:1.5px}
-.p-name{font-family:Georgia,serif;font-size:17px;font-weight:400;margin-bottom:8px;line-height:1.25;color:var(--w1)}
-.p-stack{font-family:Consolas,monospace;font-size:9.5px;color:var(--acc);margin-bottom:12px;line-height:1.65;opacity:.75}
-.p-desc{font-size:13px;color:var(--w3);line-height:1.7}
-.p-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:14px}
-.p-tag{padding:2px 8px;background:var(--dim);border:1px solid rgba(232,197,71,.18);font-family:Consolas,monospace;font-size:9px;color:var(--acc)}
-
-/* EVENTS */
-.ev-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.ev-card{padding:26px 28px;border:1px solid var(--b1);transition:all .2s;position:relative}
-.ev-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:var(--acc);transform:scaleX(0);transform-origin:left;transition:transform .3s}
-.ev-card:hover{transform:translateY(-3px)}
-.ev-card:hover::after{transform:scaleX(1)}
-.ev-tag{display:inline-block;padding:2px 9px;margin-bottom:13px;background:var(--dim);border:1px solid rgba(232,197,71,.2);font-family:Consolas,monospace;font-size:8.5px;color:var(--acc);letter-spacing:2px;text-transform:uppercase}
-.ev-name{font-family:Georgia,serif;font-size:15.5px;font-weight:400;margin-bottom:5px;line-height:1.3;color:var(--w1)}
-.ev-org{font-family:Consolas,monospace;font-size:9.5px;color:var(--w4);margin-bottom:10px;letter-spacing:.3px}
-.ev-desc{font-size:13px;color:var(--w3);line-height:1.68}
-
-/* HOSTED HACKATHON BANNER */
-.hosted-banner{border:1px solid var(--b1);background:var(--s2);overflow:hidden;margin-bottom:72px}
-.hb-top{padding:28px 32px 0;border-bottom:1px solid var(--b1)}
-.hb-eyebrow{font-family:Consolas,monospace;font-size:9px;color:var(--acc);letter-spacing:3px;text-transform:uppercase;margin-bottom:14px}
-.hb-title{font-family:Georgia,serif;font-size:28px;color:var(--w1);font-style:italic;margin-bottom:8px;letter-spacing:-1px}
-.hb-meta{font-family:Consolas,monospace;font-size:10px;color:var(--w4);margin-bottom:22px;letter-spacing:.5px}
-.hb-body{padding:28px 32px;font-size:13.5px;color:var(--w3);line-height:1.78}
-.hb-body p{margin-bottom:16px}
-.hb-body p:last-child{margin-bottom:0}
-.hb-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--b1);border-top:1px solid var(--b1)}
-.hb-stat{padding:20px 24px;background:var(--s1);text-align:center}
-.hb-n{font-family:Georgia,serif;font-size:28px;color:var(--acc);font-style:italic;display:block;line-height:1}
-.hb-l{font-family:Consolas,monospace;font-size:9px;color:var(--w4);letter-spacing:2px;text-transform:uppercase;margin-top:6px;display:block}
-.judge-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
-.judge-chip{padding:4px 12px;border:1px solid var(--b2);font-size:11.5px;color:var(--w2)}
-.judge-chip span{font-family:Consolas,monospace;font-size:9px;color:var(--acc);display:block;margin-bottom:2px;letter-spacing:.5px}
-
-/* CERTS */
-.cert-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-.crt{padding:22px 20px;border:1px solid var(--b1);transition:all .18s}
-.crt:hover{border-color:var(--acc);background:var(--dim)}
-.crt-icon{font-size:20px;margin-bottom:12px;display:block}
-.crt-name{font-size:12.5px;font-weight:600;margin-bottom:4px;line-height:1.4;color:var(--w1)}
-.crt-by{font-family:Consolas,monospace;font-size:10px;color:var(--acc)}
-
-/* CONTACT */
-.ct-layout{display:grid;grid-template-columns:1fr 1fr;gap:88px;align-items:center}
-.ct-head{font-family:Georgia,serif;font-size:clamp(42px,5.5vw,74px);font-weight:400;letter-spacing:-2.5px;line-height:.92;margin-bottom:22px}
-.ct-head em{color:var(--acc);font-style:italic;display:block}
-.ct-body{font-size:14.5px;color:var(--w3);line-height:1.78;max-width:360px}
-.ct-links{display:flex;flex-direction:column;gap:8px}
-.clink{display:flex;align-items:center;justify-content:space-between;padding:15px 20px;border:1px solid var(--b1);text-decoration:none;color:var(--w1);transition:all .18s}
-.clink:hover{border-color:var(--acc);background:var(--dim)}
-.cl-label{font-size:13px;font-weight:500;margin-bottom:2px;color:var(--w2)}
-.cl-val{font-family:Consolas,monospace;font-size:10.5px;color:var(--w4)}
-.clink:hover .cl-val{color:var(--acc)}
-.cl-arr{font-size:14px;color:var(--w4);transition:transform .18s,color .18s}
-.clink:hover .cl-arr{transform:translate(3px,-3px);color:var(--acc)}
-
-/* FOOTER */
-footer{border-top:1px solid var(--b1);padding:18px 56px;display:flex;justify-content:space-between;align-items:center}
-footer span{font-family:Consolas,monospace;font-size:9.5px;color:var(--w4);letter-spacing:.5px}
-
-/* FADE */
-.fade{opacity:0;transform:translateY(22px);transition:opacity .72s ease,transform .72s ease}
-.fade.in{opacity:1;transform:translateY(0)}
-
-/* HERO ENTRANCE */
-.h-inner > *{opacity:0;transform:translateY(18px);animation:ent .75s ease forwards}
-.h-tag{animation-delay:.1s}
-.h-name{animation-delay:.28s}
-.h-sub{animation-delay:.44s}
-.h-btns{animation-delay:.58s}
-@keyframes ent{to{opacity:1;transform:translateY(0)}}
-
-/* SCROLLBAR */
-::-webkit-scrollbar{width:2px}
-::-webkit-scrollbar-track{background:var(--bg)}
-::-webkit-scrollbar-thumb{background:var(--acc)}
+:root{--bg:#07070b;--card:#101018;--line:#23232f;--fg:#f4f4f6;--mut:#8d8d9c;--lime:#c6ff3d;--pink:#ff3d81;--blue:#3dc6ff}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{background:var(--bg);color:var(--fg);font-family:'Space Grotesk',system-ui,sans-serif;line-height:1.55;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;opacity:.28;mask-image:radial-gradient(ellipse at 50% 30%,#000 10%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse at 50% 30%,#000 10%,transparent 70%)}
+a{color:inherit;text-decoration:none}
+.mono{font-family:'JetBrains Mono',monospace}
+::selection{background:var(--lime);color:#000}
+:focus-visible{outline:2px solid var(--lime);outline-offset:3px}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--lime),var(--pink));z-index:200}
+.cursor{position:fixed;width:18px;height:18px;border:1.5px solid var(--lime);border-radius:50%;pointer-events:none;z-index:300;transform:translate(-50%,-50%);transition:width .2s,height .2s,background .2s;mix-blend-mode:difference}
+.cursor.big{width:56px;height:56px;background:var(--lime)}
+@media(pointer:coarse){.cursor{display:none}}
+.blob{position:fixed;border-radius:50%;filter:blur(120px);opacity:.28;z-index:-1;animation:drift 18s ease-in-out infinite alternate}
+.b1{width:460px;height:460px;background:var(--lime);top:-120px;left:-120px}
+.b2{width:520px;height:520px;background:var(--pink);bottom:-160px;right:-140px;animation-delay:-8s}
+@keyframes drift{to{transform:translate(120px,80px) scale(1.2)}}
+nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);display:flex;gap:6px;padding:8px 10px;border-radius:999px;background:rgba(16,16,24,.78);backdrop-filter:blur(14px);border:1px solid var(--line);z-index:150;font-size:14px}
+nav a{padding:7px 14px;border-radius:999px;color:var(--mut);transition:.2s}
+nav a:hover,nav a.on{color:#000;background:var(--lime)}
+@media(max-width:700px){nav{width:94vw;justify-content:space-between}nav a{padding:7px 6px;font-size:11px}}
+section{padding:110px 6vw 0;max-width:1240px;margin:0 auto}
+.kicker{color:var(--lime);font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px}
+h2{font-size:clamp(32px,5.5vw,64px);letter-spacing:-.03em;line-height:1.05;margin-bottom:20px}
+.cap{color:var(--mut);margin-bottom:30px;max-width:700px}
+.rv{opacity:0;transform:translateY(40px);transition:opacity 1s,transform 1s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:130px;position:relative}
+.three{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px;font-size:clamp(12px,1.4vw,15px)}
+.three span{padding:6px 14px;border-radius:999px;border:1px solid var(--line);letter-spacing:.16em;text-transform:uppercase}
+.three span:nth-child(1){color:var(--lime);border-color:rgba(198,255,61,.5)}
+.three span:nth-child(2){color:var(--pink);border-color:rgba(255,61,129,.5)}
+.three span:nth-child(3){color:var(--blue);border-color:rgba(61,198,255,.5)}
+h1{font-size:clamp(52px,11.5vw,150px);line-height:.92;font-weight:700;letter-spacing:-.045em}
+h1 .w{display:inline-block;overflow:hidden;vertical-align:top;padding-right:.08em}
+h1 .w span{display:inline-block;transform:translateY(110%);animation:up .9s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes up{to{transform:none}}
+.outline{-webkit-text-stroke:2px var(--fg);color:transparent;transition:.3s}
+h1:hover .outline{color:var(--lime);-webkit-text-stroke-color:var(--lime)}
+.typed{font-size:clamp(18px,2.6vw,30px);margin:30px 0 24px;color:var(--mut);min-height:1.6em}
+.typed b{color:var(--lime);font-weight:500}
+.caret{display:inline-block;width:3px;height:1em;background:var(--lime);margin-left:3px;vertical-align:-.12em;animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+.pitch{max-width:800px;font-size:clamp(17px,1.8vw,21px);color:#d4d4dc;margin:0 0 30px}
+.pitch b{color:var(--fg);font-weight:500}
+.btns{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.btn{padding:15px 28px;border-radius:999px;font-weight:700;border:1.5px solid var(--lime);transition:.25s;display:inline-block;cursor:pointer;background:transparent;color:var(--fg);font-family:inherit;font-size:16px}
+.btn.fill{background:var(--lime);color:#000}
+.btn:hover{transform:translateY(-3px) rotate(-1.5deg);box-shadow:0 10px 40px rgba(198,255,61,.3)}
+.mqw{margin:0 -6vw}
+.mq{display:flex;overflow:hidden;border-block:1px solid var(--line);padding:20px 0;margin-bottom:-1px}
+.tr{display:flex;flex-shrink:0;gap:54px;padding-right:54px;white-space:nowrap;animation:mq 38s linear infinite;font-size:clamp(26px,4vw,48px);font-weight:700;letter-spacing:-.02em}
+.mq:hover .tr{animation-play-state:paused}
+.tr span{color:transparent;-webkit-text-stroke:1.3px #6f6f80;transition:.2s}
+.tr span:hover{color:var(--lime);-webkit-text-stroke-color:var(--lime)}
+.tr i{font-style:normal;color:var(--pink)}
+@keyframes mq{to{transform:translateX(-100%)}}
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:40px}
+@media(max-width:820px){.about{grid-template-columns:1fr}}
+.about p{font-size:clamp(17px,1.9vw,21px);color:#d4d4dc;margin-bottom:16px}
+.about em{font-style:normal;color:var(--lime)}
+.now{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:26px}
+.now h3{font-size:13px;color:var(--pink);letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px}
+.now li{list-style:none;padding:10px 0;border-bottom:1px dashed var(--line);color:#d4d4dc}
+.now li:last-child{border:0}
+.stats,.fit{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.stat,.fc{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:28px;transition:.3s}
+.stat:hover,.fc:hover{border-color:var(--lime);transform:translateY(-6px)}
+.stat .n{font-size:clamp(38px,4.6vw,58px);font-weight:700;letter-spacing:-.03em;background:linear-gradient(120deg,var(--lime),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1.1}
+.stat h3{font-size:18px;margin:10px 0 4px}
+.stat p,.fc p{color:#b9b9c6;font-size:15px}
+.fc h3{font-size:22px;margin-bottom:8px;color:var(--lime)}
+.fc:nth-child(2) h3{color:var(--pink)}.fc:nth-child(3) h3{color:var(--blue)}
+.fc ul{list-style:none}
+.fc li,.ti li{color:#c4c4cf;padding-left:18px;position:relative;margin-bottom:6px;font-size:15px}
+.fc li::before,.ti li::before{content:"";position:absolute;left:0;top:.7em;width:8px;height:2px;background:var(--pink)}
+.tabs{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:26px}
+.tab{flex:1;min-width:210px;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px 24px;cursor:pointer;color:var(--fg);font-family:inherit;transition:.25s}
+.tab small{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);font-family:'JetBrains Mono',monospace;margin-bottom:4px}
+.tab b{font-size:clamp(24px,3vw,36px);letter-spacing:-.02em}
+.tab:hover{transform:translateY(-4px)}
+.tab[data-t="build"].on{background:var(--lime);color:#000;border-color:var(--lime)}
+.tab[data-t="sell"].on{background:var(--pink);color:#fff;border-color:var(--pink)}
+.tab[data-t="run"].on{background:var(--blue);color:#000;border-color:var(--blue)}
+.tab.on small{color:inherit;opacity:.7}
+.panel{display:none;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.panel.on{display:grid;animation:fade .5s}
+@keyframes fade{from{opacity:0;transform:translateY(14px)}}
+.pc{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:26px;transition:.3s}
+.pc:hover{border-color:var(--fg);transform:translateY(-5px)}
+.pc .big{font-size:clamp(26px,3.4vw,38px);font-weight:700;letter-spacing:-.03em;line-height:1.1;margin-bottom:8px}
+.panel[data-p="build"] .big{color:var(--lime)}.panel[data-p="sell"] .big{color:var(--pink)}.panel[data-p="run"] .big{color:var(--blue)}
+.pc p{color:#c4c4cf;font-size:15px}
+.tl{border-left:2px solid var(--line);margin-left:8px}
+.ti{position:relative;padding:0 0 38px 34px}
+.ti::before{content:"";position:absolute;left:-9px;top:6px;width:16px;height:16px;border-radius:50%;background:var(--bg);border:3px solid var(--lime);transition:.3s}
+.ti:hover::before{background:var(--lime);transform:scale(1.3)}
+.ti .d{font-size:12px;color:var(--pink);letter-spacing:.1em;text-transform:uppercase}
+.ti h3{font-size:clamp(20px,2.4vw,28px);margin:4px 0 2px;letter-spacing:-.01em}
+.ti .o{color:var(--lime);font-size:15px;margin-bottom:8px}
+.ti ul{list-style:none;max-width:800px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chips span{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:9px 18px;font-size:15px;transition:.25s}
+.chips span:hover{border-color:var(--pink);transform:translateY(-3px)}
+.chips .hot{border-color:rgba(198,255,61,.5)}
+.fl{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px}
+.f{padding:9px 18px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--mut);font:500 14px 'Space Grotesk',sans-serif;cursor:pointer;transition:.2s}
+.f:hover{color:var(--fg);border-color:var(--fg)}
+.f.on{background:var(--lime);color:#000;border-color:var(--lime)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px}
+.card{position:relative;background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(198,255,61,.13),transparent 45%),var(--card);border:1px solid var(--line);border-radius:22px;padding:28px;transition:transform .15s,border-color .3s;display:flex;flex-direction:column;gap:12px}
+.card[hidden]{display:none}
+.card:hover{border-color:var(--lime)}
+.card h3{font-size:22px;letter-spacing:-.01em}
+.card p{color:#b9b9c6;font-size:15px}
+.card p b{color:var(--fg);font-weight:500}
+.badge{align-self:flex-start;font-size:11px;padding:5px 12px;border-radius:999px;background:var(--lime);color:#000;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.badge.p{background:var(--pink);color:#fff}
+.badge.o{background:transparent;color:var(--mut);border:1px solid var(--line)}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:auto;padding-top:6px}
+.tags span{font-size:12px;color:var(--mut);border:1px solid var(--line);padding:4px 10px;border-radius:999px}
+.sk{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.sk div{border-top:2px solid var(--lime);padding-top:14px}
+.sk h3{font-size:19px;margin-bottom:4px}
+.sk p{color:var(--mut);font-size:15px}
+.contact{text-align:center;padding-bottom:70px}
+.cbig{font-size:clamp(40px,9vw,120px);font-weight:700;letter-spacing:-.045em;line-height:.95;margin-bottom:34px}
+.cbig a{display:inline-block;background:linear-gradient(120deg,var(--lime),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent;transition:.3s}
+.cbig a:hover{transform:skewX(-6deg) scale(1.03)}
+.contact .btns{justify-content:center}
+.contact .cap{margin:0 auto 30px}
+#toast{min-height:1.5em;margin-top:18px;color:var(--lime);font-size:14px}
+footer{text-align:center;color:var(--mut);font-size:13px;padding:30px 6vw 50px;border-top:1px solid var(--line)}
+footer a:hover{color:var(--lime)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}h1 .w span{transform:none}}
+[hidden]{display:none!important}
+nav{max-width:96vw;overflow-x:auto;scrollbar-width:none}nav a{white-space:nowrap}
+.feat{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(340px,100%),1fr));gap:18px;margin-bottom:28px}
+.pf{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:30px;display:flex;flex-direction:column;gap:12px;transition:.3s}
+.pf:hover{border-color:var(--lime);transform:translateY(-5px)}.pf h3{font-size:26px;letter-spacing:-.01em}
+.pf p{color:#b9b9c6;font-size:15px}.pf p b{color:var(--fg);font-weight:500}
+.pl{display:flex;gap:10px;margin-top:auto;padding-top:8px}.pl .btn{padding:9px 18px;font-size:14px}
+.more summary{cursor:pointer;font-size:20px;font-weight:700;color:var(--lime);margin-bottom:20px}
+.grp{color:var(--pink);font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin:10px 0 18px}
+.ti.sm{padding-bottom:20px}.ti.sm h3{font-size:18px}.ti.sm .o{color:var(--mut);margin:0}
+.now small{display:block;color:var(--mut);font-size:13px;margin-top:2px}
+@media(max-width:560px){.stats,.fit{grid-template-columns:1fr}.cbig{font-size:40px}.btn{padding:12px 20px;font-size:15px}}
 </style>
+<noscript><style>.rv{opacity:1;transform:none}h1 .w span{transform:none}</style></noscript>
 </head>
 <body>
-<div id="c1"></div>
-<div id="c2"></div>
+<div id="bar"></div><div class="cursor"></div>
+<div class="blob b1"></div><div class="blob b2"></div>
+<nav aria-label="Main"><a href="#about">About</a><a href="#impact">Impact</a><a href="#fit">Finance</a><a href="#exp">Experience</a><a href="#work">Projects</a><a href="#contact">Contact</a><a id="navResume" hidden>Resume</a></nav>
 
-<nav>
-  <div class="logo">ASK<b>.</b></div>
-  <div class="nav-links">
-    <a href="#about">About</a>
-    <a href="#experience">Experience</a>
-    <a href="#projects">Projects</a>
-    <a href="#events">Events</a>
-    <a href="#contact">Contact</a>
-  </div>
-</nav>
-
-<!-- HERO -->
-<section class="hero" id="home">
-  <div class="grid-bg"></div>
-  <div class="glow g1"></div>
-  <div class="glow g2"></div>
-  <div class="h-inner">
-    <div class="h-tag"><span class="pip"></span>CSE at RV University &nbsp;·&nbsp; AI/ML &nbsp;·&nbsp; Bengaluru</div>
-    <h1 class="h-name">Ayush S<em>Kulkarni.</em></h1>
-    <p class="h-sub">
-      I build <em>AI tools, IoT systems and automation</em> that actually work.<br>
-      Closed 12 sponsors including <strong>Mercedes-Benz, Red Bull and Nokia</strong> for a college fest.<br>
-      Won a national AI hackathon out of 60+ teams. Yeah, all of it.
-    </p>
-    <div class="h-btns">
-      <a href="#projects" class="btn-fill">See My Work</a>
-      <a href="https://linkedin.com/in/ayushsk" target="_blank" class="btn-out">LinkedIn</a>
-      <a href="https://github.com/snixxfs" target="_blank" class="btn-out">GitHub</a>
-    </div>
-  </div>
-  <div class="h-foot">
-    <div class="scroll-hint"><div class="s-line"></div>SCROLL</div>
-    <div class="stats">
-      <div class="st"><span class="st-n">12+</span><span class="st-l">Projects</span></div>
-      <div class="st"><span class="st-n">1.6K</span><span class="st-l">LinkedIn</span></div>
-      <div class="st"><span class="st-n">5</span><span class="st-l">Clubs</span></div>
-    </div>
+<section class="hero" id="top">
+  <div class="three mono"><span>Technology</span><span>Partnerships</span></div>
+  <h1><span class="w"><span style="animation-delay:.1s">AYUSH</span></span> <span class="w"><span style="animation-delay:.2s">S</span></span><br><span class="w"><span class="outline" style="animation-delay:.35s">KULKARNI</span></span></h1>
+  <div class="typed mono">&gt; <b id="typed"></b><span class="caret"></span></div>
+  <p class="pitch">BTech CSE student building <b>AI products</b> and driving <b>partnerships</b>. <b>10K+</b> community builder, <b>₹13L</b> in sponsorships (₹2.8L cash + ₹10.2L in kind) from 20 brands, <b>220+</b> team hackathon lead.</p>
+  <div class="btns">
+    <a class="btn fill" href="#impact">See my impact</a>
+    <a class="btn" href="#work">Projects</a>
+    <a class="btn" href="#contact">Get in touch</a>
+    <a class="btn" id="heroResume" hidden>Download Resume</a>
   </div>
 </section>
 
-<!-- TICKER -->
-<div class="ticker">
-  <div class="t-track">
-    <span class="t-item"><span>+</span>Python LLMs OpenRouter</span>
-    <span class="t-item"><span>+</span>n8n Automation Webhooks</span>
-    <span class="t-item"><span>+</span>IoT ESP8266 Arduino</span>
-    <span class="t-item"><span>+</span>AI Build Sprint Winner</span>
-    <span class="t-item"><span>+</span>INNOVITUS 2026 Organiser</span>
-    <span class="t-item"><span>+</span>E-Cell GDG RUDRA PressCorps</span>
-    <span class="t-item"><span>+</span>Mercedes Benz Red Bull Nokia Cisco</span>
-    <span class="t-item"><span>+</span>RV University Bengaluru</span>
-    <span class="t-item"><span>+</span>Python LLMs OpenRouter</span>
-    <span class="t-item"><span>+</span>n8n Automation Webhooks</span>
-    <span class="t-item"><span>+</span>IoT ESP8266 Arduino</span>
-    <span class="t-item"><span>+</span>AI Build Sprint Winner</span>
-    <span class="t-item"><span>+</span>INNOVITUS 2026 Organiser</span>
-    <span class="t-item"><span>+</span>E-Cell GDG RUDRA PressCorps</span>
-    <span class="t-item"><span>+</span>Mercedes Benz Red Bull Nokia Cisco</span>
-    <span class="t-item"><span>+</span>RV University Bengaluru</span>
-  </div>
-</div>
+<div class="mqw" style="margin-top:-40px"><div class="mq"><div class="tr" style="animation-duration:30s"><span>AI products</span><i>✦</i><span>Sponsorships</span><i>✦</i><span>Hackathons</span><i>✦</i><span>Communities</span><i>✦</i><span>Fintech</span><i>✦</i><span>Partnerships</span><i>✦</i></div></div></div>
 
-<!-- ABOUT -->
-<section class="sec" id="about">
-  <div class="ey">About</div>
-  <div class="sec-title">Builder.<br><em>Closer.</em> Organiser.</div>
-  <div class="about-layout fade">
-    <div class="about-text">
-      <p>I study CSE at RV University with a focus on <strong>AI/ML</strong> and a minor in Finance. Outside class I'm either building something, closing someone, or running an event for 500 people.</p>
-      <p>On the building side: an <strong>IoT rover that sorts waste at 90% accuracy</strong>, AI bots that evaluate startup ideas and handle tax queries, a pharmacogenomics risk system built in 24 hours, a crypto backtester, automation workflows. Things that work in the real world, not just in a notebook.</p>
-      <p>On the people side: I run <strong>Sponsorships and PR at E-Cell</strong> where I personally closed 12 sponsors for Kalpavikas 1.0 — Mercedes-Benz, TVS Motors, Red Bull, Cisco, Nokia, JustVend, RunAnywhere, MileTech, EasyBites by Empire, Belgium Waffle, Atty's Bakery and Physics Wallah. All cold outreach. About a month. No prior connections. I'm also <strong>Club Advisor at PressCorps</strong> and co-built the GDG RVU website.</p>
-      <p>When RIFT '26 closed registrations, I DM'd the PW team with a collab pitch and got my whole team in. When I needed Mercedes-Benz, I walked into their Karnataka regional office and met the head directly. I got into my first invite-only founder meet by cold messaging the organiser at 17. I just don't really accept no.</p>
-    </div>
+<section id="about">
+  <div class="kicker mono">01 / About</div>
+  <div class="about rv">
     <div>
-      <div class="sk-label">Tech Stack</div>
-      <div class="sk-grid">
-        <div class="chip">Python LLM APIs</div>
-        <div class="chip">n8n Automation</div>
-        <div class="chip">Telegram Bot API</div>
-        <div class="chip">OpenRouter Mistral</div>
-        <div class="chip">JavaScript ES6+</div>
-        <div class="chip">C++ Algorithms</div>
-        <div class="chip">ESP8266 Arduino</div>
-        <div class="chip">IoT Robotics</div>
-        <div class="chip">AWS GCP Cloud</div>
-        <div class="chip">MySQL Pandas</div>
-        <div class="chip">GSAP SwiperJS</div>
-        <div class="chip">Figma UI/UX</div>
-      </div>
-      <div class="sk-label">Domain</div>
-      <div class="sk-grid">
-        <div class="chip">Finance Markets</div>
-        <div class="chip">Digital Marketing</div>
-        <div class="chip">Startup Strategy</div>
-        <div class="chip">Sponsorship PR</div>
-      </div>
+      <p>I'm a BTech CSE student at RV University. I work where <em>technology, partnerships and execution</em> meet.</p>
+      <p><em>Technology:</em> AI products for concrete problems, such as insurance fraud detection and an India tax assistant.</p>
+      <p><em>Partnerships:</em> ₹13L in sponsorships from 20 brands across two editions of Kalpavikas, through cold outreach, negotiation and delivery.</p>
+      <p><em>Execution:</em> one of three main coordinators of Argonyx '26, a 24-hour hackathon with 220+ teams from 5 countries.</p>
+      <p><em>Community:</em> a Telegram channel with 10K+ subscribers, and HNI mentors in Dubai I learn from through it.</p>
+    </div>
+    <div class="now">
+      <h3 class="mono">Education</h3>
+      <ul><li>RV University, BTech CSE<small id="edu"></small></li></ul>
+      <h3 class="mono" style="margin-top:22px">Certifications</h3>
+      <ul><li>J.P. Morgan Investment Banking Virtual Experience (Forage)</li></ul>
+      <h3 class="mono" style="margin-top:22px">Right now</h3>
+      <ul>
+        <li>Running a 10K+ subscriber Telegram channel. Learning from HNI mentors in Dubai through Telegram (real estate, aviation, global taxation)</li>
+        <li>Director, Partnerships and Engagements, ECell</li>
+        <li>Project Executive intern, CEDAT</li>
+        <li>Student Placement Coordinator, RV University</li>
+        <li>Building a Smart India Hackathon solution for dementia care</li>
+      </ul>
     </div>
   </div>
 </section>
 
-<!-- EXPERIENCE -->
-<section class="sec sec-dark" id="experience">
-  <div class="ey">Experience</div>
-  <div class="sec-title">What I've<br><em>Led and Done.</em></div>
-  <div class="exp-list fade">
-
-    <div class="exp-item">
-      <div><div class="ex-date">Jun 2024 – Present</div><div class="ex-org">E-Cell, RV University</div></div>
-      <div>
-        <div class="ex-title">Head of Sponsorships, Engagements and PR</div>
-        <div class="ex-desc">Closed 12 sponsors for Kalpavikas 1.0 — Mercedes-Benz, TVS Motors, Red Bull, Cisco, Nokia, JustVend, RunAnywhere, MileTech, EasyBites by Empire, Belgium Waffle, Atty's Bakery and Physics Wallah. All cold outreach, no connections, about a month. Also ran founder workshops, mentorship programs, inter-institutional partnerships, and co-organised Winter Tech Talk, a 6-founder panel event on building from zero.</div>
-      </div>
-    </div>
-
-    <div class="exp-item">
-      <div><div class="ex-date">2025 – Present</div><div class="ex-org">PressCorps, RV University</div></div>
-      <div>
-        <div class="ex-title">Club Advisor</div>
-        <div class="ex-desc">Advising the campus media club on content direction, storytelling and building the club's voice. More of a sounding board than anything formal.</div>
-      </div>
-    </div>
-
-    <div class="exp-item">
-      <div><div class="ex-date">Apr 2026</div><div class="ex-org">RV University</div></div>
-      <div>
-        <div class="ex-title">Lead Organiser — INNOVITUS 2026, 24-Hour National Hackathon</div>
-        <div class="ex-desc">Organised a 24-hour national hackathon at RV University with participants from across India building in AI/ML and Web Development. Judges from Morgan Stanley, Salesforce, iTriangle and Progress. Collaborated with Callisto and GameDev Club. Took it from concept to execution — venue, judges, sponsors, participants, the lot.</div>
-      </div>
-    </div>
-
-    <div class="exp-item">
-      <div><div class="ex-date">Aug – Dec 2024</div><div class="ex-org">RV University</div></div>
-      <div>
-        <div class="ex-title">Head of Sponsorships and PR, Kalpavikas 1.0 and Argonyx '25</div>
-        <div class="ex-desc">Running sponsorships for the flagship fest while simultaneously putting together Argonyx '25, a 24-hour startup simulation hackathon with a Rs.30,000 prize pool. Same month, both events, one team. It was a lot.</div>
-      </div>
-    </div>
-
-    <div class="exp-item">
-      <div><div class="ex-date">Oct 2024 – Oct 2025</div><div class="ex-org">GDG On Campus, RVU</div></div>
-      <div>
-        <div class="ex-title">Technical Team Member — Google Developer Group</div>
-        <div class="ex-desc">Part of the team that built and shipped the official GDG RVU website at gdg-rvu.onrender.com. Also helped run Codeverse 2025 LeetCode rounds and a bunch of developer meetups throughout the year.</div>
-      </div>
-    </div>
-
-    <div class="exp-item">
-      <div><div class="ex-date">Oct 2024 – Oct 2025</div><div class="ex-org">RUDRA, RVU</div></div>
-      <div>
-        <div class="ex-title">Board Member — RVU Data Analytics Unit</div>
-        <div class="ex-desc">Helped put together a Toyota-sponsored Ideathon and sat on the evaluation panel for 20+ student teams. Gave feedback on analytics thinking and how teams presented their work.</div>
-      </div>
-    </div>
-
-    <div class="exp-item">
-      <div><div class="ex-date">2024</div><div class="ex-org">Scaler School of Technology</div></div>
-      <div>
-        <div class="ex-title">Young Innovators Internship</div>
-        <div class="ex-desc">Covered AI for startups, branding, growth marketing and Discord bot development. Useful early on for connecting the builder side with the business side.</div>
-      </div>
-    </div>
-
-    <div class="exp-item">
-      <div><div class="ex-date">2024</div><div class="ex-org">DevTown</div></div>
-      <div>
-        <div class="ex-title">Campus Ambassador</div>
-        <div class="ex-desc">30+ hours of HTML, CSS and JavaScript. Was the campus rep, helped connect students to the program. Where a lot of the frontend thinking started.</div>
-      </div>
-    </div>
-
+<section id="impact">
+  <div class="kicker mono">02 / Impact</div>
+  <h2 class="rv">Results, in numbers.</h2>
+  <div class="stats rv">
+    <div class="stat"><div class="n" data-n="10" data-suf="K+">10K+</div><h3>Telegram subscribers</h3><p>Built and grew a Telegram channel to 10,000+ subscribers.</p></div>
+    <div class="stat"><div class="n">Dubai</div><h3>HNI mentors</h3><p>Mentored by high-net-worth individuals in Dubai across real estate, private aviation and international taxation, learned through my Telegram community.</p></div>
+    <div class="stat"><div class="n" data-n="13" data-pre="₹" data-suf="L">₹13L</div><h3>In sponsorships (₹2.8L cash + ₹10.2L in kind) from 20 brands</h3><p>Led sponsorship at both Kalpavikas editions: ₹5L (₹1L cash, ₹4L in kind), then ₹8L (₹1.8L cash). Brands include Mercedes-Benz, Cisco, Mahindra, Red Bull, TVS Motors, Nokia, ixigo, CodeChef and HP.</p></div>
+    <div class="stat"><div class="n">220+</div><h3>Teams at Argonyx '26</h3><p>220+ teams from 5 countries in 24 hours. One of three main coordinators. Judge panel included professionals from JPMorgan Chase, Google, Oracle, Morgan Stanley and nasscom.</p></div>
+    <div class="stat"><div class="n">Top 5</div><h3>of 60+ teams, AI Build Sprint</h3><p>With a teammate, built an AI insurance claims platform: approval, fraud detection, payout estimates, photo-based damage scoring and drafted replies. It ran end to end at the live demo.</p></div>
+    <div class="stat"><div class="n">Promoted</div><h3>Head to Director, ECell</h3><p>Leads partnership outreach and campus engagement for RV University's Entrepreneurship Cell.</p></div>
+    <div class="stat"><div class="n">$1M</div><h3>Startup World Cup, Bengaluru</h3><p>Organizing team for the regional finale (Pegasus Tech Ventures with CEDAT). Handled on-ground operations and worked with founders and investors.</p></div>
   </div>
 </section>
 
-<!-- PROJECTS -->
-<section class="sec" id="projects">
-  <div class="ey">Projects</div>
-  <div class="sec-title">Things I've<br><em>Actually Built.</em></div>
-
-  <!-- WIN CALLOUT -->
-  <div class="win-banner fade">
-    <div class="win-top">
-      <div class="win-badge">Won</div>
-      <div class="win-title">AI Build Sprint — 5 winners out of 60+ teams, 180 students</div>
-    </div>
-    <p class="win-sub">Me and my teammate entered the AI Build Sprint and walked out as one of five winners. Two people, compressed timeline, everything had to work live in front of judges. We built an insurance claim automation platform from scratch — claim engine, fraud detection, payout estimator, image-based damage scoring, automated customer responses. All functional by demo time. The pitch is what closed it. We explained the problem, showed the solution working, and made it land.</p>
-    <div class="win-features">
-      <div class="win-feat"><span>Module 01</span>Claim Approval and Rejection Engine</div>
-      <div class="win-feat"><span>Module 02</span>Fraud Detection System</div>
-      <div class="win-feat"><span>Module 03</span>Payout Estimator</div>
-      <div class="win-feat"><span>Module 04</span>Image-based Damage Scoring</div>
-      <div class="win-feat"><span>Module 05</span>Automated Customer Responses</div>
-    </div>
-    <p class="win-quote">Speed of execution matters as much as quality of idea. You can have the best concept and still lose if you can't ship it.</p>
-  </div>
-
-  <div class="proj-grid fade">
-
-    <div class="pcard wide">
-      <div class="p-num">01 — Featured</div>
-      <div class="p-name">Smart Trash Collector — IoT Waste Segregation Rover</div>
-      <div class="p-stack">Arduino · ESP8266 · Ultrasonic and Moisture Sensors · 3-DOF Robotic Arm · Li-ion + Solar</div>
-      <div class="p-desc">Built this for a semester project with my team. An IoT rover that figures out if waste is wet or dry using sensors, then sorts it automatically with a 3-DOF robotic arm. Runs on solar and Li-ion hybrid power. We got it to about 90% accuracy on the first real demo which honestly surprised us.</div>
-      <div class="p-tags"><span class="p-tag">90% accuracy</span><span class="p-tag">4.5s per cycle</span><span class="p-tag">15m WiFi range</span></div>
-    </div>
-
-    <div class="pcard">
-      <div class="p-num">02</div>
-      <div class="p-name">PharmaGuard</div>
-      <div class="p-stack">Python · ML · Bioinformatics</div>
-      <div class="p-desc">Built at RIFT '26 in 24 hours. Looks at genetic markers to predict which drugs might cause adverse reactions in a patient. Not bad for something built overnight with a team running on zero sleep.</div>
-      <div class="p-tags"><span class="p-tag">RIFT '26</span><span class="p-tag">24hr build</span></div>
-    </div>
-
-    <div class="pcard">
-      <div class="p-num">03</div>
-      <div class="p-name">AI Startup Evaluator Bot</div>
-      <div class="p-stack">Python · Telegram Bot API · OpenRouter LLM</div>
-      <div class="p-desc">Drop a startup idea and it comes back with a market size estimate, the obvious risks, and a verdict. Built it mostly for E-Cell people who kept asking me to poke holes in their ideas.</div>
-    </div>
-
-    <div class="pcard">
-      <div class="p-num">04</div>
-      <div class="p-name">AI Tax Assistant — India</div>
-      <div class="p-stack">Python · Mistral · OpenRouter · Telegram</div>
-      <div class="p-desc">A Telegram bot that works like a CA. Tell it your income and it calculates your tax, answers follow-up questions, and suggests ways to save. Built it after getting annoyed by how confusing the new regime is.</div>
-    </div>
-
-    <div class="pcard">
-      <div class="p-num">05</div>
-      <div class="p-name">BTC Strategy Backtester</div>
-      <div class="p-stack">Python · Pandas · Matplotlib</div>
-      <div class="p-desc">Wanted to actually test whether those EMA200 and RSI strategies people talk about on YouTube work. Built a backtester on 15-min BTC candles, 30-day window. The plots came out surprisingly clean.</div>
-    </div>
-
-    <div class="pcard">
-      <div class="p-num">06</div>
-      <div class="p-name">Crypto CRC Automation</div>
-      <div class="p-stack">n8n · HMAC-SHA256 · ngrok</div>
-      <div class="p-desc">Was exploring n8n and pushed it to replicate Twitter's CRC webhook challenge entirely in the visual editor. Signs tokens with HMAC-SHA256, returns the response. Tested with ngrok end to end.</div>
-    </div>
-
-    <div class="pcard">
-      <div class="p-num">07</div>
-      <div class="p-name">GDG RVU Website</div>
-      <div class="p-stack">HTML · CSS · JavaScript · Deployed on Render</div>
-      <div class="p-desc">Our GDG chapter didn't have a website so we built one. Part of the tech team that shipped it. Live at gdg-rvu.onrender.com and people actually use it to find out about events.</div>
-    </div>
-
-    <div class="pcard">
-      <div class="p-num">08</div>
-      <div class="p-name">Vision Rover — WiFi Robot</div>
-      <div class="p-stack">ESP8266 · C++ · Real-time Mobile Control</div>
-      <div class="p-desc">WiFi-controlled robot built at an inter-college hackathon in 24 hours. Control it from your phone in real time. We placed 3rd. First time building hardware under serious time pressure.</div>
-      <div class="p-tags"><span class="p-tag">3rd Place</span><span class="p-tag">24hrs</span></div>
-    </div>
-
-    <div class="pcard">
-      <div class="p-num">09</div>
-      <div class="p-name">CAR BHAI — Web Experience</div>
-      <div class="p-stack">HTML · CSS · JS · GSAP · SwiperJS</div>
-      <div class="p-desc">A web presentation project that got a bit out of hand. Luxury car showcase with GSAP animations, a vertical SwiperJS slider, and actual engine sounds per slide. Looked way better than we expected.</div>
-    </div>
-
+<section id="fit">
+  <div class="kicker mono">03 / Focus</div>
+  <h2 class="rv">Technology, Finance and Execution.</h2>
+  <div class="fit rv">
+    <div class="fc"><h3>Technology</h3><ul><li>Python, C++, JavaScript, MySQL, AWS, GCP.</li><li>BTC backtester for an EMA200 and RSI crossover strategy on 15-minute candles.</li><li>AI tax assistant for India's new regime.</li><li>Fraud detection and payout estimation in an insurance claims platform.</li></ul></div>
+    <div class="fc"><h3>Finance exposure</h3><ul><li>Mentored by HNIs in Dubai on real estate, aviation and international taxation.</li><li>J.P. Morgan Investment Banking Virtual Experience (Forage): screened acquisition targets for an Asia expansion case.</li><li>Project Executive at CEDAT, inside Bengaluru's VC ecosystem.</li><li>Startup World Cup regional finale, $1M global prize.</li></ul></div>
+    <div class="fc"><h3>Execution</h3><ul><li>20 sponsors across two Kalpavikas editions.</li><li>Argonyx '26: 220+ teams, 24 hours.</li><li>Head to Director at ECell within a year.</li><li>10K+ subscriber Telegram channel.</li></ul></div>
   </div>
 </section>
 
-<!-- EVENTS -->
-<section class="sec sec-dark" id="events">
-  <div class="ey">Events and Exposure</div>
-  <div class="sec-title">Where I've<br><em>Shown Up.</em></div>
-
-  <!-- INNOVITUS HOSTED HACKATHON -->
-  <div class="hosted-banner fade">
-    <div class="hb-top">
-      <div class="hb-eyebrow">Organised and Hosted</div>
-      <div class="hb-title">INNOVITUS 2026 — 24-Hour National Hackathon</div>
-      <div class="hb-meta">17–18 April 2026 &nbsp;·&nbsp; RV University, Bengaluru &nbsp;·&nbsp; AI/ML and Web Dev tracks</div>
-    </div>
-    <div class="hb-body">
-      <p>Took INNOVITUS from nothing to a full 24-hour national hackathon at RV University. Students from across India came to build, and the level of what people shipped in one overnight sprint was genuinely impressive.</p>
-      <p>Brought in judges with real weight — people from Morgan Stanley, Salesforce, iTriangle and Progress. Collaborated with Callisto and GameDev Club. Handled everything from the venue to the participant experience to the closing ceremony.</p>
-      <div class="judge-list">
-        <div class="judge-chip"><span>Morgan Stanley</span>Himangshu Shekhar Jha</div>
-        <div class="judge-chip"><span>Salesforce</span>Abhinav Kumar Rai</div>
-        <div class="judge-chip"><span>iTriangle</span>Chandru V, Pavan Naik, Pooja KM, Vinay Prakash</div>
-        <div class="judge-chip"><span>Progress</span>Vivek Yadav, Poonnam P.</div>
-      </div>
-    </div>
-    <div class="hb-grid">
-      <div class="hb-stat"><span class="hb-n">24</span><span class="hb-l">Hours</span></div>
-      <div class="hb-stat"><span class="hb-n">National</span><span class="hb-l">Reach</span></div>
-      <div class="hb-stat"><span class="hb-n">6+</span><span class="hb-l">Industry Judges</span></div>
-    </div>
+<section id="hats">
+  <div class="kicker mono">04 / Strengths</div>
+  <h2 class="rv">Build. Sponsor. Organize.</h2>
+  <div class="tabs rv" role="tablist">
+    <button class="tab on" role="tab" aria-selected="true" data-t="build"><small>Tech</small><b>Build</b></button>
+    <button class="tab" role="tab" aria-selected="false" data-t="sell"><small>Business</small><b>Sponsor</b></button>
+    <button class="tab" role="tab" aria-selected="false" data-t="run"><small>Management</small><b>Organize</b></button>
   </div>
-
-  <div class="ev-grid fade">
-
-    <div class="ev-card">
-      <div class="ev-tag">Selected · Pan-India</div>
-      <div class="ev-name">RIFT '26 — Physics Wallah IOI</div>
-      <div class="ev-org">Bengaluru · Feb 2026 · Rs.2.5L+ Prize Pool</div>
-      <div class="ev-desc">Registrations were closed when I found out about it. DM'd the PW team with a collaboration pitch between E-Cell RVU and PW IOI and got spots for my whole team. Competed against 2000+ people across 4 cities. Built PharmaGuard in 24 hours straight.</div>
-    </div>
-
-    <div class="ev-card">
-      <div class="ev-tag">Official POC</div>
-      <div class="ev-name">E-Summit 2026 — IIIT Bhubaneswar</div>
-      <div class="ev-org">IIIT Bhubaneswar · Jan 2026 · E-Cell IIT BHU x RVU</div>
-      <div class="ev-desc">Went as the official rep from RVU as part of the E-Cell IIT BHU collab. Attended the Startup Expo, Founders Residency and Bidding Wars. Good talks from Dr. Tanu Jain and Shradha Bora on what actually matters early on.</div>
-    </div>
-
-    <div class="ev-card">
-      <div class="ev-tag">Invite-Only · Age 17</div>
-      <div class="ev-name">LESGO Entrepreneurs Meetup</div>
-      <div class="ev-org">Bengaluru · Founders and VC Network</div>
-      <div class="ev-desc">Cold messaged the organiser at 17, pitched an idea, got personally invited. Spent the day talking to founders, a VC from Japan, a guy who owns 50 cafes across India. One of those days where you leave with way more than you came with.</div>
-    </div>
-
-    <div class="ev-card">
-      <div class="ev-tag">Invite-Only</div>
-      <div class="ev-name">CEDATE Startup Founders Meet</div>
-      <div class="ev-org">Bengaluru · VCs and Operators</div>
-      <div class="ev-desc">Talked to a trader based in the UK, a CA who broke down startup finance properly, a founder building in AI automation, and a psychologist who made a surprisingly good point about clarity. Everyone was building something real.</div>
-    </div>
-
-    <div class="ev-card">
-      <div class="ev-tag">Organiser + Builder</div>
-      <div class="ev-name">Argonyx '25 — 24hr Hackathon</div>
-      <div class="ev-org">RV University · 500+ Participants · Rs.30K Prize</div>
-      <div class="ev-desc">Organised the whole event as Head of PR while also competing as a builder. 500+ participants, 10+ colleges, Rs.30K prize pool. Doing both at once was genuinely chaotic but we pulled it off.</div>
-    </div>
-
-    <div class="ev-card">
-      <div class="ev-tag">National Level</div>
-      <div class="ev-name">Smart India Hackathon 2024</div>
-      <div class="ev-org">Government of India · National Level</div>
-      <div class="ev-desc">Built a platform to digitise fisheries catch data for field workers who were still doing everything on paper. National level submission for the Government of India hackathon.</div>
-    </div>
-
+  <div class="panel on" data-p="build">
+    <div class="pc"><div class="big">Top 5</div><p>AI Build Sprint, 60+ teams. An AI claims platform with fraud detection, payout estimates and image-based damage scoring, demoed live.</p></div>
+    <div class="pc"><div class="big">Finalist</div><p>RIFT Hackathon by PW, selected from a large field after building under tight time limits.</p></div>
+    <div class="pc"><div class="big">3rd place</div><p>Vision Rover, a WiFi-controlled ESP8266 robot, at an inter-college event at KLE College.</p></div>
+    <div class="pc"><div class="big">AI bots</div><p>Telegram bots on LLMs via OpenRouter: one validates startup ideas, one handles India's new tax regime.</p></div>
+  </div>
+  <div class="panel" data-p="sell">
+    <div class="pc"><div class="big">₹8L</div><p>Kalpavikas 2.0, as Head of Sponsorships. ₹1.8L cash, with Mahindra, ixigo, CodeChef and HP among the sponsors.</p></div>
+    <div class="pc"><div class="big">₹5L</div><p>Kalpavikas 1.0: ₹1L cash and ₹4L in kind from Mercedes-Benz, TVS Motors, Red Bull, Cisco and Nokia.</p></div>
+    <div class="pc"><div class="big">10K+</div><p>Built a Telegram channel past 10,000 subscribers.</p></div>
+    <div class="pc"><div class="big">CEDAT</div><p>Building partnerships with Bengaluru's startup, investor and banking community.</p></div>
+  </div>
+  <div class="panel" data-p="run">
+    <div class="pc"><div class="big">Argonyx '26</div><p>One of three main coordinators of a 24-hour national hackathon with 220+ teams from 5 countries.</p></div>
+    <div class="pc"><div class="big">ECell</div><p>Director of Partnerships and Engagements, promoted from Head. Runs outreach, workshops and mentoring for student founders.</p></div>
+    <div class="pc"><div class="big">Placements</div><p>Student Placement Coordinator, the link between students, the placement cell and recruiters.</p></div>
+    <div class="pc"><div class="big">Startup World Cup</div><p>Organizing team for the Bengaluru Regional Finale, with a $1M global prize.</p></div>
   </div>
 </section>
 
-<!-- CERTS -->
-<section class="sec" id="certs">
-  <div class="ey">Certifications</div>
-  <div class="sec-title">Credentials<br><em>and Courses.</em></div>
-  <div class="cert-row fade">
-    <div class="crt"><span class="crt-icon">☁️</span><div class="crt-name">Google Cloud Essentials</div><div class="crt-by">Google</div></div>
-    <div class="crt"><span class="crt-icon">🏦</span><div class="crt-name">Investment Banking Virtual Program</div><div class="crt-by">J.P. Morgan</div></div>
-    <div class="crt"><span class="crt-icon">🐂</span><div class="crt-name">Basement Innovation Program</div><div class="crt-by">Red Bull</div></div>
-    <div class="crt"><span class="crt-icon">💻</span><div class="crt-name">Web Dev Training 30+ hrs</div><div class="crt-by">DevTown · Campus Ambassador</div></div>
+<section id="exp">
+  <div class="kicker mono">05 / Experience</div>
+  <h2 class="rv">Where I've worked.</h2>
+  <div class="rv">
+  <h3 class="grp mono">Leadership</h3>
+  <div class="tl">
+    <div class="ti"><div class="d mono">Jun 2025 – Present</div><h3>Director, Partnerships and Engagements</h3><div class="o">Entrepreneurship Cell (ECell), RV University</div><ul><li>Promoted from Head within the year.</li><li>Lead partnership outreach and campus engagement.</li><li>Support student founders through workshops, events and mentoring.</li></ul></div>
+    <div class="ti"><!-- TODO: add dates for Kalpavikas 1.0 and 2.0 --><h3>Head of Sponsorships, Kalpavikas 1.0 and 2.0</h3><div class="o">RVU flagship fest, two editions</div><ul><li>1.0 (Head of Sponsorships and Engagements): ₹5L (₹1L cash, ₹4L in kind) from Mercedes-Benz, TVS Motors, Red Bull, Cisco and Nokia.</li><li>2.0: ₹8L (₹1.8L cash) with Mahindra, ixigo, CodeChef and HP among the sponsors.</li><li>Combined: ₹13L (₹2.8L cash + ₹10.2L in kind) from 20 brands.</li></ul></div>
+    <div class="ti sm"><!-- TODO: add dates --><h3>Student Placement Coordinator</h3><div class="o">RV University · Link between students, the placement cell and recruiters</div></div>
+  </div>
+  <h3 class="grp mono">Internships</h3>
+  <div class="tl">
+    <div class="ti"><div class="d mono">Jun 2026 – Present</div><h3>Project Executive</h3><div class="o">CEDAT, hybrid</div><ul><li>Oversee projects and build strategic partnerships.</li><li>Work inside Bengaluru's startup and VC ecosystem, alongside investors, banks and government bodies.</li></ul></div>
+  </div>
+  <h3 class="grp mono">Events and Communities</h3>
+  <div class="tl">
+    <div class="ti"><div class="d mono">Sep 2026</div><h3>Main Coordinator, Argonyx '26</h3><div class="o">24-hour national hackathon, 3rd edition, part of Kalpavikas '26</div><ul><li>220+ teams from 5 countries in 24 hours.</li><li>One of three main coordinators across planning, outreach, judges, mentors and logistics.</li><li>Judge panel included professionals from JPMorgan Chase, Google, Oracle, Morgan Stanley and nasscom.</li><li>Sponsored by Studio1, hosted with ECell, Viksha and IEEE RVU.</li></ul></div>
+    <div class="ti"><div class="d mono">Aug 2026</div><h3>Organizing Team, Startup World Cup Bengaluru Regional Finale</h3><div class="o">Pegasus Tech Ventures with CEDAT, $1M global prize</div><ul><li>Coordinated event operations on the day.</li><li>Worked directly with founders and investors.</li></ul></div>
+    <div class="ti"><div class="d mono">Ongoing</div><h3>Telegram Channel, 10K+ Subscribers</h3><!-- TODO: add channel niche, one line --><ul><li>Built and grew a 10K+ subscriber channel.</li><li>Learned from HNI mentors in Dubai on real estate, aviation and international taxation.</li></ul></div>
+    <div class="ti sm"><div class="d mono">Oct 2024 – Oct 2025</div><h3>Board Member, RUDRA</h3><div class="o">RVU Data Analytics Unit · Co-organized a Toyota-sponsored Ideathon</div></div>
+    <div class="ti sm"><div class="d mono">Oct 2024 – Oct 2025</div><h3>Technical Team Member, GDG On Campus</h3><div class="o">RV University · Ran the qualifying rounds of Codeverse 2025</div></div>
+  </div>
   </div>
 </section>
 
-<!-- CONTACT -->
-<section class="sec sec-dark" id="contact">
-  <div class="ct-layout fade">
-    <div>
-      <div class="ey">Contact</div>
-      <div class="ct-head">Let's<em>Connect.</em></div>
-      <p class="ct-body">Based in Bengaluru. If you're building something interesting or want to talk startups, AI, or just have a good opportunity — reach out. I reply fast.</p>
-    </div>
-    <div class="ct-links">
-      <a href="mailto:ayushak12n@gmail.com" class="clink">
-        <div><div class="cl-label">Email</div><div class="cl-val">ayushak12n@gmail.com</div></div>
-        <div class="cl-arr">↗</div>
-      </a>
-      <a href="https://linkedin.com/in/ayushsk" target="_blank" class="clink">
-        <div><div class="cl-label">LinkedIn</div><div class="cl-val">linkedin.com/in/ayushsk</div></div>
-        <div class="cl-arr">↗</div>
-      </a>
-      <a href="https://github.com/snixxfs" target="_blank" class="clink">
-        <div><div class="cl-label">GitHub</div><div class="cl-val">github.com/snixxfs</div></div>
-        <div class="cl-arr">↗</div>
-      </a>
-      <a href="tel:+918660697430" class="clink">
-        <div><div class="cl-label">Phone</div><div class="cl-val">+91 866 069 7430</div></div>
-        <div class="cl-arr">↗</div>
-      </a>
-    </div>
+<section id="vc">
+  <div class="kicker mono">06 / Network</div>
+  <h2 class="rv">CEDAT's investor network.</h2>
+  <p class="cap rv">Venture firms, angel networks, banks and government bodies in the ecosystem I work with as Project Executive.</p>
+  <div class="chips rv"><span class="hot">Pegasus Tech Ventures</span><span class="hot">KDEM / Startup Karnataka</span><span>IvyCap Ventures</span><span>Aum Ventures</span><span>NextUnicorn.Fund</span><span>Blume Ventures</span><span>SIAN</span><span>Ideabaaz</span><span>DBS Bank India</span><span>State Bank of India</span><span>IACC</span><span>TiE Bangalore</span><span>Headstart Network</span><span>eChai Ventures</span><span>Finsu Advisors / FINVAYU</span></div>
+</section>
+
+<section id="brands">
+  <div class="kicker mono">07 / Brands</div>
+  <h2 class="rv">Brands we signed.</h2>
+  <p class="cap rv">A selection of the 20 brands my teams brought on board at Kalpavikas 1.0 and 2.0.</p>
+  <div class="mqw rv"><div class="mq"><div class="tr"><span>Mercedes-Benz</span><i>✦</i><span>Mahindra</span><i>✦</i><span>TVS Motors</span><i>✦</i><span>Red Bull</span><i>✦</i><span>Cisco</span><i>✦</i><span>Nokia</span><i>✦</i><span>ixigo</span><i>✦</i><span>CodeChef</span><i>✦</i><span>HP</span><i>✦</i><span>JustVend</span><i>✦</i><span>RunAnywhere</span><i>✦</i><span>MileTech</span><i>✦</i><span>Technosport</span><i>✦</i><span>Belgium Waffle</span><i>✦</i></div></div></div>
+</section>
+
+<section id="work">
+  <div class="kicker mono">08 / Projects</div>
+  <h2 class="rv">Things I've built.</h2>
+  <div class="feat rv" id="feat"></div>
+  <details class="more rv"><summary>More projects</summary>
+  <div class="fl" role="group" aria-label="Filter projects">
+    <button class="f on" data-f="all" aria-pressed="true">All</button><button class="f" data-f="hack" aria-pressed="false">Hackathons</button><button class="f" data-f="ai" aria-pressed="false">AI and automation</button><button class="f" data-f="hw" aria-pressed="false">Hardware</button><button class="f" data-f="web" aria-pressed="false">Web</button>
+  </div>
+  <div class="grid">
+    <div class="card" data-c="ai"><h3>AI Startup Evaluator</h3><p><b>Problem:</b> founders need a fast first read on an idea.<br><b>Built:</b> a Telegram bot that takes a startup idea and replies with market size, key risks and a verdict, using LLMs through OpenRouter.</p><div class="tags"><span>Python</span><span>Telegram API</span><span>OpenRouter</span></div></div>
+    <div class="card" data-c="hack"><span class="badge p">Finalist</span><h3>RIFT Hackathon by PW</h3><p>Built a working project under time pressure and reached the finals.</p><div class="tags"><span>Hackathon</span></div></div>
+    <div class="card" data-c="hack"><span class="badge o">In progress</span><h3>Dementia Patient Care</h3><p>A Smart India Hackathon solution to support dementia patients and the people caring for them.</p><div class="tags"><span>SIH</span><span>Healthcare</span></div></div>
+    <div class="card" data-c="hw"><span class="badge p">3rd place</span><h3>Vision Rover</h3><p>A robot you drive from your phone over WiFi, built on an ESP8266 for an inter-college event at KLE College. Placed 3rd.</p><div class="tags"><span>ESP8266</span><span>IoT</span><span>Robotics</span></div></div>
+    <div class="card" data-c="hw"><h3>Smart Fire-Safety IoT</h3><p>Detects smoke, then sets off the alarm and suppression automatically. A first-year team project.</p><div class="tags"><span>IoT</span><span>Sensors</span></div></div>
+    <div class="card" data-c="hack"><h3>Fish Catch Data Repository</h3><p>Digitizes fishermen's catch logs and adds simple analytics. Built for Smart India Hackathon.</p><div class="tags"><span>SIH</span><span>Data</span></div></div>
+    <div class="card" data-c="web"><h3>CAR BHAI</h3><p>A luxury car showcase with a vertical slider, GSAP animations and an engine sound that changes with each slide.</p><div class="tags"><span>JavaScript</span><span>GSAP</span><span>SwiperJS</span></div></div>
+  </div></details>
+</section>
+
+<section id="stack">
+  <div class="kicker mono">09 / Skills</div>
+  <h2 class="rv">What I work with.</h2>
+  <div class="sk rv">
+    <div><h3>Programming</h3><p>Python, C++, JavaScript, MySQL</p></div>
+    <div><h3>AI and automation</h3><p>LLM apps with OpenRouter and Mistral, Telegram Bot API, n8n workflows</p></div>
+    <div><h3>Cloud and hardware</h3><p>AWS, GCP, ESP8266</p></div>
+    <div><h3>Web and design</h3><p>HTML5, CSS3, GSAP, Figma</p></div>
+    <div><h3>Business and finance</h3><p>Sponsorship sales, partnerships, stakeholder outreach, community building, M&amp;A target screening, strategy backtesting</p></div>
+    <div><h3>Management</h3><p>Event operations, team leadership, judge and mentor coordination</p></div>
   </div>
 </section>
 
-<footer>
-  <span>2026 Ayush S Kulkarni</span>
-  <span>CSE · RV University · Bengaluru</span>
-  <span>ayushak12n@gmail.com</span>
-</footer>
+<section id="recs" hidden><div class="kicker mono">Recommendations</div><h2>What people say.</h2><div class="fit" id="recg"></div></section>
+
+<section id="contact" class="contact">
+  <div class="kicker mono">10 / Contact</div>
+  <div class="cbig rv"><a href="#contact" data-mail>Let's build<br>something.</a></div>
+  <p class="cap rv">Got a project, a partnership or an idea worth building? I like working with people who move fast and care about the result. Email is the fastest way to reach me.</p>
+  <div class="btns rv">
+    <a class="btn fill" href="#contact" data-mail>Email me</a>
+    <button class="btn" id="copy" type="button">Copy email</button>
+    <a class="btn" href="https://www.linkedin.com/in/ayushsk/" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn" href="https://github.com/snixxfs" target="_blank" rel="noopener">GitHub</a>
+  </div>
+  <div id="toast" class="mono" role="status" aria-live="polite"></div>
+</section>
+<footer class="mono">© 2026 Ayush S Kulkarni · <a href="#top">Back to top</a></footer>
 
 <script>
-var c1 = document.getElementById('c1');
-var c2 = document.getElementById('c2');
-var mx = 0, my = 0, rx = 0, ry = 0;
-document.addEventListener('mousemove', function(e) {
-  mx = e.clientX; my = e.clientY;
-  c1.style.left = (mx - 2.5) + 'px';
-  c1.style.top  = (my - 2.5) + 'px';
-});
-function loop() {
-  rx += (mx - rx - 12) * 0.13;
-  ry += (my - ry - 12) * 0.13;
-  c2.style.left = rx + 'px';
-  c2.style.top  = ry + 'px';
-  requestAnimationFrame(loop);
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+// ===== EDIT HERE: all links and placeholders in one place =====
+const CONFIG={email:"ayushak12n@gmail.com",resumeUrl:"",gradYear:"",cgpa:"",
+recs:[{text:"",name:"",role:""},{text:"",name:"",role:""}],
+projects:[
+{badge:"Top 5 · AI Build Sprint",title:"AI Insurance Claim Automation",problem:"Insurance claims are slow to review and easy to game.",stack:"AI, full-stack, computer vision",built:"With a teammate, a platform that approves claims, flags fraud, estimates payouts, scores damage from photos and drafts the customer reply.",decision:"",result:"Top 5 of 60+ teams, working end to end at the live demo.",githubUrl:"",demoUrl:""},
+{title:"BTC Backtester + CRC Automation",problem:"Trading ideas need testing before capital goes in.",stack:"Python, n8n, ngrok",built:"A backtester for an EMA200 and RSI crossover strategy on 15-minute candles, plus an n8n workflow that signs challenges with HMAC-SHA256.",decision:"",result:"",githubUrl:"",demoUrl:""},
+{title:"AI Tax Assistant",problem:"India's new tax regime confuses salaried people.",stack:"Python, Mistral, OpenRouter, Telegram Bot API",built:"A Telegram bot that calculates tax, answers questions and suggests ways to save.",decision:"",result:"",githubUrl:"",demoUrl:""}
+]};
+const esc=t=>String(t).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const rows=[["problem","Problem"],["stack","Stack"],["built","What I built"],["decision","Key decision"],["result","Result"]];
+$('#feat').innerHTML=CONFIG.projects.map(p=>`<div class="pf">${p.badge?`<span class="badge">${esc(p.badge)}</span>`:""}<h3>${esc(p.title)}</h3>${rows.filter(r=>p[r[0]]).map(r=>`<p><b>${r[1]}:</b> ${esc(p[r[0]])}</p>`).join("")}${p.githubUrl||p.demoUrl?`<div class="pl">${p.githubUrl?`<a class="btn" href="${esc(p.githubUrl)}" target="_blank" rel="noopener">Code</a>`:""}${p.demoUrl?`<a class="btn fill" href="${esc(p.demoUrl)}" target="_blank" rel="noopener">Live demo</a>`:""}</div>`:""}</div>`).join("");
+if(CONFIG.resumeUrl)["heroResume","navResume"].forEach(i=>{const a=$("#"+i);a.href=CONFIG.resumeUrl;a.setAttribute("download","");a.hidden=false});
+$("#edu").textContent=[CONFIG.gradYear&&"Class of "+CONFIG.gradYear,CONFIG.cgpa&&"CGPA "+CONFIG.cgpa].filter(Boolean).join(" · ");
+const rc=CONFIG.recs.filter(r=>r.text);
+if(rc.length){$("#recs").hidden=false;$("#recg").innerHTML=rc.map(r=>`<div class="fc"><p>${esc(r.text)}</p><p style="margin-top:10px;color:var(--fg)">${esc(r.name)}<small style="display:block;color:var(--mut)">${esc(r.role)}</small></p></div>`).join("")}
+addEventListener('scroll',()=>{const h=document.documentElement;$('#bar').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'});
+const cur=$('.cursor');
+addEventListener('mousemove',e=>{cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px'});
+document.addEventListener('mouseover',e=>cur.classList.toggle('big',!!e.target.closest('a,button,.card,.stat,.pc,.fc')));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
+$$('.rv').forEach(el=>io.observe(el));
+const links=$$('nav a');
+const so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const m={hats:'fit',vc:'work',brands:'work',stack:'work'};const id=m[e.target.id]||e.target.id;links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+id))}}),{rootMargin:'-45% 0px -50% 0px'});
+['about','impact','fit','hats','exp','vc','brands','work','stack','contact'].forEach(id=>so.observe($('#'+id)));
+if(!matchMedia('(prefers-reduced-motion:reduce)').matches){
+  const co=new IntersectionObserver(es=>es.forEach(e=>{
+    if(!e.isIntersecting)return;co.unobserve(e.target);
+    const el=e.target,end=+el.dataset.n,t0=performance.now();
+    (function f(t){const p=Math.min((t-t0)/1400,1),v=Math.round(end*(1-Math.pow(1-p,3)));
+      el.textContent=(el.dataset.pre||'')+v+(el.dataset.suf||'');if(p<1)requestAnimationFrame(f)})(t0);
+  }),{threshold:.6});
+  $$('[data-n]').forEach(el=>co.observe(el));
 }
-loop();
-document.querySelectorAll('a, button').forEach(function(el) {
-  el.addEventListener('mouseenter', function() { c2.classList.add('cx'); });
-  el.addEventListener('mouseleave', function() { c2.classList.remove('cx'); });
+const words=["I build AI products","I raised ₹13L in sponsorships","I built a 10K+ Telegram community","I coordinated a hackathon with 220+ teams","I work in Bengaluru's VC ecosystem at CEDAT"];
+let wi=0,ci=0,del=false;const tp=$('#typed');
+(function tick(){const w=words[wi];ci+=del?-1:1;tp.textContent=w.slice(0,ci);let d=del?30:60;
+  if(!del&&ci===w.length){del=true;d=1600}else if(del&&ci===0){del=false;wi=(wi+1)%words.length;d=350}
+  setTimeout(tick,d)})();
+$$('.tab').forEach(t=>t.addEventListener('click',()=>{
+  $$('.tab').forEach(x=>{x.classList.toggle('on',x===t);x.setAttribute('aria-selected',x===t)});
+  $$('.panel').forEach(p=>p.classList.toggle('on',p.dataset.p===t.dataset.t));
+}));
+$$('.f').forEach(b=>b.addEventListener('click',()=>{
+  $$('.f').forEach(x=>{x.classList.toggle('on',x===b);x.setAttribute('aria-pressed',x===b)});
+  $$('.card').forEach(c=>c.hidden=!(b.dataset.f==='all'||c.dataset.c.split(' ').includes(b.dataset.f)));
+}));
+$$('.card').forEach(c=>{
+  c.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;
+    c.style.transform=`perspective(800px) rotateX(${(.5-y)*9}deg) rotateY(${(x-.5)*11}deg) translateY(-4px)`;
+    c.style.setProperty('--mx',x*100+'%');c.style.setProperty('--my',y*100+'%')});
+  c.addEventListener('mouseleave',()=>c.style.transform='');
 });
-var io = new IntersectionObserver(function(entries) {
-  entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('in'); });
-}, { threshold: 0.05 });
-document.querySelectorAll('.fade').forEach(function(el) { io.observe(el); });
-var secs = document.querySelectorAll('section[id]');
-var nls = document.querySelectorAll('.nav-links a');
-window.addEventListener('scroll', function() {
-  var cur = '';
-  secs.forEach(function(s) { if (window.scrollY >= s.offsetTop - 90) cur = s.id; });
-  nls.forEach(function(l) { l.style.color = l.getAttribute('href') === '#' + cur ? '#c4bfb4' : ''; });
-}, { passive: true });
+const MAIL=CONFIG.email,toast=$('#toast');$$('[data-mail]').forEach(a=>a.href='mailto:'+MAIL);
+let tt;function say(m){toast.textContent=m;clearTimeout(tt);tt=setTimeout(()=>toast.textContent='',4000)}
+async function copyMail(){
+  try{await navigator.clipboard.writeText(MAIL);return true}catch(e){}
+  try{const ta=document.createElement('textarea');ta.value=MAIL;ta.setAttribute('readonly','');ta.style.cssText='position:fixed;top:0;left:0;opacity:0';document.body.appendChild(ta);ta.select();ta.setSelectionRange(0,99);const ok=document.execCommand('copy');ta.remove();return ok}catch(e){return false}
+}
+$('#copy').addEventListener('click',async()=>{say(await copyMail()?'Copied: '+MAIL:'Could not copy. Email me at '+MAIL)});
+$$('a[href^="mailto:"]').forEach(a=>a.addEventListener('click',async()=>{const ok=await copyMail();say('Opening your mail app. If nothing opens, write to '+MAIL+(ok?' (copied).':'.'))}));
+$$('.mq .tr').forEach(t=>t.parentNode.appendChild(t.cloneNode(true)));
 </script>
 </body>
 </html>
