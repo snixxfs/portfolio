@@ -35,7 +35,7 @@ Currently serving as the **President of ECell RV University** and **Core Member 
 - 📍 **Location**: Bengaluru, India
 - 🎓 **Education**: B.Tech in Computer Science & Engineering (AI/ML), Minor in Finance — RV University
 - 💼 **Focus**: Machine Learning & AI, Cloud Architecture (AWS), Venture Capital & Ecosystem Building
-- 📬 **Direct Contact**: [ayushkulkarni934@gmail.com](mailto:ayushkulkarni934@gmail.com) · +91 93530 39958
+- 📬 **Direct Contact**: [ayushkulkarni934@gmail.com](mailto:ayushak12n@gmail.com) · +91 8660697430
 
 <br />
 
@@ -86,33 +86,13 @@ A custom, luxury dark-mode web application engineered to showcase technical dept
 
 <br />
 
-## ✦ Local Setup
 
-To run this portfolio locally on your machine:
-
-```bash
-# Clone the repository
-git clone https://github.com/snixxfs/portfolio.git
-
-# Navigate into the folder
-cd portfolio
-
-# Install dependencies
-npm install
-
-# Start the local development server
-npm run dev
-```
-
-Open [http://localhost:5173](http://localhost:5173) in your browser.
-
-<br />
 
 ## ✦ Connect
 
 - **LinkedIn**: [linkedin.com/in/ayush-s-kulkarni](https://linkedin.com/in/ayush-s-kulkarni)
-- **Portfolio**: [portfolio-snixxfs.vercel.app](https://github.com/snixxfs/portfolio)
-- **Email**: [ayushkulkarni934@gmail.com](mailto:ayushkulkarni934@gmail.com)
+- **Portfolio**: [portfolio-snixxfs.vercel.app](ayushskulkarni.vercel.app)
+- **Email**: [ayushkulkarni934@gmail.com](mailto:ayushak12n@gmail.com)
 
 ---
 
