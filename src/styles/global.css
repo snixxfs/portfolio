@@ -1,0 +1,255 @@
+/* ============================================================
+   ANTIGRAVITY DESIGN SYSTEM — IMPERIAL QUIET LUXURY TOKENS
+   Aesthetic: Haute Horlogerie / Private Wealth / Elite Venture Studio
+   ============================================================ */
+
+:root {
+  /* Surface & Canvas System — Deep Caviar Obsidian */
+  --bg: #07080b;
+  --bg-translucent: rgba(7, 8, 11, 0.88);
+  --surface: #0e1118;
+  --surface-hover: #151924;
+  --card: #121520;
+  --card-elevated: #171c2b;
+  --line: rgba(223, 186, 106, 0.16);
+  --line-soft: rgba(255, 255, 255, 0.05);
+  --line-bright: rgba(223, 186, 106, 0.38);
+
+  /* Typography Colors — Alabaster Silk & Warm Parchment */
+  --fg: #fcfbf9;
+  --body: #d6d2c7;
+  --muted: #949086;
+  --muted-2: #656157;
+
+  /* Chromatic Signatures — Imperial Champagne Gold */
+  --gold: #dfba6a;
+  --gold-bright: #f5e4bd;
+  --gold-dim: #a6843b;
+  --gold-glow: rgba(223, 186, 106, 0.28);
+  --gold-gradient: linear-gradient(135deg, #f5e4bd 0%, #dfba6a 50%, #ad883c 100%);
+
+  /* Platinum Silver */
+  --cyan: #e2e8f0;
+  --cyan-bright: #ffffff;
+  --cyan-glow: rgba(226, 232, 240, 0.25);
+
+  /* Deep Tourmaline Emerald */
+  --emerald: #34d399;
+  --emerald-bright: #6ee7b7;
+  --emerald-glow: rgba(52, 211, 153, 0.25);
+
+  /* Active Accent (Dynamic via dataset.accent: gold | cyan | emerald) */
+  --accent: var(--gold);
+  --accent-bright: var(--gold-bright);
+  --accent-glow: var(--gold-glow);
+  --accent-contrast: #07080b;
+
+  /* Typography Families */
+  --font-display: 'Syne', sans-serif;
+  --font-sans: 'Space Grotesk', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'Cascadia Code', monospace;
+  --font-serif: 'Instrument Serif', Georgia, serif;
+
+  /* Spatial Scale */
+  --gutter: clamp(16px, 4vw, 64px);
+  --shell: 1360px;
+  --radius: 16px;
+  --radius-sm: 8px;
+  --radius-xs: 4px;
+
+  /* Animation Easing */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-snap: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --nav-h: 70px;
+}
+
+/* Theme accent overrides */
+html[data-accent='gold'] {
+  --accent: var(--gold);
+  --accent-bright: var(--gold-bright);
+  --accent-glow: var(--gold-glow);
+}
+
+html[data-accent='cyan'] {
+  --accent: var(--cyan);
+  --accent-bright: var(--cyan-bright);
+  --accent-glow: var(--cyan-glow);
+}
+
+html[data-accent='emerald'] {
+  --accent: var(--emerald);
+  --accent-bright: var(--emerald-bright);
+  --accent-glow: var(--emerald-glow);
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Base Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-padding-top: 96px;
+  -webkit-text-size-adjust: 100%;
+  color-scheme: dark;
+}
+
+html.is-locked {
+  overflow: hidden;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.65;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  selection-background-color: var(--accent);
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-contrast);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* Technical Atmospheric Background */
+.site-main {
+  position: relative;
+  z-index: 1;
+  background: var(--bg);
+}
+
+.site-main::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 64px 64px;
+  opacity: 0.7;
+  -webkit-mask-image: radial-gradient(ellipse at 50% 30%, #000 15%, transparent 75%);
+  mask-image: radial-gradient(ellipse at 50% 30%, #000 15%, transparent 75%);
+}
+
+.site-main > * {
+  position: relative;
+  z-index: 1;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+  isolation: isolate;
+}
+
+/* Global Section Framework */
+.section {
+  padding: clamp(60px, 8vw, 130px) var(--gutter);
+  position: relative;
+  border-bottom: 1px solid var(--line-soft);
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 54px var(--gutter);
+  }
+}
+
+.section__inner {
+  max-width: var(--shell);
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Skip link for accessibility */
+.skip-link {
+  position: fixed;
+  top: 14px;
+  left: 20px;
+  z-index: 99999;
+  background: var(--accent);
+  color: var(--accent-contrast);
+  padding: 10px 18px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 6px;
+  transform: translateY(-160%);
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e2638;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Reduced Motion Utility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

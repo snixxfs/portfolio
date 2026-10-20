@@ -1,0 +1,173 @@
+/* ============================================================
+   Keyframes and motion preferences
+   ============================================================ */
+
+@keyframes grain-shift {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  33% {
+    transform: translate3d(-6%, 4%, 0);
+  }
+  66% {
+    transform: translate3d(4%, -5%, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes caret-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes preloader-line {
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes scroll-line {
+  0% {
+    transform: scaleX(0);
+    opacity: 0.2;
+  }
+  50% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleX(1);
+    opacity: 0;
+  }
+}
+
+@keyframes marquee-run {
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes glitch-shift {
+  0%,
+  92%,
+  100% {
+    transform: none;
+    text-shadow: none;
+  }
+  93% {
+    transform: translate(-2px, 1px);
+    text-shadow:
+      2px 0 var(--pink),
+      -2px 0 var(--blue);
+  }
+  95% {
+    transform: translate(2px, -1px);
+    text-shadow:
+      -2px 0 var(--lime),
+      1px 0 var(--pink);
+  }
+  97% {
+    transform: translate(-1px, 0);
+    text-shadow:
+      1px 0 var(--blue),
+      -1px 0 var(--lime);
+  }
+}
+
+@keyframes glitch-hue {
+  0%,
+  88%,
+  100% {
+    filter: none;
+  }
+  90% {
+    filter: hue-rotate(18deg) contrast(1.05);
+  }
+  94% {
+    filter: hue-rotate(-14deg) saturate(1.1);
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Scroll-velocity marquee falls back to a linear run when GSAP is idle. */
+.marquee__track[data-driver='css'] {
+  animation: marquee-run 40s linear infinite;
+}
+
+/* ---------- reduced motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .grain {
+    animation: none;
+    opacity: 0.035;
+  }
+
+  .marquee__track[data-driver='css'] {
+    animation: none;
+    transform: none;
+  }
+
+  .marquee {
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .marquee::-webkit-scrollbar {
+    display: none;
+  }
+
+  .hero__caret {
+    animation: none;
+  }
+
+  .cursor {
+    display: none !important;
+  }
+
+  .hero__word--glitch,
+  :root[data-glitch='true'] .glitchable {
+    animation: none;
+  }
+
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
