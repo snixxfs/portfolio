@@ -10,10 +10,10 @@
   <a href="https://linkedin.com/in/ayush-s-kulkarni">
     <img src="https://img.shields.io/badge/LinkedIn-Ayush_S_Kulkarni-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
   </a>
-  <a href="mailto:ayushkulkarni934@gmail.com">
+  <a href="mailto:ayushak12n@gmail.com">
     <img src="https://img.shields.io/badge/Email-Get_in_Touch-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
   </a>
-  <a href="https://github.com/snixxfs/portfolio">
+  <a href="ayushskulkarni.vercel.app">
     <img src="https://img.shields.io/badge/Portfolio-Live_Site-D4AF37?style=for-the-badge&logo=vercel&logoColor=black" alt="Portfolio" />
   </a>
 </p>
