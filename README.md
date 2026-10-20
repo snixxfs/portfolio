@@ -35,7 +35,7 @@ Currently serving as the **President of ECell RV University** and **Core Member 
 - 📍 **Location**: Bengaluru, India
 - 🎓 **Education**: B.Tech in Computer Science & Engineering (AI/ML), Minor in Finance — RV University
 - 💼 **Focus**: Machine Learning & AI, Cloud Architecture (AWS), Venture Capital & Ecosystem Building
-- 📬 **Direct Contact**: [ayushkulkarni934@gmail.com](mailto:ayushak12n@gmail.com) · +91 8660697430
+- 📬 **Direct Contact**: [ayushak12n@gmail.com](mailto:ayushak12n@gmail.com) · +91 8660697430
 
 <br />
 
@@ -91,8 +91,8 @@ A custom, luxury dark-mode web application engineered to showcase technical dept
 ## ✦ Connect
 
 - **LinkedIn**: [linkedin.com/in/ayush-s-kulkarni](https://linkedin.com/in/ayush-s-kulkarni)
-- **Portfolio**: [portfolio-snixxfs.vercel.app](ayushskulkarni.vercel.app)
-- **Email**: [ayushkulkarni934@gmail.com](mailto:ayushak12n@gmail.com)
+- **Portfolio**: [ayushskulkarni.vercel.app](ayushskulkarni.vercel.app)
+- **Email**: [ayushak12n@gmail.com](mailto:ayushak12n@gmail.com)
 
 ---
 
