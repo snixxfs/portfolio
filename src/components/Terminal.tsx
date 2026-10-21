@@ -24,7 +24,7 @@ const HELP = `Available system commands:
   whoami         executive profile & bio
   roles          current leadership & ecosystem appointments
   projects       browse shipped technical builds
-  hackathons     national hackathon wins & organizing record
+  hackathons     hackathon track record & organizing achievements
   sponsors       enterprise brand partners closed (₹13L+)
   contact        direct communication channels
   theme          cycle cinematic color accent
@@ -137,9 +137,8 @@ export function Terminal({ open, reduced, onClose, onThemeCycle }: TerminalProps
           break
         case 'hackathons':
           push('Hackathon & Competitive Record:', 'accent')
-          push('  🏆 AI Build Sprint — TOP 5 WINNER out of 60+ national teams (180+ devs)')
-          push('  ⚡ INNOVITUS 2026 — LEAD ORGANISER (24h National Hackathon, RVU)')
-          push('  🚀 Argonyx 24h Hackathon — MAIN COORDINATOR (220+ teams from 5 countries)')
+          push('  🏆 Domain Winner at AI Build Sprint (one of 5 winners among 60+ teams)')
+          push("  ⚡ Argonyx '26 — ONE OF THREE MAIN COORDINATORS (24h Hackathon, 220+ teams from 5 countries)")
           push('  🔬 RIFT 2026 (PW IOI) — Finalist (Built PharmaGuard in 24 hours)')
           push('  🤖 Vision Rover — 3rd Place (24h hardware IoT sprint at KLE)')
           break

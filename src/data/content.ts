@@ -12,8 +12,8 @@ export const RICH_MARKERS = /(\*\*[^*]+\*\*|_[^_]+_)/
 export const profile = {
   name: 'Ayush S Kulkarni',
   nameLines: ['AYUSH', 'S', 'KULKARNI'] as const,
-  title: 'Ayush S Kulkarni | Computer Science & Engineering (AI/ML) · Venture & Ecosystem Builder',
-  pageTitle: 'Ayush S Kulkarni — AI Systems, Venture Strategy & Ecosystem Architecture',
+  title: 'Ayush S Kulkarni | President of ECell · AI Builder',
+  pageTitle: 'Ayush S Kulkarni | President of ECell · AI Builder',
   tagline: 'AI Systems Builder · Venture Strategist · Ecosystem Leader',
   location: 'Bengaluru, India',
   university: 'RV University',
@@ -25,9 +25,9 @@ export const profile = {
   pillars: ['Artificial Intelligence', 'Venture & Capital Growth', 'Ecosystem Architecture'] as const,
   typedPhrases: [
     'AI Systems & Machine Learning Engineering',
-    'National AI Build Sprint Winner (Top 5 of 60+ Teams)',
+    'Domain Winner at AI Build Sprint (one of 5 winners among 60+ teams)',
     'Secured ₹13L in Sponsorships from 20 Global Brands',
-    'Main Coordinator: ARGONYX ’26 (220+ Teams from 5 Countries)',
+    "One of Three Main Coordinators: Argonyx '26 (220+ Teams from 5 Countries)",
     'Project Executive @ CEDAT (Venture & Startup Ecosystem)',
     'Built 10,000+ Member Community & Mentorship Network',
   ],
@@ -41,9 +41,9 @@ export const profile = {
   heroMarquee: [
     'President of ECell',
     'AWS Student Builders Group',
-    'National AI Sprint Winner',
+    'Domain Winner at AI Build Sprint',
     '₹13L+ Enterprise Capital',
-    'ARGONYX ’26 Main Coordinator',
+    "Argonyx '26 Coordinator",
     'Autonomous AI & Quant Systems',
     'IoT Robotics & Kinematics',
     'CEDAT Venture Ecosystem',
@@ -67,7 +67,7 @@ export const aboutSection = {
   headline: 'Where technical rigor, venture economics, and executive leadership converge.',
   paragraphs: [
     "I study Computer Science & Engineering at RV University with an honors focus on **Artificial Intelligence & Machine Learning** and a minor in Finance. Rather than confining myself to software sandboxes, I operate across three high-leverage domains: **applied AI engineering**, **venture capital dealmaking**, and **ecosystem leadership**.",
-    "As **President of ECell**, I direct campus engagement, strategic partnerships, and student founder initiatives. Concurrently at **CEDAT**, I oversee projects connecting Bengaluru's startup ecosystem with institutional venture funds and angel networks. Having secured ₹13 lakh in sponsorships from 20 premier brands including Mercedes-Benz and Cisco, and co-led ARGONYX ’26—a 24-hour national hackathon with 220+ teams across 5 countries—I prioritize execution speed and precision.",
+    "As **President of ECell**, I direct campus engagement, strategic partnerships, and student founder initiatives. Concurrently at **CEDAT**, I oversee projects connecting Bengaluru's startup ecosystem with institutional venture funds and angel networks. Having secured ₹13 lakh in sponsorships from 20 premier brands including Mercedes-Benz and Cisco, and served as one of three main coordinators of Argonyx '26—a 24-hour hackathon with 220+ teams across 5 countries—I prioritize execution speed and precision.",
     "On the engineering front, I architect systems that deliver tangible real-world value: from an **autonomous IoT rover sorting waste at 90% accuracy** to a **Top-5 award-winning AI Insurance Claim Automation engine**, algorithmic crypto analytics pipelines, and LLM orchestration tools.",
   ] as const,
   terminalHeading: 'Executive Telemetry // Operational Overview',
@@ -100,7 +100,7 @@ export interface Stat {
 export const impactSection = {
   kicker: 'II // TRACK RECORD',
   heading: 'Proven Metrics in Numbers',
-  caption: 'Verifiable outcomes achieved through high-velocity cold outreach, national competitions, and university leadership.',
+  caption: 'Verifiable outcomes achieved through high-velocity cold outreach, technical hackathons, and university leadership.',
   stats: [
     {
       value: '₹13L+',
@@ -120,9 +120,9 @@ export const impactSection = {
       description: 'Mercedes-Benz, TVS Motors, Red Bull, Cisco, Nokia, ixigo, CodeChef, HP, JustVend, and Physics Wallah.',
     },
     {
-      value: 'Top 5',
-      label: 'National AI Sprint Winners',
-      sublabel: 'Out of 60+ Teams (180+ Devs)',
+      value: 'Domain Winner',
+      label: 'AI Build Sprint',
+      sublabel: 'One of 5 winners among 60+ teams',
       description: 'Engineered an end-to-end AI Insurance Claim Automation Platform with live fraud scoring and damage computer vision.',
     },
     {
@@ -135,9 +135,9 @@ export const impactSection = {
     },
     {
       value: '24h / 500+',
-      label: 'National Hackathons Directed',
-      sublabel: 'INNOVITUS & Argonyx Lead',
-      description: 'Lead organiser for 24-hour national hackathons with 220+ teams from 5 countries; judges from Morgan Stanley, Salesforce, Google.',
+      label: "Argonyx '26 Coordination",
+      sublabel: 'One of Three Main Coordinators',
+      description: "One of three main coordinators of Argonyx '26, a 24-hour hackathon with 220+ teams from 5 countries; judges from Morgan Stanley, Salesforce, Google.",
     },
     {
       value: '$1M',
@@ -190,7 +190,7 @@ export const fitSection = {
       items: [
         'Core Member of AWS Student Builders Group at RVU: driving cloud architecture cohorts.',
         'Closed 20 enterprise brand sponsors with zero prior network in 30-day cold outreach sprints.',
-        'Lead Organiser for INNOVITUS 2026: managing judges from Morgan Stanley, Salesforce, and Progress.',
+        "One of three main coordinators of Argonyx '26: managing judges from Morgan Stanley, Salesforce, and Progress.",
         'Official Student Placement Coordinator bridging campus hiring committees and recruiters.',
       ],
     },
@@ -225,9 +225,9 @@ export const hatsSection = {
       accent: 'gold',
       panels: [
         {
-          big: 'Top 5 Winner',
-          title: 'National AI Build Sprint',
-          text: 'Defeated 55+ teams building an autonomous insurance claim evaluation platform with computer vision damage scoring and instant fraud risk triage.',
+          big: 'Domain Winner',
+          title: 'AI Build Sprint',
+          text: 'Domain Winner at AI Build Sprint (one of 5 winners among 60+ teams), building an autonomous insurance claim evaluation platform with computer vision damage scoring and instant fraud risk triage.',
           tags: ['Python', 'Computer Vision', 'LLMs', 'Fintech'],
         },
         {
@@ -303,7 +303,7 @@ export const hatsSection = {
         {
           big: 'ARGONYX ’26',
           title: 'Main Coordinator (220+ Teams)',
-          text: 'Co-led a 24-hour national-level hackathon featuring 220+ registered teams across 5 countries; coordinated event planning, outreach, mentors, and on-ground execution.',
+          text: "Served as one of three main coordinators of Argonyx '26, a 24-hour hackathon featuring 220+ registered teams across 5 countries; coordinated event planning, outreach, mentors, and on-ground execution.",
           tags: ['220+ Teams', '5 Countries', 'Hackathon Lead'],
         },
         {
@@ -381,9 +381,9 @@ export const experienceSection = {
       title: 'Main Coordinator',
       org: 'ARGONYX ’26',
       category: 'leadership',
-      badge: '24H NATIONAL HACKATHON',
+      badge: '24H HACKATHON',
       bullets: [
-        'Co-led a 24-hour national-level hackathon featuring 220+ registered teams across five countries.',
+        "One of three main coordinators of Argonyx '26, a 24-hour hackathon featuring 220+ registered teams across five countries.",
         'Coordinated event planning, participant outreach, judges, mentors, sponsorships, and on-ground execution.',
       ],
     },
@@ -528,10 +528,10 @@ export const projectsSection = {
       headline: 'Autonomous claim verification, fraud detection & damage scoring engine',
       categories: ['ai', 'hack'],
       featured: true,
-      badge: { text: 'Top 5 Winner · 60+ Teams', tone: 'gold' },
+      badge: { text: 'Domain Winner · AI Build Sprint', tone: 'gold' },
       metrics: [
         { label: 'Evaluation Speed', value: '< 2.5s' },
-        { label: 'National Rank', value: 'Top 5 / 60+' },
+        { label: 'Sprint Standing', value: 'Domain Winner (Top 5 / 60+)' },
         { label: 'Architecture', value: '5 Live Engines' },
       ],
       problem: 'Insurance claims take weeks of manual inspection, are vulnerable to fraudulent image uploads, and require costly human assessors.',
@@ -568,7 +568,7 @@ export const projectsSection = {
       ],
       problem: 'Adverse Drug Reactions (ADRs) cause thousands of preventable hospitalizations annually due to unrecognized patient genetic polymorphisms.',
       solution: 'Trained a bioinformatics ML pipeline at RIFT 2026 (Physics Wallah IOI) mapping specific genetic loci and metabolizer phenotypes to contraindicated medications.',
-      impact: 'Built completely overnight in 24 hours under extreme time limits; pitched to national jury across 2000+ competitors.',
+      impact: 'Built completely overnight in 24 hours under extreme time limits; pitched to an industry jury across 2000+ competitors.',
       stack: ['Python', 'Bioinformatics', 'Scikit-Learn', 'Pandas'],
     },
     {
@@ -655,7 +655,7 @@ export const projectsSection = {
       badge: { text: 'Smart India Hackathon', tone: 'gold' },
       problem: 'Dementia patients experience severe disorientation and caregivers lack passive, non-intrusive wandering detection systems.',
       solution: 'Architected an integrated IoT sensor and mobile alert mechanism that flags unusual movement patterns and guides disoriented patients safely.',
-      impact: 'Submitted for national evaluation under the Government of India Smart India Hackathon initiative.',
+      impact: 'Submitted for evaluation under the Government of India Smart India Hackathon initiative.',
       stack: ['IoT', 'Mobile Architecture', 'SIH Track'],
     },
   ] satisfies Project[],
@@ -731,7 +731,7 @@ export const stackSection = {
       category: 'Execution & Operations',
       accent: 'gold',
       skills: [
-        'National Hackathon Direction (INNOVITUS 2026)',
+        "Argonyx '26 Hackathon Coordination",
         'Cross-Functional Team Leadership',
         'Placement Cell Operations',
         'Technical Mentorship',

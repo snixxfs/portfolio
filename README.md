@@ -42,7 +42,7 @@ Currently serving as the **President of ECell RV University** and **Core Member 
 ## ✦ Key Highlights & Impact
 
 - 💰 **₹13 Lakhs+ Secured in Sponsorships**: Spearheaded brand partnerships across 20 marquee enterprises including **Mercedes-Benz, Cisco, Mahindra, Red Bull, TVS Motors, Nokia, ixigo, CodeChef, and HP** for Kalpavikas 1.0 & 2.0.
-- 🌐 **Global Hackathon Leadership**: Co-led **ARGONYX ’26**, a 24-hour national hackathon with **220+ registered teams across 5 countries**.
+- 🌐 **Global Hackathon Leadership**: One of three main coordinators of **Argonyx ’26**, a 24-hour hackathon with **220+ registered teams across 5 countries**.
 - 🚀 **Venture Ecosystem Engagement**: Project Executive at **CEDAT**, actively engaging with VC funds, angel syndicates, institutional investors, and startup accelerators across Bengaluru's tech ecosystem. Supported the **Startup World Cup (Pegasus Tech Ventures)** Bengaluru Regional Finale.
 - 👥 **10,000+ Community Builder**: Scaled an active online knowledge community to over 10,000 subscribers, connecting builders with mentors in fintech, real estate, aviation, and international taxation.
 

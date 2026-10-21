@@ -304,7 +304,7 @@ export function Hero({ reduced, glitch, onNameGlitch, onNotify }: HeroProps) {
         <div className="hero__stats-strip">
           <div className="hero__stat-card">
             <span className="hero__stat-num">₹13L+</span>
-            <span className="hero__stat-lbl">Raised in Fest Sponsorships</span>
+            <span className="hero__stat-lbl">Led in sponsorships from 20 brands</span>
           </div>
           <div className="hero__stat-card">
             <span className="hero__stat-num">20+</span>
@@ -312,7 +312,7 @@ export function Hero({ reduced, glitch, onNameGlitch, onNotify }: HeroProps) {
           </div>
           <div className="hero__stat-card">
             <span className="hero__stat-num">Top 5</span>
-            <span className="hero__stat-lbl">National AI Build Sprint Winner</span>
+            <span className="hero__stat-lbl">Domain Winner at AI Build Sprint (one of 5 winners among 60+ teams)</span>
           </div>
           <div className="hero__stat-card">
             <span className="hero__stat-num">10K+</span>
