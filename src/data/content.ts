@@ -137,7 +137,7 @@ export const impactSection = {
       value: '24h / 500+',
       label: "Argonyx '26 Coordination",
       sublabel: 'One of Three Main Coordinators',
-      description: "One of three main coordinators of Argonyx '26, a 24-hour hackathon with 220+ teams from 5 countries; judges from Morgan Stanley, Salesforce, Google.",
+      description: "One of three main coordinators of Argonyx '26, a 24-hour hackathon with 220+ teams from 5 countries; judges from JPMC, Morgan Stanley, Google, and NASSCOM.",
     },
     {
       value: '$1M',
@@ -190,7 +190,7 @@ export const fitSection = {
       items: [
         'Core Member of AWS Student Builders Group at RVU: driving cloud architecture cohorts.',
         'Closed 20 enterprise brand sponsors with zero prior network in 30-day cold outreach sprints.',
-        "One of three main coordinators of Argonyx '26: managing judges from Morgan Stanley, Salesforce, and Progress.",
+        "One of three main coordinators of Argonyx '26: managing judges from JPMC, Morgan Stanley, Google, and NASSCOM.",
         'Official Student Placement Coordinator bridging campus hiring committees and recruiters.',
       ],
     },
