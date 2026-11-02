@@ -1115,84 +1115,193 @@
    03. IMPACT SECTION
    ------------------------------------------------------------ */
 
-.impact__grid {
+/* Asymmetric Bento Masterclass */
+.impact__bento {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(12, 1fr);
   gap: 20px;
 }
 
-.impact__card {
+.impact__bento-card {
   padding: clamp(26px, 3.5vw, 36px);
   border-radius: var(--radius);
   display: flex;
   flex-direction: column;
-  background: linear-gradient(165deg, rgba(20, 24, 36, 0.95) 0%, rgba(12, 14, 22, 0.98) 100%);
-  border: 1px solid rgba(223, 186, 106, 0.16);
-  box-shadow: inset 0 1px 0 0 rgba(223, 186, 106, 0.2), 0 20px 40px -15px rgba(0, 0, 0, 0.7);
-  transition: transform 0.3s var(--ease-out), border-color 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
+  background: linear-gradient(165deg, rgba(16, 18, 36, 0.75) 0%, rgba(8, 9, 18, 0.92) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.16),
+    0 20px 40px -15px rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: transform 0.35s var(--ease-out), border-color 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out);
 }
 
-.impact__card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(223, 186, 106, 0.45);
-  box-shadow: inset 0 1px 0 0 rgba(223, 186, 106, 0.35), 0 24px 50px -12px rgba(0, 0, 0, 0.9), 0 0 25px -8px rgba(223, 186, 106, 0.15);
+.impact__bento-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(6, 182, 212, 0.7);
+  box-shadow: 
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.35),
+    0 30px 60px -12px rgba(0, 0, 0, 0.95),
+    0 0 35px -5px rgba(6, 182, 212, 0.3);
 }
 
-.impact__card--featured {
-  grid-column: span 2;
-  background: linear-gradient(145deg, rgba(28, 34, 52, 0.95) 0%, rgba(14, 17, 26, 0.98) 100%);
-  border-color: rgba(223, 186, 106, 0.32);
-  box-shadow: inset 0 1px 0 0 rgba(223, 186, 106, 0.35), 0 24px 50px -12px rgba(0, 0, 0, 0.85);
+/* Module A: 2x2 Hero Bento Tile (7 cols) */
+.impact__bento-card--hero {
+  grid-column: span 7;
+  grid-row: span 2;
+  background: linear-gradient(145deg, rgba(28, 22, 54, 0.85) 0%, rgba(10, 11, 24, 0.94) 100%);
+  border: 1px solid rgba(245, 158, 11, 0.45);
+  box-shadow: 
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.25),
+    0 24px 50px -12px rgba(0, 0, 0, 0.9),
+    0 0 35px -8px rgba(245, 158, 11, 0.25);
+  position: relative;
+  overflow: hidden;
 }
 
-.impact__card-top {
+.impact__bento-card--hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #f59e0b, #fde047, #f43f5e);
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.6);
+}
+
+/* Module B: Tall 1x2 Bento Tile (5 cols) */
+.impact__bento-card--tall {
+  grid-column: span 5;
+  grid-row: span 2;
+  background: linear-gradient(165deg, rgba(16, 26, 44, 0.8) 0%, rgba(8, 12, 22, 0.94) 100%);
+  border: 1px solid rgba(6, 182, 212, 0.4);
+}
+
+/* Module C: Wide 2x1 Panoramic Bento Tile (8 cols) */
+.impact__bento-card--wide {
+  grid-column: span 8;
+  border: 1px solid rgba(139, 92, 246, 0.35);
+}
+
+/* Module D & E: 1x1 Compact Bento Tiles (4 cols each) */
+.impact__bento-card--compact {
+  grid-column: span 4;
+}
+
+.impact__bento-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 22px;
+  margin-bottom: 20px;
 }
 
-.impact__card-index {
+.impact__bento-tag {
   font: 700 11px/1 var(--font-mono);
-  color: var(--gold);
+  color: var(--cyan-bright);
   letter-spacing: 0.14em;
+  text-shadow: 0 0 8px rgba(6, 182, 212, 0.4);
 }
 
-.impact__card-tag {
-  font: 700 10.5px/1 var(--font-mono);
-  color: var(--gold-bright);
-  background: rgba(223, 186, 106, 0.1);
+.impact__bento-badge {
+  font: 700 10px/1 var(--font-mono);
+  color: #fef08a;
+  background: rgba(245, 158, 11, 0.15);
   padding: 5px 12px;
   border-radius: 999px;
-  border: 1px solid rgba(223, 186, 106, 0.3);
+  border: 1px solid rgba(245, 158, 11, 0.45);
 }
 
-.impact__card-value-wrap {
-  margin-bottom: 16px;
+.impact__bento-badge--gold {
+  color: #fef08a;
+  background: rgba(245, 158, 11, 0.15);
+  border-color: rgba(245, 158, 11, 0.45);
 }
 
-.impact__card-value {
+.impact__bento-badge--cyan {
+  color: #a5f3fc;
+  background: rgba(6, 182, 212, 0.15);
+  border-color: rgba(6, 182, 212, 0.45);
+}
+
+.impact__bento-value-wrap {
+  margin-bottom: 14px;
+}
+
+.impact__bento-value {
   font-family: var(--font-display);
-  font-size: clamp(2.8rem, 4.8vw, 4.2rem);
+  font-size: clamp(2.4rem, 4vw, 3.8rem);
   font-weight: 800;
   line-height: 0.95;
-  background: var(--gold-gradient);
+  background: linear-gradient(135deg, #ffffff 0%, #fde047 30%, #f59e0b 70%, #d97706 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 15px rgba(245, 158, 11, 0.3));
 }
 
-.impact__card-label {
-  font-size: 18px;
+.impact__bento-title {
+  font-size: clamp(17px, 1.8vw, 21px);
   font-weight: 700;
-  color: var(--fg);
+  color: #ffffff;
   margin-bottom: 10px;
 }
 
-.impact__card-description {
+.impact__bento-desc {
   font-size: 14px;
-  line-height: 1.65;
+  line-height: 1.6;
   color: var(--muted);
+  margin-bottom: 20px;
+}
+
+.impact__bento-brands {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
   margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.impact__bento-brand {
+  font: 600 11px/1 var(--font-mono);
+  color: #ffffff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.impact__bento-brand:hover {
+  border-color: var(--cyan-bright);
+  background: rgba(6, 182, 212, 0.12);
+}
+
+.impact__bento-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.impact__bento-chip {
+  font: 600 11px/1 var(--font-mono);
+  color: var(--cyan-bright);
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: rgba(6, 182, 212, 0.1);
+  border: 1px solid rgba(6, 182, 212, 0.25);
+}
+
+@media (max-width: 1024px) {
+  .impact__bento-card--hero,
+  .impact__bento-card--tall,
+  .impact__bento-card--wide,
+  .impact__bento-card--compact {
+    grid-column: span 12;
+    grid-row: auto;
+  }
 }
 
 @media (max-width: 900px) {
