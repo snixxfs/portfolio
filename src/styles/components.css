@@ -2179,61 +2179,160 @@
 }
 
 /* ------------------------------------------------------------
-   08. BRANDS SECTION
+   08. BRANDS SECTION (MARQUEE & CURATED DIRECTORY)
    ------------------------------------------------------------ */
 
-.brands__grid {
+.brands__marquee-stage {
+  margin-bottom: 36px;
+}
+
+.brands__marquee-label {
+  font: 700 10.5px/1 var(--font-mono);
+  color: var(--muted-2);
+  letter-spacing: 0.12em;
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+.brands__filters {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+
+.brands__filter-pill {
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--muted);
+  font: 600 12px/1 var(--font-mono);
+  cursor: pointer;
+  transition: all 0.25s var(--ease-out);
+}
+
+.brands__filter-pill:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--fg);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.brands__filter-pill--active {
+  background: rgba(251, 191, 36, 0.1);
+  color: var(--gold-bright);
+  border-color: rgba(251, 191, 36, 0.4);
+  box-shadow: 0 0 16px -4px rgba(251, 191, 36, 0.25);
+}
+
+.brands__directory {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 14px;
-  margin-bottom: 40px;
+  margin-bottom: 36px;
 }
 
-.brand-card {
-  padding: 20px 22px;
-  border-radius: var(--radius-sm);
+.brand-chip {
+  position: relative;
+  padding: 18px 20px;
+  border-radius: 12px;
+  background: rgba(14, 16, 26, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: all 0.25s var(--ease-out);
+}
+
+.brand-chip:hover {
+  transform: translateY(-2px);
+  background: rgba(20, 24, 38, 0.85);
+  border-color: rgba(251, 191, 36, 0.35);
+  box-shadow: 0 10px 24px -8px rgba(0, 0, 0, 0.7);
+}
+
+.brand-chip__inner {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  background: linear-gradient(165deg, rgba(20, 24, 36, 0.95) 0%, rgba(12, 14, 22, 0.98) 100%);
-  border: 1px solid rgba(223, 186, 106, 0.16);
-  box-shadow: inset 0 1px 0 0 rgba(223, 186, 106, 0.18), 0 10px 24px -10px rgba(0, 0, 0, 0.6);
-  transition: transform 0.25s var(--ease-out), border-color 0.25s var(--ease-out), box-shadow 0.25s var(--ease-out);
+  gap: 5px;
 }
 
-.brand-card:hover {
-  transform: translateY(-2px);
-  border-color: rgba(223, 186, 106, 0.45);
-  box-shadow: inset 0 1px 0 0 rgba(223, 186, 106, 0.35), 0 16px 36px -10px rgba(0, 0, 0, 0.8), 0 0 20px -6px rgba(223, 186, 106, 0.15);
-}
-
-.brand-card__name {
+.brand-chip__name {
   font-family: var(--font-display);
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
   color: var(--fg);
   letter-spacing: -0.01em;
 }
 
-.brand-card__category {
-  font: 600 11px/1 var(--font-mono);
+.brand-chip__category {
+  font: 600 10.5px/1 var(--font-mono);
   color: var(--gold-bright);
 }
 
-.brands__ticker-wrap {
-  margin: 30px 0;
+.brands__summary-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 24px 32px;
+  border-radius: 16px;
+  background: rgba(14, 16, 26, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
 }
 
-.brands__hint {
-  font: 500 12px/1.6 var(--font-mono);
-  color: var(--muted-2);
+.brands__summary-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
   text-align: center;
-  margin-top: 20px;
 }
 
-@media (max-width: 900px) {
-  .brands__grid {
+.brands__summary-value {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--gold-bright);
+  letter-spacing: -0.01em;
+}
+
+.brands__summary-caption {
+  font: 600 11px/1 var(--font-mono);
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.brands__summary-divider {
+  width: 1px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+@media (max-width: 1024px) {
+  .brands__directory {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .brands__directory {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .brands__summary-bar {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .brands__summary-divider {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .brands__directory {
+    grid-template-columns: 1fr;
   }
 }
 
