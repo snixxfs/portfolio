@@ -36,18 +36,17 @@ export function Hero({ reduced, glitch, onNameGlitch, onNotify }: HeroProps) {
   const [enableScene, setEnableScene] = useState(false)
   const [webglReady, setWebglReady] = useState(false)
 
-  // Live Bengaluru local time clock
+  // Live Bengaluru local time clock (cached Intl formatter for zero garbage collection)
   useEffect(() => {
+    const formatter = new Intl.DateTimeFormat('en-US', {
+      timeZone: 'Asia/Kolkata',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: true,
+    })
     const updateTime = () => {
-      const now = new Date()
-      const formatter = new Intl.DateTimeFormat('en-US', {
-        timeZone: 'Asia/Kolkata',
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit',
-        hour12: true,
-      })
-      setTimeStr(formatter.format(now))
+      setTimeStr(formatter.format(new Date()))
     }
     updateTime()
     const interval = window.setInterval(updateTime, 1000)
