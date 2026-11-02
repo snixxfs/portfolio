@@ -113,6 +113,57 @@
   }
 }
 
+/* Hyper-Cybernetic Glow & Holographic Motion Effects */
+@keyframes holographic-shine {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes cyber-border-spin {
+  0% {
+    --border-angle: 0deg;
+  }
+  100% {
+    --border-angle: 360deg;
+  }
+}
+
+@keyframes neon-pulse {
+  0%, 100% {
+    box-shadow: 0 0 15px -3px var(--accent-glow), 0 0 30px -8px var(--accent-glow);
+    border-color: var(--line-bright);
+  }
+  50% {
+    box-shadow: 0 0 30px 2px var(--accent-glow), 0 0 60px -5px var(--accent-glow);
+    border-color: #fff;
+  }
+}
+
+@keyframes float-levitate {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(0.5deg);
+  }
+}
+
+@keyframes laser-sweep {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
 /* Scroll-velocity marquee falls back to a linear run when GSAP is idle. */
 .marquee__track[data-driver='css'] {
   animation: marquee-run 40s linear infinite;
