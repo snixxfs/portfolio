@@ -78,11 +78,17 @@ Currently serving as the **President of ECell RV University** and **Core Member 
 
 A custom, luxury dark-mode web application engineered to showcase technical depth, leadership pedigree, and interactive design:
 
-- **Interactive 3D**: Three.js WebGL procedural shaders with cursor physics
-- **Editorial Typography**: GSAP ScrollTrigger timeline reveals and split-text micro-interactions
-- **Inertial Physics**: Lenis smooth scrolling with accessibility fallbacks
-- **Built-in Shell**: Interactive CLI overlay (hit the `~` key or click `SHELL` in the navigation to try commands like `roles`, `whoami`, `sponsors`, `matrix`)
-- **Secret Easter Eggs**: Hidden interactive triggers built throughout the experience
+- **Hero Split Cockpit**: Cyber-editorial layout with live Bengaluru (`Asia/Kolkata`) telemetry clock and floating horizontal status ribbon.
+- **Asymmetric Bento Grid**: High-density credential matrix showcasing ₹13L+ sponsorships, Domain Winner at AI Build Sprint, and Argonyx '26 hackathon.
+- **Panoramic Project Showcase**: 3-tab architecture inspector (`[Solution & Architecture]`, `[Core Problem]`, `[Verified Impact]`) with interactive selector strip.
+- **Sticky Split Command Stream**: Sticky executive appointments console with real-time domain filtering and luminous circuit milestone stream.
+- **Constellation Network**: Tier-1 institutional venture anchors (Pegasus, KDEM, IvyCap, Blume) with angel syndicate constellation cloud.
+- **Curated Partner Directory**: Marquee logo stream and categorized directory for 20 enterprise sponsors.
+- **Interactive 3D WebGL**: Three.js obsidian procedural noise shader with cursor physics and ambient illumination.
+- **Editorial Typography**: GSAP ScrollTrigger timeline reveals and split-text micro-interactions.
+- **Inertial Physics**: Lenis smooth scrolling with accessibility fallbacks.
+- **Built-in Developer Shell**: Interactive CLI overlay (hit `~` or click `SHELL` in navigation for `roles`, `whoami`, `sponsors`, `matrix`, `sudo hire`).
+- **Secret Easter Eggs**: Hidden interactive triggers built throughout the experience.
 
 <br />
 
