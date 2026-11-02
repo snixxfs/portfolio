@@ -32,8 +32,27 @@ export function Hero({ reduced, glitch, onNameGlitch, onNotify }: HeroProps) {
   const typedRef = useRef<HTMLSpanElement>(null)
   const ctaRowRef = useRef<HTMLDivElement>(null)
 
-  const [webglReady, setWebglReady] = useState(false)
+  const [timeStr, setTimeStr] = useState('')
   const [enableScene, setEnableScene] = useState(false)
+  const [webglReady, setWebglReady] = useState(false)
+
+  // Live Bengaluru local time clock
+  useEffect(() => {
+    const updateTime = () => {
+      const now = new Date()
+      const formatter = new Intl.DateTimeFormat('en-US', {
+        timeZone: 'Asia/Kolkata',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: true,
+      })
+      setTimeStr(formatter.format(now))
+    }
+    updateTime()
+    const interval = window.setInterval(updateTime, 1000)
+    return () => window.clearInterval(interval)
+  }, [])
 
   const clickCount = useRef(0)
   const clickTimer = useRef<number>(0)
@@ -240,83 +259,138 @@ export function Hero({ reduced, glitch, onNameGlitch, onNotify }: HeroProps) {
             <span className="hero__hud-dot" aria-hidden="true" />
             <span className="hero__hud-status">STATUS // ONLINE</span>
           </div>
+          <div className="hero__hud-telemetry" aria-hidden="true">
+            <span>BENGALURU // {timeStr || '10:00:00 PM'}</span>
+            <span className="hero__hud-sep">/</span>
+            <span>LATENCY // 8MS</span>
+          </div>
           <div className="hero__hud-roles">
-            <span className="hero__badge hero__badge--gold">AI & SYSTEMS BUILDER</span>
-            <span className="hero__badge hero__badge--cyan">VENTURE & ECOSYSTEM STRATEGY</span>
+            <span className="hero__badge hero__badge--gold">PRESIDENT @ ECELL</span>
+            <span className="hero__badge hero__badge--cyan">AWS BUILDERS CORE</span>
             <span className="hero__badge hero__badge--neutral">RV UNIVERSITY // BLR</span>
           </div>
         </div>
 
-        {/* Hero Title */}
-        <h1 className="hero__title" id="hero-title" ref={titleRef}>
-          <span className="hero__line">
-            <span
-              className={`hero__word${glitch ? ' hero__word--glitch' : ''}`}
-              ref={nameRef}
-              onClick={onNameClick}
-              data-cursor="view"
-              role="button"
-              tabIndex={0}
-              aria-label="Ayush S Kulkarni (Click five times for glitch mode)"
-            >
-              AYUSH S KULKARNI
-            </span>
-          </span>
-        </h1>
+        {/* Asymmetric Hero Cockpit Split */}
+        <div className="hero__split">
+          <div className="hero__main">
+            {/* Hero Title */}
+            <h1 className="hero__title" id="hero-title" ref={titleRef}>
+              <span className="hero__line">
+                <span
+                  className={`hero__word${glitch ? ' hero__word--glitch' : ''}`}
+                  ref={nameRef}
+                  onClick={onNameClick}
+                  data-cursor="view"
+                  role="button"
+                  tabIndex={0}
+                  aria-label="Ayush S Kulkarni (Click five times for glitch mode)"
+                >
+                  AYUSH S KULKARNI
+                </span>
+              </span>
+            </h1>
 
-        {/* Interactive Typed Terminal Prompt */}
-        <div className="hero__typed" aria-label="What I do">
-          <span className="hero__typed-prompt" aria-hidden="true">
-            root@ask:~$
-          </span>
-          <span className="hero__typed-text" ref={typedRef} aria-live="off" />
-          <span className="hero__caret" aria-hidden="true" />
+            {/* Interactive Typed Terminal Prompt */}
+            <div className="hero__typed" aria-label="What I do">
+              <span className="hero__typed-prompt" aria-hidden="true">
+                root@ask:~$
+              </span>
+              <span className="hero__typed-text" ref={typedRef} aria-live="off" />
+              <span className="hero__caret" aria-hidden="true" />
+            </div>
+
+            {/* Narrative Pitch */}
+            <p className="hero__pitch">
+              <RichText text={profile.pitch} />
+            </p>
+
+            {/* Call to Actions */}
+            <div className="hero__ctas" ref={ctaRowRef}>
+              {profile.heroCtas.map((cta) => (
+                <a
+                  key={cta.href}
+                  className={`btn ${cta.variant === 'fill' ? 'btn--fill' : 'btn--outline'}`}
+                  href={cta.href}
+                  data-cursor="view"
+                  onClick={(event) => {
+                    event.preventDefault()
+                    const id = cta.href.replace('#', '')
+                    const target = document.getElementById(id)
+                    if (target) {
+                      target.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' })
+                    }
+                  }}
+                >
+                  <span className="magnetic-inner">{cta.label}</span>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Right Column: Tactical Executive Cockpit */}
+          <aside className="hero__cockpit" aria-label="Current Live Engagements">
+            <div className="hero__cockpit-header">
+              <div className="hero__cockpit-dot" aria-hidden="true" />
+              <span className="hero__cockpit-title">LIVE TELEMETRY & ENGAGEMENTS</span>
+            </div>
+            
+            <div className="hero__cockpit-feed">
+              <div className="hero__cockpit-item">
+                <span className="hero__cockpit-tag">PRESIDENT</span>
+                <span className="hero__cockpit-text">ECell, RV University — Founder Ecosystems & ₹13L+ Partnerships</span>
+              </div>
+              <div className="hero__cockpit-item">
+                <span className="hero__cockpit-tag hero__cockpit-tag--cyan">CORE BUILDER</span>
+                <span className="hero__cockpit-text">AWS Student Builders Group — Cloud Architectures & AI Solutions</span>
+              </div>
+              <div className="hero__cockpit-item">
+                <span className="hero__cockpit-tag hero__cockpit-tag--gold">VENTURE EXEC</span>
+                <span className="hero__cockpit-text">CEDAT — Startup World Cup Operations & VC Fund Interface</span>
+              </div>
+              <div className="hero__cockpit-item">
+                <span className="hero__cockpit-tag">HACKATHONS</span>
+                <span className="hero__cockpit-text">One of 3 Main Coordinators for Argonyx '26 (220+ Teams, 5 Countries)</span>
+              </div>
+            </div>
+
+            <div className="hero__cockpit-footer">
+              <div className="hero__cockpit-stat">
+                <span className="hero__cockpit-num">20+</span>
+                <span className="hero__cockpit-lbl">BRANDS CLOSED</span>
+              </div>
+              <div className="hero__cockpit-stat">
+                <span className="hero__cockpit-num">₹13L+</span>
+                <span className="hero__cockpit-lbl">SPONSORSHIPS</span>
+              </div>
+              <div className="hero__cockpit-stat">
+                <span className="hero__cockpit-num">TOP 5</span>
+                <span className="hero__cockpit-lbl">AI SPRINT</span>
+              </div>
+            </div>
+          </aside>
         </div>
 
-        {/* Narrative Pitch */}
-        <p className="hero__pitch">
-          <RichText text={profile.pitch} />
-        </p>
-
-        {/* Call to Actions */}
-        <div className="hero__ctas" ref={ctaRowRef}>
-          {profile.heroCtas.map((cta) => (
-            <a
-              key={cta.href}
-              className={`btn ${cta.variant === 'fill' ? 'btn--fill' : 'btn--outline'}`}
-              href={cta.href}
-              data-cursor="view"
-              onClick={(event) => {
-                event.preventDefault()
-                const id = cta.href.replace('#', '')
-                const target = document.getElementById(id)
-                if (target) {
-                  target.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' })
-                }
-              }}
-            >
-              <span className="magnetic-inner">{cta.label}</span>
-            </a>
-          ))}
-        </div>
-
-        {/* Hero Metrics Strip */}
-        <div className="hero__stats-strip">
-          <div className="hero__stat-card">
-            <span className="hero__stat-num">₹13L+</span>
-            <span className="hero__stat-lbl">Led in sponsorships from 20 brands</span>
+        {/* Sleek Horizontal Floating Status Ribbon */}
+        <div className="hero__ribbon" aria-label="Key Milestones">
+          <div className="hero__ribbon-item">
+            <span className="hero__ribbon-num">₹13L+</span>
+            <span className="hero__ribbon-lbl">Sponsorships Led Across 20 Brands</span>
           </div>
-          <div className="hero__stat-card">
-            <span className="hero__stat-num">20+</span>
-            <span className="hero__stat-lbl">Tier-1 Enterprise Brands Closed</span>
+          <div className="hero__ribbon-sep" aria-hidden="true" />
+          <div className="hero__ribbon-item">
+            <span className="hero__ribbon-num">Top 5</span>
+            <span className="hero__ribbon-lbl">Domain Winner @ AI Build Sprint (60+ Teams)</span>
           </div>
-          <div className="hero__stat-card">
-            <span className="hero__stat-num">Top 5</span>
-            <span className="hero__stat-lbl">Domain Winner at AI Build Sprint (one of 5 winners among 60+ teams)</span>
+          <div className="hero__ribbon-sep" aria-hidden="true" />
+          <div className="hero__ribbon-item">
+            <span className="hero__ribbon-num">220+</span>
+            <span className="hero__ribbon-lbl">Teams Coordinated: Argonyx '26 (5 Nations)</span>
           </div>
-          <div className="hero__stat-card">
-            <span className="hero__stat-num">10K+</span>
-            <span className="hero__stat-lbl">Telegram Community Scaled</span>
+          <div className="hero__ribbon-sep" aria-hidden="true" />
+          <div className="hero__ribbon-item">
+            <span className="hero__ribbon-num">10K+</span>
+            <span className="hero__ribbon-lbl">Subscribers Scaled in Telegram Community</span>
           </div>
         </div>
       </div>
