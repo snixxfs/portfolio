@@ -3915,3 +3915,104 @@ html[data-godmode='true'] body {
   color: var(--gold-bright);
   transform: rotate(180deg);
 }
+
+.proj-drawer {
+  padding: 36px 12px 44px 12px;
+  animation: fadeIn 0.35s ease;
+}
+
+.proj-drawer__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+}
+
+.proj-drawer__col {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.proj-drawer__col-label {
+  font: 700 11px/1 var(--font-mono);
+  color: var(--gold-bright);
+  letter-spacing: 0.12em;
+}
+
+.proj-drawer__text {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+.proj-drawer__impact-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: rgba(6, 182, 212, 0.08);
+  border: 1px solid rgba(6, 182, 212, 0.25);
+  border-radius: 4px;
+  font: 600 12px/1 var(--font-mono);
+  color: var(--cyan);
+}
+
+.proj-drawer__impact-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--cyan);
+}
+
+.proj-drawer__stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.proj-drawer__stack-tag {
+  font: 600 11px/1 var(--font-mono);
+  color: var(--fg);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 4px 10px;
+  border-radius: 3px;
+}
+
+.proj-drawer__links {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.proj-drawer__link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font: 700 11px/1 var(--font-mono);
+  color: var(--fg);
+  padding: 10px 18px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+  letter-spacing: 0.06em;
+  transition: all 0.25s ease;
+}
+
+.proj-drawer__link-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+}
+
+.proj-drawer__link-btn--primary {
+  background: var(--gold-bright);
+  color: #030305;
+  border-color: var(--gold-bright);
+}
+
+.proj-drawer__link-btn--primary:hover {
+  background: #ffffff;
+  color: #030305;
+}
