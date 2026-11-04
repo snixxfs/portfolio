@@ -113,7 +113,7 @@ export function About({ reduced }: AboutProps) {
             </div>
           </div>
 
-          <aside className="about__terminal reveal corner-brackets" aria-labelledby="terminal-heading">
+          <aside className="about__dossier reveal" aria-labelledby="terminal-heading">
             <div className="about__terminal-header">
               <div className="about__terminal-dots">
                 <span className="about__terminal-dot about__terminal-dot--red" />
