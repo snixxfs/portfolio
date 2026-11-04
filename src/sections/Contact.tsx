@@ -80,7 +80,7 @@ export function Contact({ reduced, notify }: ContactProps) {
                   href={ch.href}
                   target={ch.href.startsWith('http') ? '_blank' : undefined}
                   rel={ch.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                  className="contact-channel-card corner-brackets"
+                  className="contact-channel-row"
                   data-cursor="open"
                 >
                   <div className="contact-channel-card__info">
