@@ -105,3 +105,12 @@ A custom, luxury dark-mode web application engineered to showcase technical dept
 <div align="center">
   <sub>Designed & Developed by Ayush S Kulkarni · © 2026 All Rights Reserved</sub>
 </div>
+
+
+## Architectural Open-Canvas Editorial System (v2.5)
+
+- **Monumental Typographic Ledger (Impact)**: Replaced boxed bento containers with a high-contrast chronological ledger showcasing ₹13L+ enterprise partnerships and AI sprint leadership.
+- **Studio Project Index (Projects)**: Zero-box interactive index featuring three-column architectural drawers (Core Problem, Architecture & Engineering, Verified Impact).
+- **Chronological Executive Ledger (Experience)**: Clean, continuous timeline presenting verified institutional engagements.
+- **Architectural 3-Column Split (Fit)**: Open column geometry with hairline vertical dividers for advisory and venture alignment.
+- **Blueprint Specification Grid (Stack)**: Structured technical ledger detailing full-stack, cloud, and ML competencies.
