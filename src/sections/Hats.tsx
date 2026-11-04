@@ -88,7 +88,7 @@ export function Hats() {
             <div className="hats__grid">
               {active.panels.map((panel, pIdx) => (
                 <article
-                  className={`hat-card corner-brackets${pIdx === 0 ? ' hat-card--hero' : ''}`}
+                  className={`hat-panel-entry${pIdx === 0 ? ' hat-panel-entry--hero' : ''}`}
                   key={panel.title}
                 >
                   <div className="hat-card__badge-wrap">
