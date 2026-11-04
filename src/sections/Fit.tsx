@@ -3,7 +3,7 @@ import { SectionHeading } from '../components/SectionHeading'
 
 export function Fit() {
   return (
-    <section className="section" id="fit" aria-labelledby="fit-heading">
+    <section className="section fit-section" id="fit" aria-labelledby="fit-heading">
       <div className="section__inner">
         <SectionHeading
           kicker={fitSection.kicker}
@@ -12,23 +12,23 @@ export function Fit() {
           id="fit-heading"
         />
 
-        <div className="fit__pillars reveal">
+        {/* Architectural 3-Column Editorial Split (No Boxed Cards) */}
+        <div className="fit-columns reveal">
           {fitSection.columns.map((column, colIdx) => (
             <div
-              className={`fit__pillar fit__pillar--${column.accent} corner-brackets`}
+              className={`fit-col fit-col--${column.accent}`}
               key={column.title}
-              style={{ animationDelay: `${colIdx * 0.15}s` }}
             >
-              <div className="fit__pillar-header">
-                <span className="fit__pillar-tag">{column.tag}</span>
-                <span className="fit__pillar-index">0{colIdx + 1}</span>
+              <div className="fit-col__header">
+                <span className="fit-col__index">0{colIdx + 1} // DISCIPLINE</span>
+                <span className="fit-col__tag">{column.tag}</span>
               </div>
-              <h3 className="fit__pillar-title">{column.title}</h3>
-              <ul className="fit__pillar-list">
+              <h3 className="fit-col__title">{column.title}</h3>
+              <ul className="fit-col__list">
                 {column.items.map((item) => (
-                  <li className="fit__pillar-item" key={item}>
-                    <span className="fit__pillar-dot" aria-hidden="true" />
-                    <span className="fit__pillar-text">{item}</span>
+                  <li className="fit-col__item" key={item}>
+                    <span className="fit-col__dash" aria-hidden="true">—</span>
+                    <span className="fit-col__text">{item}</span>
                   </li>
                 ))}
               </ul>
