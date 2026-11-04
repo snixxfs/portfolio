@@ -4181,3 +4181,52 @@ html[data-godmode='true'] body {
   color: var(--muted);
   letter-spacing: 0.08em;
 }
+
+/* ------------------------------------------------------------
+   ARCHITECTURAL 3-COLUMN FIT
+   ------------------------------------------------------------ */
+.fit-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+  margin-top: 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: 48px;
+}
+
+.fit-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+}
+
+.fit-col:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -24px;
+  bottom: 0;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.fit-col__num {
+  font: 800 13px/1 var(--font-mono);
+  color: var(--gold-bright);
+  letter-spacing: 0.1em;
+}
+
+.fit-col__title {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2.2vw, 26px);
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+.fit-col__desc {
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--muted);
+}
