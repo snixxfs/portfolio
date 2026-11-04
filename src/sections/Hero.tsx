@@ -96,6 +96,10 @@ export function Hero({ reduced, glitch, onNameGlitch, onNotify }: HeroProps) {
           ease: 'expo.out',
           stagger: 0.02,
           delay: 0.1,
+          clearProps: 'transform,rotate,opacity',
+          onComplete: () => {
+            split.revert()
+          },
         })
       }
     })
@@ -155,6 +159,7 @@ export function Hero({ reduced, glitch, onNameGlitch, onNotify }: HeroProps) {
         duration: 0.8,
         ease: 'elastic.out(1, 0.45)',
         stagger: { each: 0.008, from: 'random' },
+        clearProps: 'all',
       })
       scatterTimeline.current = timeline
     }
