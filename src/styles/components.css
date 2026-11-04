@@ -4230,3 +4230,66 @@ html[data-godmode='true'] body {
   line-height: 1.65;
   color: var(--muted);
 }
+
+/* ------------------------------------------------------------
+   ARCHITECTURAL BLUEPRINT SPECIFICATION (STACK)
+   ------------------------------------------------------------ */
+.stack-blueprint {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  margin-top: 32px;
+}
+
+.stack-spec-row {
+  display: grid;
+  grid-template-columns: 80px 220px 1fr;
+  gap: 32px;
+  align-items: baseline;
+  padding: 32px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.25s ease;
+}
+
+.stack-spec-row:hover {
+  padding-left: 12px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.015) 0%, transparent 100%);
+  border-bottom-color: rgba(223, 186, 106, 0.3);
+}
+
+.stack-spec-index {
+  font: 700 13px/1 var(--font-mono);
+  color: var(--gold-bright);
+}
+
+.stack-spec-category {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+.stack-spec-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.stack-spec-pill {
+  font: 600 12px/1 var(--font-mono);
+  color: var(--fg);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 7px 14px;
+  border-radius: 4px;
+  letter-spacing: 0.04em;
+  transition: all 0.2s ease;
+}
+
+.stack-spec-pill:hover {
+  background: rgba(223, 186, 106, 0.1);
+  border-color: rgba(223, 186, 106, 0.4);
+  color: var(--gold-bright);
+}
