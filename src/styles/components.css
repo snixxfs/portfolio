@@ -3630,3 +3630,32 @@ html[data-godmode='true'] body {
   border-radius: 0 !important;
   box-shadow: none !important;
 }
+
+/* ------------------------------------------------------------
+   MONUMENTAL TYPOGRAPHIC LEDGER (Zero Box Architecture)
+   ------------------------------------------------------------ */
+.impact-ledger {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  margin-top: 24px;
+}
+
+.ledger-row {
+  display: grid;
+  grid-template-columns: 80px 260px 1fr 48px;
+  gap: clamp(24px, 3.5vw, 44px);
+  align-items: baseline;
+  padding: clamp(32px, 4vw, 48px) 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s var(--ease-out);
+  position: relative;
+  background: none;
+}
+
+.ledger-row:hover {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.02) 0%, rgba(223, 186, 106, 0.03) 60%, transparent 100%);
+  padding-left: 16px;
+  border-bottom-color: rgba(223, 186, 106, 0.4);
+}
