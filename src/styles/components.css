@@ -3613,3 +3613,20 @@ html[data-godmode='true'] body {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* ------------------------------------------------------------
+   OVERRIDE: Neutralize Corner Brackets & Glass Cards for Open Canvas
+   ------------------------------------------------------------ */
+.corner-brackets::before,
+.corner-brackets::after {
+  display: none !important;
+}
+
+.panel-glass,
+.bento-card,
+.card-tier1,
+.stream-item,
+.about__dossier-card {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
