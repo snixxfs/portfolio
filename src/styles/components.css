@@ -4293,3 +4293,58 @@ html[data-godmode='true'] body {
   border-color: rgba(223, 186, 106, 0.4);
   color: var(--gold-bright);
 }
+
+/* ------------------------------------------------------------
+   EDITORIAL RESPONSIVE MEDIA QUERIES
+   ------------------------------------------------------------ */
+@media (max-width: 900px) {
+  .ledger-row {
+    grid-template-columns: 50px 1fr;
+    gap: 16px;
+  }
+  .ledger-row__figure {
+    grid-column: 2;
+  }
+  .ledger-row__content {
+    grid-column: 1 / -1;
+  }
+  .ledger-row__action {
+    display: none;
+  }
+
+  .proj-row__header {
+    grid-template-columns: 40px 1fr 40px;
+    gap: 16px;
+  }
+  .proj-row__category-col {
+    display: none;
+  }
+  .proj-drawer__grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .exp-ledger-row {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .exp-ledger-row__meta-col {
+    align-items: flex-start;
+  }
+
+  .fit-columns {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .fit-col:not(:last-child)::after {
+    display: none;
+  }
+
+  .stack-spec-row {
+    grid-template-columns: 50px 1fr;
+    gap: 16px;
+  }
+  .stack-spec-pills {
+    grid-column: 1 / -1;
+  }
+}
