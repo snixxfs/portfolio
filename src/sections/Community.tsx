@@ -40,7 +40,7 @@ export function Community({ reduced: _reduced = false }: CommunityProps) {
           {communitySection.testimonials.map((item) => (
             <article
               key={item.id}
-              className={`community-card reveal ${item.featured ? 'community-card--featured' : ''}`}
+              className="community-card reveal"
               role="listitem"
               tabIndex={0}
               aria-label={`Testimonial from ${item.author}`}
