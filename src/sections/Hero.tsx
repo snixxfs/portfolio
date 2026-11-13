@@ -1,6 +1,7 @@
 import { lazy, Suspense, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 import { SplitText } from 'gsap/SplitText'
+import Typed from 'typed.js'
 import { profile } from '../data/content'
 import { RichText } from '../components/RichText'
 import { attachMagnetic } from '../effects/Magnetic'
@@ -186,7 +187,7 @@ export function Hero({ reduced, glitch, onNameGlitch, onNotify }: HeroProps) {
     return () => cleanups.forEach((cleanup) => cleanup())
   }, [reduced])
 
-  /* ---------- typed headline stream ---------- */
+  /* ---------- typed headline stream with typed.js ---------- */
   useEffect(() => {
     const node = typedRef.current
     if (!node) return
@@ -196,30 +197,18 @@ export function Hero({ reduced, glitch, onNameGlitch, onNotify }: HeroProps) {
       return
     }
 
-    let phrase = 0
-    let index = 0
-    let deleting = false
-    let timer = 0
+    const typed = new Typed(node, {
+      strings: [...phrases],
+      typeSpeed: 45,
+      backSpeed: 25,
+      backDelay: 2000,
+      loop: true,
+      showCursor: false,
+    })
 
-    const tick = () => {
-      const current = phrases[phrase] ?? ''
-      index += deleting ? -1 : 1
-      node.textContent = current.slice(0, Math.max(index, 0))
-
-      let delay = deleting ? 25 : 55
-      if (!deleting && index >= current.length) {
-        deleting = true
-        delay = 1800
-      } else if (deleting && index <= 0) {
-        deleting = false
-        phrase = (phrase + 1) % phrases.length
-        delay = 350
-      }
-      timer = window.setTimeout(tick, delay)
+    return () => {
+      typed.destroy()
     }
-
-    timer = window.setTimeout(tick, 600)
-    return () => window.clearTimeout(timer)
   }, [reduced])
 
   /* ---------- five-click easter egg glitch ---------- */

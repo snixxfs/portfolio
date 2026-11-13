@@ -43,6 +43,7 @@ export function Community({ reduced: _reduced = false }: CommunityProps) {
               className={`community-card reveal ${item.featured ? 'community-card--featured' : ''}`}
               role="listitem"
               tabIndex={0}
+              aria-label={`Testimonial from ${item.author}`}
             >
               {/* Card Meta Header */}
               <div className="community-card__header">
