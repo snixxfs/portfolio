@@ -19,6 +19,7 @@ import { Experience } from './sections/Experience'
 import { VentureCapital } from './sections/VentureCapital'
 import { Brands } from './sections/Brands'
 import { Projects } from './sections/Projects'
+import { Community } from './sections/Community'
 import { Stack } from './sections/Stack'
 import { Contact } from './sections/Contact'
 import { profile } from './data/content'
@@ -306,10 +307,13 @@ export default function App() {
         {/* 09. Projects (Things Built & Shipped) */}
         <Projects reduced={reduced} />
 
-        {/* 10. Tech Stack & Arsenal */}
+        {/* 10. Community Impact (Telegram Community Testimonials) */}
+        <Community reduced={reduced} />
+
+        {/* 11. Tech Stack & Arsenal */}
         <Stack />
 
-        {/* 11. Contact */}
+        {/* 12. Contact */}
         <Contact reduced={reduced} notify={notify} />
       </main>
 

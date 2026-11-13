@@ -747,6 +747,160 @@ export const stackSection = {
   ],
 }
 
+export const communitySection = {
+  kicker: 'TELEGRAM COMMUNITY · REAL FEEDBACK',
+  heading: 'Words From The Community',
+  caption:
+    'Beyond views and numbers, what matters is the impact. Here’s what people who’ve followed my content have to say.',
+  stats: {
+    communityScale: '10,000+',
+    platform: 'Telegram Broadcast Channel',
+    handle: '@snixxfs',
+    verifiedImpact: 'Mindset · Productivity · Financial Intelligence',
+  },
+  testimonials: [
+    {
+      id: 'rudra',
+      number: '02',
+      author: 'RUDRA 🔱',
+      date: 'March 2026',
+      quote:
+        'One of the best posts I’ve read in a long time honestly… so brutally honest and so accurate and not just this one, ur other posts hit the same way too.',
+      tag: 'MINDSET & HONESTY',
+      initials: 'RD',
+      featured: false,
+    },
+    {
+      id: 'luthera',
+      number: '03',
+      author: 'Luthera',
+      date: 'November 2026',
+      quote:
+        'Channel is damn goated. The only reason to use telegram is for reading his channel posts',
+      tag: 'HIGH-SIGNAL VALUE',
+      initials: 'LT',
+      featured: false,
+    },
+    {
+      id: 'observer',
+      number: '04',
+      author: 'Observer (07)',
+      date: 'March 2026',
+      quote:
+        'I was stuck in the same loop but now I have been taking action from the last 3-4 days… Now I’m trying to rebuild myself brick by brick',
+      tag: 'ACTION & MOMENTUM',
+      initials: 'OB',
+      featured: true,
+    },
+    {
+      id: 'logymystic',
+      number: '05',
+      author: 'LOGYMYSTIC 🍁🚀🍹',
+      date: 'November 2026',
+      quote: 'You helped me getting reality checks 😭❤️',
+      tag: 'REALITY CHECK',
+      initials: 'LM',
+      featured: false,
+    },
+    {
+      id: 'eas',
+      number: '06',
+      author: 'EAS///',
+      date: 'August 2026',
+      quote: 'you helped me a lot. Thanks bro',
+      tag: 'PERSONAL GROWTH',
+      initials: 'EA',
+      featured: false,
+    },
+    {
+      id: 'ad',
+      number: '07',
+      author: 'Ad 045999',
+      date: 'August 2025',
+      quote: 'This is best amazing channel damn… a great thanks to @admin / -snixxfs ❤',
+      tag: 'COMMUNITY FEEDBACK',
+      initials: 'AD',
+      featured: false,
+    },
+    {
+      id: 'idrees',
+      number: '08',
+      author: 'Idrees Khan',
+      date: 'June 2025',
+      quote: 'Extraordinary stuff, keep sending, salute to the man behind the scene ❤️',
+      tag: 'CONSISTENCY & DEPTH',
+      initials: 'IK',
+      featured: false,
+    },
+    {
+      id: 'mitesh',
+      number: '09',
+      author: 'Mitesh',
+      date: 'August 2025',
+      quote:
+        'Wonderful Insight and thank you for taking such great efforts for putting such insight to us ❤️',
+      tag: 'STRATEGIC INSIGHT',
+      initials: 'MI',
+      featured: false,
+    },
+    {
+      id: 'jettlagg',
+      number: '10',
+      author: 'jettlagg',
+      date: 'August 2025',
+      quote: 'your notes here helped me a lot ❤️😌',
+      tag: 'PRACTICAL NOTES',
+      initials: 'JL',
+      featured: false,
+    },
+    {
+      id: 'anonymous-productivity',
+      number: '11',
+      author: 'Anonymous',
+      date: 'March 2026',
+      quote:
+        'Been the most productive version of myself for the last 2 days, simply executing on my plans and take action on stuff I have been putting off for weeks.',
+      tag: 'PRODUCTIVITY & EXECUTION',
+      initials: 'AN',
+      featured: true,
+    },
+    {
+      id: 'anonymous-finance',
+      number: '12',
+      author: 'Anonymous',
+      date: 'August 2025',
+      quote:
+        'The only channel on the telegram to get upgrade your financial intelligence at rocket speed 🚀',
+      tag: 'FINANCIAL INTELLIGENCE',
+      initials: 'AN',
+      featured: false,
+    },
+  ],
+  shortStrip: [
+    {
+      id: 'mayank',
+      author: 'Mayank Devli',
+      date: 'June 2026',
+      quote: 'Best telegram channel 🔥🔥',
+      initials: 'MD',
+    },
+    {
+      id: 'gaurav',
+      author: 'Gaurav',
+      date: 'October 2024',
+      quote: 'G.O.A.T 🐐 Snixx',
+      initials: 'GV',
+    },
+    {
+      id: 'community-member',
+      author: 'Community Member',
+      date: 'October 2024',
+      quote: 'Excellent bro 👏 huge respect',
+      initials: 'CM',
+    },
+  ],
+}
+
 export const contactSection = {
   kicker: 'X // INITIATE TRANSMISSION',
   heading: 'Let’s Build Something Formidable',
@@ -769,6 +923,7 @@ export const navLinks = [
   { id: 'vc', label: 'Venture' },
   { id: 'brands', label: 'Brands' },
   { id: 'work', label: 'Projects' },
+  { id: 'community', label: 'Community' },
   { id: 'stack', label: 'Tech Stack' },
   { id: 'contact', label: 'Contact' },
 ] as const
@@ -783,5 +938,6 @@ export type SectionId =
   | 'vc'
   | 'brands'
   | 'work'
+  | 'community'
   | 'stack'
   | 'contact'
