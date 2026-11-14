@@ -19,6 +19,13 @@ export interface BrandDeal {
   type?: 'Cash' | 'In-Kind' | 'Cash + In-Kind'
 }
 
+export interface VentureEntity {
+  name: string
+  tag: string
+  category: string
+  featured?: boolean
+}
+
 export interface RoomPanel {
   id: string
   numeral: string
@@ -93,7 +100,7 @@ export const dealRoomData = {
     {
       id: 'capital',
       number: '₹13L',
-      label: 'Capital Raised · 20 Partners',
+      label: 'Capital Raised · 18 Brands',
       sublabel: 'Closed Fortune 500s via 30-day cold outreach sprints',
       targetChapter: 'chapter-01',
     },
@@ -129,7 +136,6 @@ export const dealRoomData = {
     'HP',
     'ixigo',
     'CodeChef',
-    'Physics Wallah',
     'JustVend',
     'RunAnywhere',
     'MileTech',
@@ -137,9 +143,11 @@ export const dealRoomData = {
     'Belgium Waffle',
     "Atty's Bakery",
     'EasyBites by Empire',
+    'Toyota',
+    'DevTown',
   ],
 
-  // Chapter 01: The Closes (All 20 verified brands with categories)
+  // Chapter 01: The Closes (18 verified corporate sponsor brands with categories)
   brands: [
     { index: '01', name: 'Mercedes-Benz', category: 'Automotive & Industrial', type: 'Cash + In-Kind' },
     { index: '02', name: 'Cisco', category: 'Tech & Telecom', type: 'Cash' },
@@ -150,18 +158,35 @@ export const dealRoomData = {
     { index: '07', name: 'HP', category: 'Tech & Telecom', type: 'In-Kind' },
     { index: '08', name: 'ixigo', category: 'Tech & Telecom', type: 'Cash' },
     { index: '09', name: 'CodeChef', category: 'Tech & Telecom', type: 'In-Kind' },
-    { index: '10', name: 'Physics Wallah', category: 'Tech & Telecom', type: 'Cash' },
-    { index: '11', name: 'JustVend', category: 'Tech & Telecom', type: 'In-Kind' },
-    { index: '12', name: 'RunAnywhere', category: 'Tech & Telecom', type: 'In-Kind' },
-    { index: '13', name: 'MileTech', category: 'Tech & Telecom', type: 'Cash' },
-    { index: '14', name: 'Technosport', category: 'Lifestyle & F&B', type: 'In-Kind' },
-    { index: '15', name: 'Belgium Waffle', category: 'Lifestyle & F&B', type: 'In-Kind' },
-    { index: '16', name: "Atty's Bakery", category: 'Lifestyle & F&B', type: 'In-Kind' },
-    { index: '17', name: 'EasyBites by Empire', category: 'Lifestyle & F&B', type: 'In-Kind' },
-    { index: '18', name: 'DevTown', category: 'Tech & Telecom', type: 'In-Kind' },
-    { index: '19', name: 'Toyota', category: 'Automotive & Industrial', type: 'In-Kind' },
-    { index: '20', name: 'Pegasus Tech Ventures', category: 'Tech & Telecom', type: 'Cash' },
+    { index: '10', name: 'JustVend', category: 'Tech & Telecom', type: 'In-Kind' },
+    { index: '11', name: 'RunAnywhere', category: 'Tech & Telecom', type: 'In-Kind' },
+    { index: '12', name: 'MileTech', category: 'Tech & Telecom', type: 'Cash' },
+    { index: '13', name: 'Technosport', category: 'Lifestyle & F&B', type: 'In-Kind' },
+    { index: '14', name: 'Belgium Waffle', category: 'Lifestyle & F&B', type: 'In-Kind' },
+    { index: '15', name: "Atty's Bakery", category: 'Lifestyle & F&B', type: 'In-Kind' },
+    { index: '16', name: 'EasyBites by Empire', category: 'Lifestyle & F&B', type: 'In-Kind' },
+    { index: '17', name: 'DevTown', category: 'Tech & Telecom', type: 'In-Kind' },
+    { index: '18', name: 'Toyota', category: 'Automotive & Industrial', type: 'In-Kind' },
   ] satisfies BrandDeal[],
+
+  // 15 Institutional Venture Capital Firms & Ecosystem Nodes (CEDAT / Startup World Cup)
+  ventureEntities: [
+    { name: 'Pegasus Tech Ventures', tag: 'Global VC · Startup World Cup Partner', category: 'Global Venture Capital', featured: true },
+    { name: 'Blume Ventures', tag: 'Tier-1 Early Stage Fund', category: 'Venture Capital', featured: true },
+    { name: 'IvyCap Ventures', tag: 'Early & Growth Stage VC', category: 'Venture Capital', featured: true },
+    { name: 'KDEM / Startup Karnataka', tag: 'State Innovation Authority', category: 'Innovation Authority', featured: true },
+    { name: 'Aum Ventures', tag: 'Global Cross-Border VC', category: 'Venture Capital' },
+    { name: 'NextUnicorn.Fund', tag: 'Early-Stage Fund', category: 'Venture Capital' },
+    { name: 'SIAN (South India Angel Network)', tag: 'Angel Syndicate', category: 'Angel Network' },
+    { name: 'Ideabaaz', tag: 'Startup Ecosystem Platform', category: 'Ecosystem' },
+    { name: 'DBS Bank India', tag: 'Institutional Banking Partner', category: 'Banking & Financial' },
+    { name: 'State Bank of India', tag: 'Public Sector Banking', category: 'Banking & Financial' },
+    { name: 'IACC (Indo-American Chamber)', tag: 'Bilateral Trade Chamber', category: 'Trade & Commerce' },
+    { name: 'TiE Bangalore', tag: 'Global Entrepreneur Network', category: 'Founder Community' },
+    { name: 'Headstart Network', tag: 'Grassroots Startup Hub', category: 'Founder Community' },
+    { name: 'eChai Ventures', tag: 'Founder Community', category: 'Founder Community' },
+    { name: 'Finsu Advisors / FINVAYU', tag: 'Strategic Advisory', category: 'Advisory' },
+  ] satisfies VentureEntity[],
 
   // Chapter 02: The Rooms (5 stacking panels)
   rooms: [

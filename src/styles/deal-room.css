@@ -1013,6 +1013,130 @@ html.lenis, html.lenis body {
   color: rgba(10, 18, 16, 0.65);
 }
 
+/* ------------------------------------------------------------
+   VENTURE CAPITAL & ECOSYSTEM CONSTELLATION (15 NODES)
+   ------------------------------------------------------------ */
+.vc-constellation-wrap {
+  margin-top: clamp(64px, 8vw, 110px);
+  padding-top: clamp(48px, 6vw, 80px);
+  border-top: 1px solid var(--rule-light);
+}
+
+.vc-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 1024px) {
+  .vc-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .vc-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.vc-card {
+  background-color: var(--bone-2);
+  border: 1px solid rgba(10, 18, 16, 0.12);
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 114px;
+  transition: transform 0.25s var(--ease-editorial), border-color 0.25s, box-shadow 0.25s;
+}
+
+.vc-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--brass);
+  box-shadow: 0 6px 18px rgba(10, 18, 16, 0.06);
+}
+
+.vc-card--featured {
+  border-color: rgba(184, 151, 90, 0.55);
+  background: linear-gradient(145deg, rgba(184, 151, 90, 0.12) 0%, rgba(226, 220, 203, 0.9) 100%);
+}
+
+.vc-card__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.vc-card__num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: rgba(10, 18, 16, 0.45);
+}
+
+.vc-card__badge {
+  font-family: var(--font-body);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--obsidian);
+  background-color: var(--brass);
+  padding: 2px 8px;
+  font-weight: 600;
+}
+
+.vc-card__name {
+  font-family: var(--font-serif);
+  font-size: clamp(17px, 1.4vw, 21px);
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 6px;
+  font-weight: 400;
+}
+
+.vc-card__tag {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: rgba(10, 18, 16, 0.62);
+  line-height: 1.4;
+}
+
+.vc-meta-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding-top: 28px;
+  border-top: 1px solid var(--rule-light);
+}
+
+@media (max-width: 768px) {
+  .vc-meta-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.vc-meta-col {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.vc-meta-val {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 2.5vw, 2.6rem);
+  color: var(--ink);
+  line-height: 1;
+}
+
+.vc-meta-lbl {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: rgba(10, 18, 16, 0.6);
+  letter-spacing: 0.04em;
+}
+
 @media (max-width: 860px) {
   .brand-row {
     grid-template-columns: 32px 1fr;

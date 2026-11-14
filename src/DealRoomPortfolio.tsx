@@ -5,6 +5,7 @@ import {
   type RoomPanel,
   type BuildProject,
   type VoiceTestimonial,
+  type VentureEntity,
 } from './data/dealRoomData'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -643,7 +644,7 @@ export function DealRoomPortfolio() {
               Closing without warm <span className="brass-italic">introductions</span>.
             </h2>
             <p style={{ color: 'rgba(10,18,16,0.65)', fontSize: 'clamp(15px, 1.3vw, 18px)', maxWidth: '58ch', marginBottom: '32px', lineHeight: 1.5 }}>
-              How a student engineer closed 20 corporate partners and ₹13,00,000 in capital through disciplined 30-day cold outreach cycles. Execution speed, not institutional pedigree.
+              How a student engineer closed 18 marquee corporate partners and ₹13,00,000 in capital through disciplined 30-day cold outreach cycles. Execution speed, not institutional pedigree.
             </p>
 
             {/* Category Filter Tabs + Counter */}
@@ -706,6 +707,61 @@ export function DealRoomPortfolio() {
                   <p className="close-timeline__desc">
                     Multi-lakh cash allocations, physical asset deployment, and long-term ecosystem ties for student founders.
                   </p>
+                </div>
+              </div>
+            </div>
+
+            {/* ============================================================
+                THE VENTURE CAPITAL & ECOSYSTEM CONSTELLATION (15 NODES)
+                Connected through CEDAT and Startup World Cup operations
+                ============================================================ */}
+            <div className="vc-constellation-wrap">
+              <div className="chapter-label-strip" style={{ marginBottom: '24px', borderBottomColor: 'var(--rule-light)' }}>
+                <span className="chapter-label-num">CEDAT Ecosystem</span>
+                <span className="chapter-label-name">Venture Capital & Institutional Partners</span>
+              </div>
+
+              <h3 className="serif" style={{ fontSize: 'clamp(2.4rem, 4.8vw, 4.4rem)', color: 'var(--ink)', marginBottom: '14px' }}>
+                15 venture funds & ecosystem <span className="brass-italic">partners</span>.
+              </h3>
+              <p style={{ color: 'rgba(10,18,16,0.65)', fontSize: 'clamp(15px, 1.3vw, 18px)', maxWidth: '62ch', marginBottom: '36px', lineHeight: 1.5 }}>
+                Institutional venture capital funds, angel syndicates, institutional banks, and state innovation authorities interfaced directly through my operations at CEDAT and the Startup World Cup.
+              </p>
+
+              {/* The 15 VC Entities Grid */}
+              <div className="vc-grid">
+                {dealRoomData.ventureEntities.map((entity: VentureEntity, idx: number) => (
+                  <article
+                    className={`vc-card ${entity.featured ? 'vc-card--featured' : ''}`}
+                    key={entity.name}
+                  >
+                    <div className="vc-card__top">
+                      <span className="vc-card__num tabular">{(idx + 1).toString().padStart(2, '0')}</span>
+                      {entity.featured && <span className="vc-card__badge">Lead Partner</span>}
+                    </div>
+                    <h4 className="vc-card__name">{entity.name}</h4>
+                    <span className="vc-card__tag">{entity.tag}</span>
+                  </article>
+                ))}
+              </div>
+
+              {/* VC Meta Stats Bar */}
+              <div className="vc-meta-strip">
+                <div className="vc-meta-col">
+                  <span className="vc-meta-val tabular">15</span>
+                  <span className="vc-meta-lbl">Active Institutional Nodes</span>
+                </div>
+                <div className="vc-meta-col">
+                  <span className="vc-meta-val tabular">4</span>
+                  <span className="vc-meta-lbl">Key Lead Partners</span>
+                </div>
+                <div className="vc-meta-col">
+                  <span className="vc-meta-val tabular">$1M</span>
+                  <span className="vc-meta-lbl">Startup World Cup Finale</span>
+                </div>
+                <div className="vc-meta-col">
+                  <span className="vc-meta-val">Bengaluru</span>
+                  <span className="vc-meta-lbl">Venture Ecosystem Base</span>
                 </div>
               </div>
             </div>
