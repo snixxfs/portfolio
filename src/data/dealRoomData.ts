@@ -71,40 +71,52 @@ export const dealRoomData = {
     githubUrl: 'https://github.com/snixxfs',
     linkedinUrl: 'https://linkedin.com/in/ayushsk',
     telegramUrl: 'https://t.me/snixxfs',
-    topLabel: 'President, ECell RV University  ·  AWS Student Builders Group  ·  Bengaluru',
-    heroLinePrefix: 'I got Mercedes-Benz, Cisco and Red Bull to',
-    heroLineHighlight: 'back',
-    heroLineSuffix: 'a college fest.',
+    topLabel: 'AI & ML Systems Engineer  ·  President, ECell RV University  ·  Bengaluru',
+    heroLinePrefix: 'I engineer autonomous AI systems, direct student venture, and build at',
+    heroLineHighlight: 'scale.',
+    heroLineSuffix: '',
     heroSubsentence:
-      'CSE (AI & ML) at RV University. I lead ECell, build with the AWS Student Builders Group, and close deals for student ecosystems.',
+      'CSE (AI & ML) at RV University and President of ECell. From 5-pipeline computer vision and claim automation engines to closing ₹13L in institutional capital, I turn technical rigor into high-leverage outcomes.',
   },
 
   // Chapter 00: The Ledger Strip (3 equal columns at bottom of viewport)
   ledger: [
     {
-      id: 'brands',
-      number: '20',
-      label: 'Brands closed',
-      sublabel: 'Fortune 500s & OEMs via cold outreach',
-      targetChapter: 'chapter-01',
+      id: 'ai-sprint',
+      number: 'Top 5',
+      label: 'Domain Winner · AI Build Sprint',
+      sublabel: 'Autonomous claim engine in <2.5s across 60+ teams',
+      targetChapter: 'chapter-03',
     },
     {
       id: 'capital',
       number: '₹13L',
-      label: 'Sponsorship raised',
-      sublabel: '₹2.8L cash + ₹10.2L in-kind (Kalpavikas 1.0 & 2.0)',
+      label: 'Capital Raised · 20 Partners',
+      sublabel: 'Closed Fortune 500s via 30-day cold outreach sprints',
       targetChapter: 'chapter-01',
     },
     {
-      id: 'scale',
-      number: '220+',
-      label: 'Teams at Argonyx ’26',
-      sublabel: 'Across 5 countries, 24h flagship hackathon',
-      targetChapter: 'chapter-02',
+      id: 'community',
+      number: '10K+',
+      label: 'Network Scaled',
+      sublabel: 'Broadcast network on mindset, technical craft & finance',
+      targetChapter: 'chapter-04',
     },
   ] satisfies LedgerItem[],
 
-  // Marquee brands ticker
+  // Hero disciplines marquee ticker
+  marqueeDisciplines: [
+    'Applied Machine Intelligence',
+    'Autonomous Multi-Agent Pipelines',
+    'Computer Vision & Classification',
+    'AWS Cloud Architectures',
+    'Venture Capital Operations',
+    'Full-Stack Systems Engineering',
+    'High-Stakes Dealmaking',
+    'Hardware & IoT Robotics',
+  ],
+
+  // Marquee brands ticker (shown in Chapter 01)
   marqueeBrands: [
     'Mercedes-Benz',
     'Cisco',
@@ -152,34 +164,52 @@ export const dealRoomData = {
   // Chapter 02: The Rooms (5 stacking panels)
   rooms: [
     {
-      id: 'ecell',
+      id: 'sprint',
       numeral: '01',
+      org: 'Machine Intelligence & Applied AI',
+      role: 'Domain Winner & Systems Builder',
+      dates: '2025 — Present',
+      highlightWord: 'Autonomous',
+      outcomes: [
+        'Built an end-to-end AI Insurance Claim Automation Platform with 5 modular pipelines: CV damage scoring, instant fraud triage, payout rule estimator, and LLM drafting.',
+        'Delivered complete evaluation in under 2.5 seconds per claim in front of senior enterprise jury, securing Top 5 across 60+ teams (180+ developers).',
+        'Architected autonomous agent workflows, computer vision classifiers, and latency-budgeted inference APIs for mission-critical tasks.',
+      ],
+      metric: {
+        value: 'Top 5',
+        label: 'Domain Winner (60+ Teams)',
+      },
+      tag: 'Applied AI & ML',
+    },
+    {
+      id: 'ecell',
+      numeral: '02',
       org: 'ECell, RV University',
       role: 'President',
       dates: '2024 — Present',
       highlightWord: 'Presidential',
       outcomes: [
-        'Progressed from Head to Director of Partnerships to President, directing strategic partnerships, campus engagement, and student founder initiatives.',
-        'Closed ₹13,00,000 across Kalpavikas 1.0 and 2.0 (₹5L in year one, scaled to ₹8L in year two, +60% YoY) through 30-day cold outreach sprints.',
-        'Structured deals with 20 corporate partners including Mercedes-Benz, Cisco, TVS Motors, and Red Bull with zero prior warm introductions.',
+        'Progressed from Head to Director of Partnerships to President, directing strategic partnerships, campus venture engagement, and student founder initiatives.',
+        'Closed ₹13,00,000 across Kalpavikas 1.0 and 2.0 (₹5L in year one, scaled to ₹8L in year two, +60% YoY) through disciplined 30-day cold outreach sprints.',
+        'Structured institutional deals with 20 corporate partners including Mercedes-Benz, Cisco, TVS Motors, and Red Bull with zero prior warm introductions.',
       ],
       metric: {
         value: '₹13L',
-        label: 'Sponsorship Capital Closed',
+        label: 'Capital Closed (+60% YoY)',
       },
       tag: 'Executive Governance',
     },
     {
       id: 'aws',
-      numeral: '02',
+      numeral: '03',
       org: 'AWS Student Builders Group',
       role: 'Core Member',
       dates: '2024 — Present',
       highlightWord: 'Infrastructure',
       outcomes: [
-        'Active member of the student builder cohort at RV University focused on practical cloud infrastructure and AWS solutions.',
-        'Architecting serverless compute, event-driven pipelines, and cloud-native AI integration for student cohorts.',
-        'Collaborating with developer communities to bridge fundamental systems architecture and real production deployments.',
+        'Active member of the student builder cohort at RV University focused on practical cloud infrastructure and AWS serverless solutions.',
+        'Architecting event-driven pipelines, serverless compute, and cloud-native AI integration using AWS Lambda, DynamoDB, and API Gateway.',
+        'Leading developer workshops bridging fundamental systems architecture with production deployments.',
       ],
       metric: {
         value: 'Cloud Native',
@@ -189,7 +219,7 @@ export const dealRoomData = {
     },
     {
       id: 'cedat',
-      numeral: '03',
+      numeral: '04',
       org: 'CEDAT · Venture Ecosystem',
       role: 'Project Executive',
       dates: 'Jun 2026 — Present',
@@ -197,7 +227,7 @@ export const dealRoomData = {
       outcomes: [
         'Coordinated operations for the Bengaluru Regional Finale of the Startup World Cup in collaboration with Pegasus Tech Ventures.',
         'Interfaced directly with early-stage venture capital funds, angel syndicates, institutional banks, and state innovation authorities (KDEM, Blume Ventures, IvyCap Ventures).',
-        'Evaluated early founder traction and dealflows at the intersection of capital, regulatory compliance, and market defensibility.',
+        'Evaluated early founder traction, unit economics, and market defensibility across enterprise software and deep tech.',
       ],
       metric: {
         value: '$1M',
@@ -206,50 +236,32 @@ export const dealRoomData = {
       tag: 'Venture Operations',
     },
     {
-      id: 'argonyx',
-      numeral: '04',
-      org: 'Argonyx ’26 Flagship Hackathon',
-      role: 'Main Coordinator',
-      dates: '2026 National Edition',
+      id: 'community-ops',
+      numeral: '05',
+      org: 'Community & Technical Operations',
+      role: 'Lead Organizer & Community Architect',
+      dates: '2024 — Present',
       highlightWord: 'Execution',
       outcomes: [
-        'Served as one of three main coordinators running a 24-hour hackathon with 220+ registered teams across 5 countries.',
-        'Directed end-to-end event planning, technical infrastructure, mentor schedules, and institutional sponsor delivery.',
-        'Managed jury panels from J.P. Morgan, Morgan Stanley, Google, and NASSCOM evaluating production submissions.',
+        'Scaled and curated a 10K+ member Telegram broadcast network on mindset, technical careers, and financial literacy.',
+        'Co-coordinated operations for Argonyx ’26 (24-hour campus hackathon with 220+ teams across 5 countries, jury from Google, J.P. Morgan, Morgan Stanley).',
+        'Built student mentorship pipelines and placement prep cohorts, bridging university curriculum with real-world engineering standards.',
       ],
       metric: {
-        value: '220+',
-        label: 'International Teams',
+        value: '10K+',
+        label: 'Broadcast Network Scaled',
       },
-      tag: 'Flagship Operations',
-    },
-    {
-      id: 'sprint',
-      numeral: '05',
-      org: 'AI Build Sprint',
-      role: 'Domain Winner (Top 5 / 60+ Teams)',
-      dates: 'Competitive AI Sprint',
-      highlightWord: 'Autonomous',
-      outcomes: [
-        'Built an end-to-end AI Insurance Claim Automation Platform with 5 modular pipelines: CV damage scoring, instant fraud triage, payout rule estimator, and LLM drafting.',
-        'Delivered complete evaluation in under 2.5 seconds per claim in front of senior industry technical jury.',
-        'Secured 1 of 5 winning positions across 60+ competing teams (180+ participating developers).',
-      ],
-      metric: {
-        value: 'Top 5',
-        label: 'Domain Standing',
-      },
-      tag: 'Machine Intelligence',
+      tag: 'Community & Operations',
     },
   ] satisfies RoomPanel[],
 
   // Folded strengths summary list for Chapter 02
   foldedStrengths: [
-    'Sponsorship strategy',
-    'Cold outreach',
-    'Executive pitching',
-    'Hackathon operations',
-    'AI + cloud builds',
+    'Autonomous AI & CV pipelines',
+    'Cloud architecture (AWS)',
+    'High-stakes dealmaking',
+    'Executive leadership',
+    'Technical operations',
   ],
 
   // Chapter 03: The Builds (8 real projects with live GitHub stats fallback)

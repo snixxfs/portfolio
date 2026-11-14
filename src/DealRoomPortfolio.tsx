@@ -467,16 +467,16 @@ export function DealRoomPortfolio() {
 
       {/* Global Frame: Proof Bar (Fixed Bottom Center) */}
       <aside className={`proof-bar ${!showProofBar ? 'proof-bar--hidden' : ''}`} aria-label="Persistent verifiable credentials">
-        <button type="button" className="proof-bar__item" onClick={() => scrollTo('chapter-01')}>
-          20 brands
-        </button>
-        <span className="proof-bar__sep">·</span>
-        <button type="button" className="proof-bar__item" onClick={() => scrollTo('chapter-01')}>
-          ₹13L raised
+        <button type="button" className="proof-bar__item" onClick={() => scrollTo('chapter-03')}>
+          AI & ML Builder
         </button>
         <span className="proof-bar__sep">·</span>
         <button type="button" className="proof-bar__item" onClick={() => scrollTo('chapter-02')}>
-          220+ teams
+          Top 5 AI Sprint
+        </button>
+        <span className="proof-bar__sep">·</span>
+        <button type="button" className="proof-bar__item" onClick={() => scrollTo('chapter-01')}>
+          ₹13L Closed
         </button>
         <span className="proof-bar__sep">·</span>
         <button type="button" className="proof-bar__item" onClick={() => scrollTo('chapter-02')}>
@@ -494,9 +494,9 @@ export function DealRoomPortfolio() {
           id="chapter-00"
           ref={heroRef}
         >
-          {/* Faint oversized ECELL outline parallax */}
+          {/* Faint oversized BUILDER outline parallax */}
           <div className="hero-bg-letters" aria-hidden="true">
-            ECELL
+            BUILDER
           </div>
 
           <div className="deal-container hero-main-content">
@@ -542,12 +542,12 @@ export function DealRoomPortfolio() {
           </div>
 
           <div>
-            {/* Slow Marquee of brand logos directly above ledger */}
+            {/* Slow Marquee of technical disciplines directly above ledger */}
             <div className="hero-marquee-wrap" aria-hidden="true">
               <div className="hero-marquee-track">
-                {dealRoomData.marqueeBrands.concat(dealRoomData.marqueeBrands).map((b, i) => (
-                  <span className="hero-marquee-item" key={`${b}-${i}`}>
-                    {b} ·
+                {dealRoomData.marqueeDisciplines.concat(dealRoomData.marqueeDisciplines).map((d, i) => (
+                  <span className="hero-marquee-item" key={`${d}-${i}`}>
+                    {d} ·
                   </span>
                 ))}
               </div>
@@ -581,12 +581,15 @@ export function DealRoomPortfolio() {
           <div className="deal-container">
             <div className="chapter-label-strip">
               <span className="chapter-label-num">Chapter 01 / The closes</span>
-              <span className="chapter-label-name">Corporate Ledger</span>
+              <span className="chapter-label-name">Execution & Leverage</span>
             </div>
 
-            <h2 className="serif" style={{ fontSize: 'clamp(2.8rem, 6vw, 5.5rem)', color: 'var(--ink)', marginBottom: '32px' }}>
-              20 brands said <span className="brass-italic">yes</span>.
+            <h2 className="serif" style={{ fontSize: 'clamp(2.8rem, 6vw, 5.5rem)', color: 'var(--ink)', marginBottom: '16px' }}>
+              Closing without warm <span className="brass-italic">introductions</span>.
             </h2>
+            <p style={{ color: 'rgba(10,18,16,0.65)', fontSize: 'clamp(15px, 1.3vw, 18px)', maxWidth: '58ch', marginBottom: '32px', lineHeight: 1.5 }}>
+              How a student engineer closed 20 corporate partners and ₹13,00,000 in capital through disciplined 30-day cold outreach cycles. Execution speed, not institutional pedigree.
+            </p>
 
             {/* Category Filter Tabs + Counter */}
             <div className="brand-ledger-controls">
@@ -725,9 +728,12 @@ export function DealRoomPortfolio() {
               <span className="chapter-label-name">Engineered Systems</span>
             </div>
 
-            <h2 className="serif" style={{ fontSize: 'clamp(2.8rem, 6vw, 5.5rem)', color: 'var(--bone)', marginBottom: '48px' }}>
-              Things I've <span className="brass-italic">shipped</span>.
+            <h2 className="serif" style={{ fontSize: 'clamp(2.8rem, 6vw, 5.5rem)', color: 'var(--bone)', marginBottom: '16px' }}>
+              Systems engineered from first <span className="brass-italic">principles</span>.
             </h2>
+            <p style={{ color: 'var(--stone)', fontSize: 'clamp(15px, 1.3vw, 18px)', maxWidth: '58ch', marginBottom: '48px', lineHeight: 1.5 }}>
+              Applied machine learning pipelines, CV damage classifiers, and hardware rovers built with production rigor. Live GitHub synchronization.
+            </p>
 
             {/* Typographic list */}
             <div className="builds-list">
