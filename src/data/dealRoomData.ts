@@ -67,6 +67,8 @@ export const dealRoomData = {
     name: 'Ayush S Kulkarni',
     email: 'ayushak12n@gmail.com',
     phone: '+91 866 069 7430',
+    phoneRaw: '+918660697430',
+    whatsappUrl: 'https://wa.me/918660697430?text=Hi%20Ayush%2C%20let%27s%20discuss%20an%20AI%20engineering%20role%20%2F%20deal.',
     location: 'Bengaluru, India',
     githubUrl: 'https://github.com/snixxfs',
     linkedinUrl: 'https://linkedin.com/in/ayushsk',

@@ -1610,6 +1610,755 @@ body {
 }
 
 /* ------------------------------------------------------------
+   NEW CRAZY ANIMATIONS & DIRECT TRANSMISSION (DEAL ROOM V3+)
+   ------------------------------------------------------------ */
+
+/* 1. Hero Constellation Canvas */
+.hero-constellation-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* 2. Topbar Live Phone Hotline & Sound Toggle */
+.deal-topbar__hotline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background-color: rgba(184, 151, 90, 0.08);
+  border: 1px solid rgba(184, 151, 90, 0.35);
+  border-radius: 999px;
+  color: var(--bone);
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  transition: all 0.25s var(--ease-editorial);
+}
+
+.deal-topbar__hotline:hover {
+  background-color: var(--brass);
+  color: var(--obsidian);
+  border-color: var(--brass);
+}
+
+.live-hotline-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #4ADE80;
+  box-shadow: 0 0 8px #4ADE80;
+  animation: pulse-hotline 1.8s infinite;
+}
+
+@keyframes pulse-hotline {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.8); }
+}
+
+.deal-topbar__sound-btn {
+  background: none;
+  border: 1px solid var(--rule-dark);
+  color: var(--bone);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.deal-topbar__sound-btn:hover {
+  border-color: var(--brass);
+  background-color: rgba(184, 151, 90, 0.1);
+}
+
+/* 3. Chapter 05 VIP Hotwire Card */
+.close-vip-hotwire {
+  margin-block: 48px;
+  padding: clamp(24px, 4vw, 36px);
+  background: linear-gradient(135deg, rgba(184, 151, 90, 0.06) 0%, rgba(10, 18, 16, 0.8) 100%);
+  border: 1px solid rgba(184, 151, 90, 0.4);
+  position: relative;
+}
+
+.close-vip-hotwire__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brass);
+  margin-bottom: 24px;
+}
+
+.live-pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #4ADE80;
+  box-shadow: 0 0 10px #4ADE80;
+  animation: pulse-hotline 1.5s infinite;
+}
+
+.close-vip-hotwire__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.close-vip-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px;
+  background-color: rgba(10, 18, 16, 0.6);
+  border: 1px solid var(--rule-dark);
+}
+
+.close-vip-item__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.close-vip-item__type {
+  font-family: var(--font-body);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--stone);
+}
+
+.close-vip-item__val {
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 2.2vw, 2rem);
+  color: var(--bone);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.close-vip-item__sub {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--stone);
+}
+
+.close-vip-item__btns {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.close-vip-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.25s var(--ease-editorial);
+  border: 1px solid transparent;
+}
+
+.close-vip-btn--call {
+  background-color: var(--brass);
+  color: var(--obsidian);
+  flex: 1;
+}
+
+.close-vip-btn--call:hover {
+  background-color: var(--brass-hi);
+  transform: translateY(-1px);
+}
+
+.close-vip-btn--copy {
+  background: none;
+  border-color: var(--rule-dark);
+  color: var(--bone);
+}
+
+.close-vip-btn--copy:hover {
+  border-color: var(--brass);
+  color: var(--brass);
+}
+
+.close-vip-btn--wa {
+  background-color: #25D366;
+  color: #0A1210;
+  width: 100%;
+  font-weight: 600;
+}
+
+.close-vip-btn--wa:hover {
+  background-color: #34E075;
+  transform: translateY(-1px);
+}
+
+/* 4. CHAPTER 06: THE BIOMETRIC VAULT */
+.biometric-vault-section {
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 50%, #11221D 0%, #0A1210 75%);
+  border-top: 1px solid var(--rule-dark);
+  padding-block: clamp(100px, 14vw, 200px);
+}
+
+.vault-header {
+  text-align: center;
+  max-width: 680px;
+  margin-inline: auto;
+  margin-bottom: clamp(48px, 6vw, 72px);
+}
+
+.vault-status-tag {
+  color: var(--brass);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+.vault-headline {
+  font-size: clamp(3rem, 6.5vw, 6rem);
+  color: var(--bone);
+  line-height: 0.95;
+  margin-bottom: 20px;
+}
+
+.vault-subheadline {
+  font-family: var(--font-body);
+  font-size: clamp(15px, 1.3vw, 18px);
+  color: var(--stone);
+  line-height: 1.5;
+}
+
+.vault-hub {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 440px;
+  position: relative;
+}
+
+/* Vault Scanner Wrap */
+.vault-scanner-wrap {
+  position: relative;
+  width: 360px;
+  height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vault-oscilloscope-canvas {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* Concentric Rotating Brass Rings */
+.vault-rotating-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px dashed rgba(184, 151, 90, 0.3);
+  pointer-events: none;
+}
+
+.vault-rotating-ring--outer {
+  width: 320px;
+  height: 320px;
+  animation: vault-spin 40s linear infinite;
+}
+
+.vault-rotating-ring--outer.is-fast {
+  animation-duration: 4s;
+  border-color: rgba(184, 151, 90, 0.8);
+}
+
+.vault-rotating-ring--inner {
+  width: 240px;
+  height: 240px;
+  border-style: dotted;
+  animation: vault-spin-reverse 28s linear infinite;
+}
+
+.vault-rotating-ring--inner.is-reverse {
+  animation-duration: 3s;
+  border-color: rgba(184, 151, 90, 0.9);
+}
+
+@keyframes vault-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes vault-spin-reverse {
+  0% { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* Central Biometric Thumb Target */
+.vault-thumb-target {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(184, 151, 90, 0.12) 0%, rgba(10, 18, 16, 0.9) 70%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+  transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+  box-shadow: 0 0 24px rgba(184, 151, 90, 0.15);
+}
+
+.vault-thumb-target:hover {
+  transform: scale(1.04);
+}
+
+.vault-thumb-target.is-holding {
+  transform: scale(0.96);
+  box-shadow: 0 0 50px rgba(184, 151, 90, 0.45);
+}
+
+.vault-thumb-svg {
+  width: 64px;
+  height: 64px;
+  color: var(--brass);
+  transition: color 0.2s;
+  z-index: 2;
+}
+
+.vault-thumb-target.is-holding .vault-thumb-svg {
+  color: var(--brass-hi);
+  filter: drop-shadow(0 0 8px rgba(212, 182, 122, 0.8));
+}
+
+/* Progress circle overlay */
+.vault-progress-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+  pointer-events: none;
+}
+
+.vault-laser-line {
+  position: absolute;
+  left: 20%;
+  width: 60%;
+  height: 2px;
+  background-color: #D4B67A;
+  box-shadow: 0 0 12px #D4B67A, 0 0 4px #FFFFFF;
+  z-index: 3;
+  animation: laser-sweep 0.9s ease-in-out infinite alternate;
+}
+
+@keyframes laser-sweep {
+  0% { top: 25%; }
+  100% { top: 75%; }
+}
+
+.vault-thumb-label {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+.vault-pct {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--brass);
+}
+
+/* Telemetry Readout */
+.vault-telemetry {
+  position: absolute;
+  bottom: -48px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+.vault-telemetry-item {
+  font-family: var(--font-body);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--stone);
+}
+
+/* 5. SEALED & UNLOCKED STATE CARD */
+.vault-unlocked-card {
+  max-width: 640px;
+  width: 100%;
+  background: linear-gradient(145deg, #132420 0%, #0A1210 100%);
+  border: 1px solid var(--brass);
+  box-shadow: 0 0 80px rgba(184, 151, 90, 0.25);
+  padding: clamp(32px, 5vw, 56px);
+  position: relative;
+  animation: vault-card-appear 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes vault-card-appear {
+  0% { opacity: 0; transform: scale(0.92) translateY(24px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* Golden Foil Seal Stamp */
+.vault-seal-stamp {
+  position: absolute;
+  top: -36px;
+  right: 32px;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #D4B67A 0%, #B8975A 60%, #8C6F34 100%);
+  border: 2px solid #EDE8DC;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(255, 255, 255, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-12deg);
+}
+
+.vault-seal-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #0A1210;
+  font-family: var(--font-serif);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  line-height: 1.1;
+}
+
+.vault-seal-star {
+  font-size: 8px;
+}
+
+.vault-seal-text {
+  font-size: 7px;
+  letter-spacing: 0.08em;
+}
+
+.vault-seal-sub {
+  font-size: 6px;
+  text-transform: uppercase;
+}
+
+.vault-card-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #4ADE80;
+  margin-bottom: 16px;
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #4ADE80;
+  box-shadow: 0 0 10px #4ADE80;
+  animation: pulse-hotline 1.4s infinite;
+}
+
+.vault-card-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  color: var(--bone);
+  margin-bottom: 12px;
+  font-weight: 400;
+}
+
+.vault-card-desc {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--stone);
+  line-height: 1.5;
+  margin-bottom: 32px;
+}
+
+.vault-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.vault-action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  text-decoration: none;
+  transition: all 0.25s var(--ease-editorial);
+  border: 1px solid transparent;
+}
+
+.vault-action-btn--primary {
+  background-color: var(--brass);
+  color: var(--obsidian);
+}
+
+.vault-action-btn--primary:hover {
+  background-color: var(--brass-hi);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(184, 151, 90, 0.3);
+}
+
+.vault-action-btn--secondary {
+  background-color: #25D366;
+  color: #0A1210;
+}
+
+.vault-action-btn--secondary:hover {
+  background-color: #34E075;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3);
+}
+
+.vault-btn-icon {
+  font-size: 20px;
+}
+
+.vault-btn-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.vault-btn-label {
+  font-family: var(--font-body);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.vault-btn-val {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.vault-btn-arrow {
+  font-size: 18px;
+}
+
+.vault-secondary-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.vault-link-pill {
+  background: none;
+  border: none;
+  color: var(--stone);
+  font-family: var(--font-body);
+  font-size: 12px;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.vault-link-pill:hover {
+  color: var(--brass);
+}
+
+.vault-ticket {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  padding: 16px;
+  background-color: rgba(10, 18, 16, 0.7);
+  border: 1px solid var(--rule-dark);
+  margin-bottom: 32px;
+}
+
+.vault-ticket-col {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.vault-footer-tools {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--rule-dark);
+}
+
+.vault-overdrive-btn {
+  background: none;
+  border: 1px solid var(--brass);
+  color: var(--brass);
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: all 0.25s var(--ease-editorial);
+}
+
+.vault-overdrive-btn:hover,
+.vault-overdrive-btn.is-active {
+  background-color: var(--brass);
+  color: var(--obsidian);
+}
+
+.vault-reset-btn {
+  background: none;
+  border: none;
+  color: var(--stone);
+  font-family: var(--font-body);
+  font-size: 12px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.vault-reset-btn:hover {
+  color: var(--bone);
+}
+
+/* 6. GOLDEN RADAR / OVERDRIVE MODE */
+.overdrive-mode {
+  --obsidian: #060D0B;
+  --brass: #E0C070;
+  --bone: #FFF8E7;
+}
+
+.overdrive-mode::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 99999;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(184, 151, 90, 0.04) 0px,
+    rgba(184, 151, 90, 0.04) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+}
+
+/* 7. MOBILE FIXED EXECUTIVE DOCK (< 768px) */
+.mobile-executive-dock {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-executive-dock {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 64px;
+    background-color: rgba(10, 18, 16, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-top: 1px solid rgba(184, 151, 90, 0.35);
+    z-index: 990;
+    justify-content: space-around;
+    align-items: center;
+    padding-inline: 12px;
+  }
+
+  .dock-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    text-decoration: none;
+    background: none;
+    border: none;
+    color: var(--bone);
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    padding: 6px 16px;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+  }
+
+  .dock-item:active {
+    background-color: rgba(184, 151, 90, 0.15);
+  }
+
+  .dock-item--call {
+    color: var(--brass);
+  }
+
+  .dock-item--wa {
+    color: #25D366;
+  }
+
+  .dock-item--vault {
+    color: #FACC15;
+  }
+
+  .dock-icon {
+    font-size: 18px;
+    line-height: 1;
+  }
+
+  .dock-label {
+    font-weight: 500;
+  }
+
+  /* Give body extra bottom clearance on mobile for dock */
+  body {
+    padding-bottom: 68px;
+  }
+}
+
+/* ------------------------------------------------------------
    REDUCED MOTION SUPPORT
    ------------------------------------------------------------ */
 @media (prefers-reduced-motion: reduce) {
