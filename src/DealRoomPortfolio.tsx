@@ -9,10 +9,7 @@ import {
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Lenis from 'lenis'
-import { BiometricVault } from './components/BiometricVault'
 import { HeroConstellation } from './components/HeroConstellation'
-import { soundEngine } from './utils/audioEngine'
-import { scrambleElement } from './utils/scrambleText'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -254,7 +251,6 @@ export function DealRoomPortfolio() {
       'chapter-03',
       'chapter-04',
       'chapter-05',
-      'chapter-06',
     ]
 
     const handleScroll = () => {
@@ -466,24 +462,12 @@ export function DealRoomPortfolio() {
           Ayush S Kulkarni
         </a>
 
-        {/* Live Phone Hotline Badge (Visible on all screens) */}
-        <a
-          href={`tel:${dealRoomData.profile.phone.replace(/\s+/g, '')}`}
-          className="deal-topbar__hotline"
-          title="Direct Priority Mobile Call to Ayush"
-          onClick={() => soundEngine.tick()}
-        >
-          <span className="live-hotline-dot" />
-          <span className="deal-topbar__hotline-text tabular">{dealRoomData.profile.phone}</span>
-        </a>
-
         <nav className="deal-topbar__nav">
           {[
             { id: 'chapter-03', label: 'Work' },
             { id: 'chapter-02', label: 'Leadership' },
             { id: 'chapter-04', label: 'Voices' },
             { id: 'chapter-05', label: 'Contact' },
-            { id: 'chapter-06', label: 'Vault ⚡' },
           ].map((item) => (
             <a
               key={item.id}
@@ -491,7 +475,6 @@ export function DealRoomPortfolio() {
               className="deal-topbar__link"
               onClick={(e) => {
                 e.preventDefault()
-                soundEngine.tick()
                 scrollTo(item.id)
               }}
             >
@@ -501,24 +484,9 @@ export function DealRoomPortfolio() {
           <a
             href={`mailto:${dealRoomData.profile.email}`}
             className="deal-topbar__cta"
-            onClick={() => soundEngine.tick()}
           >
             Email me
           </a>
-          <button
-            type="button"
-            className="deal-topbar__sound-btn"
-            onClick={() => {
-              const next = !soundMuted
-              setSoundMuted(next)
-              soundEngine.enabled = !next
-              if (!next) soundEngine.tick()
-            }}
-            title={soundMuted ? 'Unmute tactical audio' : 'Mute tactical audio'}
-            aria-label="Toggle sound effects"
-          >
-            {soundMuted ? '🔇' : '🔊'}
-          </button>
         </nav>
       </header>
 
@@ -531,16 +499,12 @@ export function DealRoomPortfolio() {
           { id: 'chapter-03', num: '03', label: 'The Builds' },
           { id: 'chapter-04', num: '04', label: 'The Voices' },
           { id: 'chapter-05', num: '05', label: 'The Close' },
-          { id: 'chapter-06', num: '06', label: 'The Vault' },
         ].map((ch) => (
           <div className="chapter-rail__item" key={ch.id}>
             <button
               type="button"
               className={`chapter-rail__btn ${activeChapter === ch.id ? 'is-active' : ''}`}
-              onClick={() => {
-                soundEngine.tick()
-                scrollTo(ch.id)
-              }}
+              onClick={() => scrollTo(ch.id)}
               aria-label={`Jump to ${ch.num}: ${ch.label}`}
             >
               <span className="chapter-rail__label">{ch.label}</span>
@@ -987,66 +951,16 @@ export function DealRoomPortfolio() {
                 href={`tel:${dealRoomData.profile.phone.replace(/\s+/g, '')}`}
                 className="close-social-link"
               >
-                Direct Call ↗
+                Direct Call ({dealRoomData.profile.phone}) ↗
               </a>
-            </div>
-
-            {/* VIP Direct Mobile & WhatsApp Hotwire Card */}
-            <div className="close-vip-hotwire">
-              <div className="close-vip-hotwire__badge">
-                <span className="live-pulse-dot" /> VERIFIED DIRECT HOTWIRE
-              </div>
-              <div className="close-vip-hotwire__grid">
-                {/* 1. Direct Phone Call */}
-                <div className="close-vip-item">
-                  <div className="close-vip-item__meta">
-                    <span className="close-vip-item__type">DIRECT MOBILE PHONE</span>
-                    <strong className="close-vip-item__val tabular">{dealRoomData.profile.phone}</strong>
-                    <span className="close-vip-item__sub">Instant voice line on Bengaluru cellular network</span>
-                  </div>
-                  <div className="close-vip-item__btns">
-                    <a
-                      href={`tel:${dealRoomData.profile.phone.replace(/\s+/g, '')}`}
-                      className="close-vip-btn close-vip-btn--call"
-                      onClick={() => soundEngine.tick()}
-                    >
-                      📞 Call Ayush Now
-                    </a>
-                    <button
-                      type="button"
-                      className="close-vip-btn close-vip-btn--copy"
-                      onClick={() => {
-                        soundEngine.tick()
-                        navigator.clipboard.writeText(dealRoomData.profile.phone.replace(/\s+/g, ''))
-                        setCopiedPhone(true)
-                        setTimeout(() => setCopiedPhone(false), 2400)
-                      }}
-                    >
-                      {copiedPhone ? '✓ Copied' : 'Copy'}
-                    </button>
-                  </div>
-                </div>
-
-                {/* 2. WhatsApp Direct */}
-                <div className="close-vip-item">
-                  <div className="close-vip-item__meta">
-                    <span className="close-vip-item__type">DIRECT WHATSAPP LINE</span>
-                    <strong className="close-vip-item__val">Instant Chat Dispatch</strong>
-                    <span className="close-vip-item__sub">Direct WhatsApp link with pre-filled intro</span>
-                  </div>
-                  <div className="close-vip-item__btns">
-                    <a
-                      href={dealRoomData.profile.whatsappUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="close-vip-btn close-vip-btn--wa"
-                      onClick={() => soundEngine.tick()}
-                    >
-                      💬 Message on WhatsApp ↗
-                    </a>
-                  </div>
-                </div>
-              </div>
+              <a
+                href={dealRoomData.profile.whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="close-social-link"
+              >
+                WhatsApp ↗
+              </a>
             </div>
 
             {/* Complete Technical Stack (Restored from Original Site) */}
@@ -1088,61 +1002,14 @@ export function DealRoomPortfolio() {
               <button
                 type="button"
                 className="close-back-to-top"
-                onClick={() => {
-                  soundEngine.tick()
-                  scrollTo('chapter-00')
-                }}
+                onClick={() => scrollTo('chapter-00')}
               >
                 Back to top ↑
               </button>
             </footer>
           </div>
         </section>
-
-        {/* ============================================================
-            CHAPTER 06: THE BIOMETRIC VAULT (INTERACTIVE CLIMAX)
-            ============================================================ */}
-        <BiometricVault
-          onInteractiveEnter={onInteractiveEnter}
-          onInteractiveLeave={onInteractiveLeave}
-        />
       </main>
-
-      {/* Mobile Fixed Executive Dock (Visible only on mobile screens < 768px) */}
-      <nav className="mobile-executive-dock" aria-label="Direct mobile action dock">
-        <a
-          href={`tel:${dealRoomData.profile.phone.replace(/\s+/g, '')}`}
-          className="dock-item dock-item--call"
-          aria-label="Direct mobile call to Ayush"
-          onClick={() => soundEngine.tick()}
-        >
-          <span className="dock-icon">📞</span>
-          <span className="dock-label">Call Now</span>
-        </a>
-        <a
-          href={dealRoomData.profile.whatsappUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="dock-item dock-item--wa"
-          aria-label="Open WhatsApp chat with Ayush"
-          onClick={() => soundEngine.tick()}
-        >
-          <span className="dock-icon">💬</span>
-          <span className="dock-label">WhatsApp</span>
-        </a>
-        <button
-          type="button"
-          className="dock-item dock-item--vault"
-          onClick={() => {
-            soundEngine.tick()
-            scrollTo('chapter-06')
-          }}
-          aria-label="Jump to Biometric Deal Vault"
-        >
-          <span className="dock-icon">⚡</span>
-          <span className="dock-label">Seal Deal</span>
-        </button>
-      </nav>
     </div>
   )
 }
