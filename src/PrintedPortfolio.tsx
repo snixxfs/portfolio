@@ -282,11 +282,7 @@ export function PrintedPortfolio() {
               </span>
               <span className="hero-editorial__line">
                 {'KULKARNI'.split('').map((char, i) => (
-                  <span
-                    className="hero-letter-reveal"
-                    key={i}
-                    style={char === 'K' ? { color: 'var(--accent)' } : undefined}
-                  >
+                  <span className="hero-letter-reveal" key={i}>
                     {char}
                   </span>
                 ))}
