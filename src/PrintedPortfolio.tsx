@@ -6,6 +6,7 @@ import {
   type StrengthItem,
   type LeadershipItem,
   type EditorialProject,
+  type Testimonial,
 } from './data/printedData'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -26,7 +27,7 @@ export function PrintedPortfolio() {
   const horizontalTrackRef = useRef<HTMLDivElement>(null)
   const horizontalWrapRef = useRef<HTMLDivElement>(null)
 
-  // 1. Loader Curtain Animation (0 -> 100 counter, then ink wipe out)
+  // 1. Loader Curtain Animation
   useEffect(() => {
     let count = 0
     const interval = setInterval(() => {
@@ -35,8 +36,6 @@ export function PrintedPortfolio() {
         count = 100
         clearInterval(interval)
         setCounterVal(100)
-
-        // Curtain wipe up
         if (loaderRef.current) {
           gsap.to(loaderRef.current, {
             yPercent: -100,
@@ -51,52 +50,34 @@ export function PrintedPortfolio() {
         setCounterVal(count)
       }
     }, 45)
-
     return () => clearInterval(interval)
   }, [])
 
-  // 2. Custom Cursor (Ink dot -> Accent circle)
+  // 2. Custom Cursor
   useEffect(() => {
     const cursor = cursorRef.current
     if (!cursor) return
-
     const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches
     if (!finePointer) return
-
     const moveCursor = (e: MouseEvent) => {
-      gsap.to(cursor, {
-        x: e.clientX,
-        y: e.clientY,
-        duration: 0.12,
-        ease: 'power2.out',
-      })
-
-      // Move float card if brand hovered
+      gsap.to(cursor, { x: e.clientX, y: e.clientY, duration: 0.12, ease: 'power2.out' })
       if (floatCardRef.current && hoveredBrand) {
-        gsap.to(floatCardRef.current, {
-          x: e.clientX + 20,
-          y: e.clientY + 20,
-          duration: 0.25,
-          ease: 'power2.out',
-        })
+        gsap.to(floatCardRef.current, { x: e.clientX + 20, y: e.clientY + 20, duration: 0.25, ease: 'power2.out' })
       }
     }
-
     window.addEventListener('mousemove', moveCursor)
     return () => window.removeEventListener('mousemove', moveCursor)
   }, [hoveredBrand])
 
-  // 3. Horizontal Scroll Pin for Leadership Section (Desktop Only)
+  // 3. Horizontal Scroll Pin for Leadership (Desktop Only)
   useEffect(() => {
     if (!loaderComplete) return
     const track = horizontalTrackRef.current
     const wrap = horizontalWrapRef.current
     if (!track || !wrap) return
-
     const mm = gsap.matchMedia()
     mm.add('(min-width: 769px)', () => {
       const getScrollAmount = () => -(track.scrollWidth - window.innerWidth + 120)
-
       const tween = gsap.to(track, {
         x: getScrollAmount,
         ease: 'none',
@@ -109,35 +90,22 @@ export function PrintedPortfolio() {
           invalidateOnRefresh: true,
         },
       })
-
-      return () => {
-        tween.kill()
-      }
+      return () => { tween.kill() }
     })
-
     return () => mm.revert()
   }, [loaderComplete])
 
-  // 4. Hero Staggered Typography Reveal
+  // 4. Hero Typography Reveal
   useEffect(() => {
     if (!loaderComplete) return
-
     const letters = document.querySelectorAll('.hero-letter-reveal')
     gsap.fromTo(
       letters,
       { yPercent: 120, opacity: 0 },
-      {
-        yPercent: 0,
-        opacity: 1,
-        duration: 1.1,
-        stagger: 0.04,
-        ease: 'power4.out',
-        delay: 0.1,
-      }
+      { yPercent: 0, opacity: 1, duration: 1.1, stagger: 0.04, ease: 'power4.out', delay: 0.1 }
     )
   }, [loaderComplete])
 
-  // Filtered brands
   const filteredBrands = personalData.brands.filter(
     (b: BrandItem) => selectedBrandCategory === 'All' || b.category === selectedBrandCategory
   )
@@ -145,10 +113,28 @@ export function PrintedPortfolio() {
   const scrollTo = (id: string) => {
     setMenuOpen(false)
     const el = document.getElementById(id)
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' })
-    }
+    if (el) el.scrollIntoView({ behavior: 'smooth' })
   }
+
+  // Note rotation classes for testimonial masonry
+  const noteRotations = ['-1.5deg', '1deg', '-2deg', '0.5deg', '-1deg', '2deg', '1.5deg', '-0.5deg', '1.8deg', '-1.2deg', '0.8deg', '-2.2deg', '1.3deg', '-0.7deg', '1.6deg']
+  const noteBgs = [
+    'var(--paper)',
+    'var(--paper-dark)',
+    'var(--paper)',
+    'var(--paper-dark)',
+    'var(--highlight)',
+    'var(--paper)',
+    'var(--paper-dark)',
+    'var(--paper)',
+    'var(--paper-dark)',
+    'var(--highlight)',
+    'var(--paper)',
+    'var(--paper-dark)',
+    'var(--paper)',
+    'var(--paper-dark)',
+    'var(--highlight)',
+  ]
 
   return (
     <div className="printed-site-root">
@@ -186,12 +172,8 @@ export function PrintedPortfolio() {
             <span>Ayush S Kulkarni</span>
           </div>
           <div className="curtain-loader__center">
-            <h1 className="curtain-loader__word">
-              <span>AYUSH</span>
-            </h1>
-            <h1 className="curtain-loader__word">
-              <span style={{ fontStyle: 'italic' }}>KULKARNI</span>
-            </h1>
+            <h1 className="curtain-loader__word"><span>AYUSH</span></h1>
+            <h1 className="curtain-loader__word"><span style={{ fontStyle: 'italic' }}>KULKARNI</span></h1>
           </div>
           <div className="curtain-loader__bottom">
             <span className="curtain-loader__counter">{counterVal}%</span>
@@ -203,82 +185,33 @@ export function PrintedPortfolio() {
       {/* Sticky Minimal Navigation */}
       <header className="editorial-nav">
         <div className="editorial-nav__inner">
-          <a
-            href="#hero"
-            className="editorial-nav__brand"
-            onClick={(e) => {
-              e.preventDefault()
-              scrollTo('hero')
-            }}
-          >
+          <a href="#hero" className="editorial-nav__brand" onClick={(e) => { e.preventDefault(); scrollTo('hero') }}>
             Ayush S Kulkarni
           </a>
-
           <div className="editorial-nav__right">
             <nav className="editorial-nav__links">
-              <a
-                href="#about"
-                className="editorial-nav__link"
-                onClick={(e) => {
-                  e.preventDefault()
-                  scrollTo('about')
-                }}
-              >
-                About
-              </a>
-              <a
-                href="#impact"
-                className="editorial-nav__link"
-                onClick={(e) => {
-                  e.preventDefault()
-                  scrollTo('impact')
-                }}
-              >
-                Impact
-              </a>
-              <a
-                href="#leadership"
-                className="editorial-nav__link"
-                onClick={(e) => {
-                  e.preventDefault()
-                  scrollTo('leadership')
-                }}
-              >
-                Leadership
-              </a>
-              <a
-                href="#brands"
-                className="editorial-nav__link"
-                onClick={(e) => {
-                  e.preventDefault()
-                  scrollTo('brands')
-                }}
-              >
-                Brands
-              </a>
-              <a
-                href="#projects"
-                className="editorial-nav__link"
-                onClick={(e) => {
-                  e.preventDefault()
-                  scrollTo('projects')
-                }}
-              >
-                Work
-              </a>
+              {[
+                { id: 'about', label: 'About' },
+                { id: 'impact', label: 'Impact' },
+                { id: 'leadership', label: 'Leadership' },
+                { id: 'brands', label: 'Brands' },
+                { id: 'projects', label: 'Work' },
+                { id: 'community', label: 'Community' },
+                { id: 'stack', label: 'Stack' },
+              ].map(link => (
+                <a
+                  key={link.id}
+                  href={`#${link.id}`}
+                  className="editorial-nav__link"
+                  onClick={(e) => { e.preventDefault(); scrollTo(link.id) }}
+                >
+                  {link.label}
+                </a>
+              ))}
             </nav>
-
-            <a
-              href="#contact"
-              className="editorial-nav__cta"
-              onClick={(e) => {
-                e.preventDefault()
-                scrollTo('contact')
-              }}
-            >
-              Let’s talk →
+            <a href="#contact" className="editorial-nav__cta" onClick={(e) => { e.preventDefault(); scrollTo('contact') }}>
+              Let's talk →
             </a>
-
             <button
               type="button"
               className="editorial-nav__menu-trigger"
@@ -292,28 +225,20 @@ export function PrintedPortfolio() {
       </header>
 
       {/* Fullscreen Menu Overlay */}
-      <div
-        className={`menu-overlay ${menuOpen ? 'menu-overlay--open' : ''}`}
-        aria-hidden={!menuOpen}
-      >
+      <div className={`menu-overlay ${menuOpen ? 'menu-overlay--open' : ''}`} aria-hidden={!menuOpen}>
         <div className="menu-overlay__header">
           <span>PORTFOLIO INDEX // ISSUE 2026</span>
-          <button
-            type="button"
-            className="menu-overlay__close"
-            onClick={() => setMenuOpen(false)}
-          >
+          <button type="button" className="menu-overlay__close" onClick={() => setMenuOpen(false)}>
             Close [✕]
           </button>
         </div>
-
         <ul className="menu-overlay__list">
           {[
             { num: '01', label: 'Intro & Persona', id: 'hero' },
             { num: '02', label: 'About & Cold Pitching', id: 'about' },
             { num: '03', label: 'The Numbers (Impact)', id: 'impact' },
             { num: '04', label: 'Core Strengths', id: 'strengths' },
-            { num: '05', label: 'Leadership Horizontal', id: 'leadership' },
+            { num: '05', label: 'Leadership & Roles', id: 'leadership' },
             { num: '06', label: 'Venture & CEDAT', id: 'venture' },
             { num: '07', label: '20 Brands Said Yes', id: 'brands' },
             { num: '08', label: 'Selected Projects', id: 'projects' },
@@ -322,28 +247,16 @@ export function PrintedPortfolio() {
             { num: '11', label: 'Direct Correspondence', id: 'contact' },
           ].map((item) => (
             <li key={item.id}>
-              <a
-                href={`#${item.id}`}
-                className="menu-overlay__link"
-                onClick={(e) => {
-                  e.preventDefault()
-                  scrollTo(item.id)
-                }}
-              >
+              <a href={`#${item.id}`} className="menu-overlay__link" onClick={(e) => { e.preventDefault(); scrollTo(item.id) }}>
                 <span className="num">{item.num}</span>
                 <span>{item.label}</span>
               </a>
             </li>
           ))}
         </ul>
-
         <div className="menu-overlay__footer">
           <span>Ayush S Kulkarni · Bengaluru, India</span>
-          <a
-            href="mailto:ayushak12n@gmail.com"
-            className="editorial-link"
-            style={{ color: 'var(--paper)' }}
-          >
+          <a href="mailto:ayushak12n@gmail.com" className="editorial-link" style={{ color: 'var(--paper)' }}>
             ayushak12n@gmail.com
           </a>
         </div>
@@ -380,11 +293,10 @@ export function PrintedPortfolio() {
               </span>
             </h1>
 
-            {/* Photo overlapping the K */}
-            <div className="hero-editorial__portrait-overlap photo-framed">
-              <div className="photo-tape" aria-hidden="true" />
-              <div className="hero-editorial__portrait-img" role="img" aria-label="Ayush portrait" />
-              <span className="marginalia" style={{ marginTop: '8px', fontSize: '15px' }}>
+            {/* AK Monogram — replaces portrait */}
+            <div className="hero-editorial__monogram" aria-label="AK initials monogram">
+              <span className="hero-editorial__monogram-text">AK</span>
+              <span className="sticker" style={{ display: 'block', marginTop: '10px', fontSize: '11px' }}>
                 Bengaluru, 2026 ↗
               </span>
             </div>
@@ -394,31 +306,15 @@ export function PrintedPortfolio() {
             <p className="hero-editorial__pitch">
               "{personalData.heroIntro}"
             </p>
-
             <div className="hero-editorial__actions">
               <div className="hero-editorial__links-row">
-                <a
-                  href="#brands"
-                  className="hero-editorial__text-link"
-                  onClick={(e) => {
-                    e.preventDefault()
-                    scrollTo('brands')
-                  }}
-                >
+                <a href="#brands" className="hero-editorial__text-link" onClick={(e) => { e.preventDefault(); scrollTo('brands') }}>
                   See the 20 brands
                 </a>
-                <a
-                  href="#projects"
-                  className="hero-editorial__text-link"
-                  onClick={(e) => {
-                    e.preventDefault()
-                    scrollTo('projects')
-                  }}
-                >
+                <a href="#projects" className="hero-editorial__text-link" onClick={(e) => { e.preventDefault(); scrollTo('projects') }}>
                   Inspect code & systems
                 </a>
               </div>
-
               <div className="hero-editorial__scroll-indicator">
                 <span>Scroll to turn page</span>
                 <span aria-hidden="true">↓</span>
@@ -437,17 +333,30 @@ export function PrintedPortfolio() {
           </div>
 
           <div className="about-editorial__grid">
+            {/* Left: Sticky fact sheet — no portrait */}
             <div className="about-editorial__left-sticky">
-              <div className="about-editorial__photo-card photo-framed">
-                <div className="photo-tape" aria-hidden="true" />
-                <div
-                  className="about-editorial__photo"
-                  role="img"
-                  aria-label="Ayush S Kulkarni at RV University"
-                />
-                <span className="about-editorial__caption">
-                  [PHOTO PLACEHOLDER: Ayush S Kulkarni, RV University campus, Bengaluru]
-                </span>
+              <div className="about-editorial__fact-sheet">
+                <div className="about-editorial__fact-pullquote">
+                  {personalData.factSheet.pullQuote}
+                </div>
+                <dl className="about-editorial__fact-list">
+                  <div className="about-editorial__fact-row">
+                    <dt className="mono">Based in</dt>
+                    <dd>{personalData.factSheet.basedIn}</dd>
+                  </div>
+                  <div className="about-editorial__fact-row">
+                    <dt className="mono">Studying</dt>
+                    <dd>{personalData.factSheet.studying}</dd>
+                  </div>
+                  <div className="about-editorial__fact-row">
+                    <dt className="mono">Currently</dt>
+                    <dd>{personalData.factSheet.currently}</dd>
+                  </div>
+                  <div className="about-editorial__fact-row">
+                    <dt className="mono">Also</dt>
+                    <dd>{personalData.factSheet.also}</dd>
+                  </div>
+                </dl>
               </div>
               <div className="about-editorial__marginalia-wrap">
                 <span className="marginalia marginalia--accent">
@@ -460,13 +369,9 @@ export function PrintedPortfolio() {
               <div className="about-editorial__scrub-text">
                 {personalData.aboutText[0]}
               </div>
-
               <div className="about-editorial__body-copy">
                 <p>{personalData.aboutText[1]}</p>
                 <p>{personalData.aboutText[2]}</p>
-                <p style={{ fontStyle: 'italic', color: 'var(--muted)' }}>
-                  [NOTE: Insert personal anecdote about the first cold email reply from Mercedes-Benz here.]
-                </p>
               </div>
             </div>
           </div>
@@ -512,16 +417,14 @@ export function PrintedPortfolio() {
                 <span className="strengths-editorial__num">{item.num}</span>
                 <h3 className="strengths-editorial__title">{item.title}</h3>
                 <p className="strengths-editorial__proof">{item.proof}</p>
-                <span className="strengths-editorial__arrow" aria-hidden="true">
-                  →
-                </span>
+                <span className="strengths-editorial__arrow" aria-hidden="true">→</span>
               </div>
             ))}
           </div>
         </section>
 
         {/* ============================================================
-            05. LEADERSHIP (HORIZONTAL PANELS)
+            05. LEADERSHIP (HORIZONTAL PANELS) — with numeral headers, no photos
             ============================================================ */}
         <section
           className="section-padding leadership-editorial"
@@ -547,19 +450,19 @@ export function PrintedPortfolio() {
                     <span className="leadership-panel__org">{panel.org}</span>
                   </div>
 
+                  {/* Large outlined numeral instead of photo */}
+                  <div className="leadership-panel__numeral" aria-hidden="true">
+                    {panel.numeral}
+                  </div>
+
                   <div>
                     <h3 className="leadership-panel__role">{panel.role}</h3>
                     <p className="leadership-panel__desc">{panel.story}</p>
-                    <div style={{ marginTop: '16px' }}>
-                      <span className="marginalia" style={{ fontSize: '16px' }}>
-                        [Record #{idx + 1}: Verified on-ground mandate]
-                      </span>
-                    </div>
                   </div>
 
                   <div className="leadership-panel__footer">
                     <span className="leadership-panel__tag">{panel.tag}</span>
-                    <span className="mono">0{idx + 1} / 03</span>
+                    <span className="mono">0{idx + 1} / 0{personalData.leadership.length}</span>
                   </div>
                 </article>
               ))}
@@ -586,9 +489,7 @@ export function PrintedPortfolio() {
               <p>{personalData.venture.p2}</p>
               <div className="venture-editorial__badge-row">
                 {personalData.venture.badges.map((b: string) => (
-                  <span className="sticker sticker--ink" key={b}>
-                    {b}
-                  </span>
+                  <span className="sticker sticker--ink" key={b}>{b}</span>
                 ))}
               </div>
             </div>
@@ -604,11 +505,10 @@ export function PrintedPortfolio() {
               <span className="section-meta-num">06 / PARTNERS</span>
               <span className="section-meta-name">Cold Outreach Results</span>
             </div>
-
             <h2 className="brands-editorial__title">20 brands said yes.</h2>
           </div>
 
-          {/* Marquee ticker of monochrome brand names */}
+          {/* Marquee ticker */}
           <div className="brands-editorial__marquee" aria-hidden="true">
             <div className="brands-editorial__marquee-track">
               {personalData.brands.concat(personalData.brands).map((b: BrandItem, idx: number) => (
@@ -622,15 +522,13 @@ export function PrintedPortfolio() {
           <div className="site-container">
             {/* Category Filter Tabs */}
             <div className="brands-editorial__filters" role="tablist">
-              {['All', 'Tech', 'Automotive', 'Lifestyle & F&B'].map((cat: string) => (
+              {(['All', 'Tech', 'Automotive', 'Lifestyle & F&B'] as const).map((cat) => (
                 <button
                   type="button"
                   key={cat}
                   role="tab"
                   aria-selected={selectedBrandCategory === cat}
-                  className={`brands-editorial__filter-btn ${
-                    selectedBrandCategory === cat ? 'is-active' : ''
-                  }`}
+                  className={`brands-editorial__filter-btn ${selectedBrandCategory === cat ? 'is-active' : ''}`}
                   onClick={() => setSelectedBrandCategory(cat)}
                 >
                   {cat}
@@ -638,7 +536,7 @@ export function PrintedPortfolio() {
               ))}
             </div>
 
-            {/* List with cursor follow */}
+            {/* Brand list */}
             <div className="brands-editorial__list">
               {filteredBrands.map((b: BrandItem) => (
                 <div
@@ -653,32 +551,24 @@ export function PrintedPortfolio() {
               ))}
             </div>
 
-            {/* 30-Day Cycles Drawn Line */}
+            {/* 30-Day Cycles Timeline */}
             <div className="brands-editorial__timeline">
-              <span className="mono" style={{ color: 'var(--accent)' }}>
-                EXECUTION PROTOCOL
-              </span>
+              <span className="mono" style={{ color: 'var(--accent)' }}>EXECUTION PROTOCOL</span>
               <div className="brands-editorial__timeline-steps">
                 <div className="brands-editorial__step">
                   <div className="brands-editorial__step-dot" />
                   <h4 className="brands-editorial__step-title">01. Cold Outreach</h4>
-                  <p className="brands-editorial__step-desc">
-                    Customized executive prospect lists, value proposition drafts, zero spam templates.
-                  </p>
+                  <p className="brands-editorial__step-desc">Customized executive prospect lists, value proposition drafts, zero spam templates.</p>
                 </div>
                 <div className="brands-editorial__step">
                   <div className="brands-editorial__step-dot" />
                   <h4 className="brands-editorial__step-title">02. Executive Pitch</h4>
-                  <p className="brands-editorial__step-desc">
-                    In-person & Zoom sponsor alignment calls presenting ROI, brand activations, and student demographics.
-                  </p>
+                  <p className="brands-editorial__step-desc">In-person & Zoom sponsor alignment calls presenting ROI, brand activations, and student demographics.</p>
                 </div>
                 <div className="brands-editorial__step">
                   <div className="brands-editorial__step-dot" />
                   <h4 className="brands-editorial__step-title">03. Deal Closure</h4>
-                  <p className="brands-editorial__step-desc">
-                    Contract signing, asset delivery, and multi-lakh in-kind/cash deployment.
-                  </p>
+                  <p className="brands-editorial__step-desc">Contract signing, asset delivery, and multi-lakh in-kind/cash deployment.</p>
                 </div>
               </div>
             </div>
@@ -686,7 +576,7 @@ export function PrintedPortfolio() {
         </section>
 
         {/* ============================================================
-            08. PROJECTS (ASYMMETRIC EDITORIAL LIST)
+            08. PROJECTS (TYPOGRAPHIC LIST — no screenshot placeholders)
             ============================================================ */}
         <section className="section-padding site-container" id="projects">
           <div className="section-meta-strip">
@@ -694,59 +584,61 @@ export function PrintedPortfolio() {
             <span className="section-meta-name">Engineered Systems</span>
           </div>
 
-          <div className="projects-editorial__list">
-            {personalData.projects.map((proj: EditorialProject) => (
-              <article className="project-entry" key={proj.id}>
-                <div className="project-entry__preview-wrap">
-                  <div
-                    className="project-entry__img"
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      backgroundColor: 'var(--paper-dark)',
-                      padding: '24px',
-                    }}
-                  >
-                    <span className="mono" style={{ color: 'var(--muted)', textAlign: 'center' }}>
-                      [SCREENSHOT PLACEHOLDER: {proj.title}]
-                    </span>
-                  </div>
+          <div className="projects-typo__list">
+            {personalData.projects.map((proj: EditorialProject, idx: number) => (
+              <article className="project-typo__row" key={proj.id}>
+                <div className="project-typo__meta">
+                  <span className="mono project-typo__year">{proj.year}</span>
+                  <span className="mono project-typo__index">0{idx + 1}</span>
                 </div>
-
-                <div className="project-entry__info">
-                  <div className="project-entry__year-tag">
-                    <span className="mono">{proj.year}</span>
-                    <span>·</span>
-                    <span className="mono">Production ML & Web</span>
-                  </div>
-                  <h3 className="project-entry__title">{proj.title}</h3>
-                  <p className="project-entry__tagline">{proj.tagline}</p>
-                  <div className="project-entry__tags">
+                <div className="project-typo__content">
+                  <h3 className="project-typo__title">{proj.title}</h3>
+                  <p className="project-typo__tagline">{proj.tagline}</p>
+                  <div className="project-typo__tags">
                     {proj.tags.map((t: string) => (
-                      <span className="project-entry__tag-pill" key={t}>
-                        {t}
-                      </span>
+                      <span className="project-typo__tag" key={t}>{t}</span>
                     ))}
                   </div>
-                  <div style={{ marginTop: '12px' }}>
+                </div>
+                <div className="project-typo__cta">
+                  <a
+                    href={proj.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="project-typo__link"
+                    aria-label={`View ${proj.title} on GitHub`}
+                  >
+                    ↗ View on GitHub
+                  </a>
+                  {proj.liveUrl && proj.liveUrl !== proj.githubUrl && (
                     <a
-                      href={proj.githubUrl}
+                      href={proj.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="editorial-btn"
+                      className="project-typo__link"
                     >
-                      Inspect Source Code →
+                      ↗ Live Site
                     </a>
-                  </div>
+                  )}
                 </div>
               </article>
             ))}
           </div>
+
+          <div className="projects-typo__footer">
+            <a
+              href="https://github.com/snixxfs"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="editorial-btn"
+            >
+              See everything on GitHub ↗
+            </a>
+          </div>
         </section>
 
         {/* ============================================================
-            09. COMMUNITY COLLAGE
+            09. COMMUNITY — 15 Testimonials Masonry
             ============================================================ */}
         <section className="section-padding section-alt site-container" id="community">
           <div className="section-meta-strip">
@@ -754,19 +646,34 @@ export function PrintedPortfolio() {
             <span className="section-meta-name">Reader Dispatches & Proof</span>
           </div>
 
-          <div className="community-editorial__collage">
-            {personalData.communityQuotes.map((q: { quote: string; author: string }, i: number) => (
-              <div className="community-editorial__card photo-framed" key={i}>
-                <div className="photo-tape" aria-hidden="true" />
-                <p className="community-editorial__quote">“{q.quote}”</p>
-                <span className="community-editorial__author">{q.author}</span>
+          <div className="community-editorial__stats">
+            <span className="community-editorial__scale">10,000+</span>
+            <span className="community-editorial__platform mono">Telegram Broadcast · @snixxfs</span>
+          </div>
+
+          <div className="community-masonry">
+            {personalData.testimonials.map((t: Testimonial, i: number) => (
+              <div
+                className={`community-note${t.featured ? ' community-note--featured' : ''}`}
+                key={t.id}
+                style={{
+                  transform: `rotate(${noteRotations[i % noteRotations.length]})`,
+                  backgroundColor: noteBgs[i % noteBgs.length],
+                  color: noteBgs[i % noteBgs.length] === 'var(--highlight)' ? 'var(--ink)' : 'var(--ink)',
+                }}
+              >
+                <p className="community-note__quote">"{t.quote}"</p>
+                <div className="community-note__footer">
+                  <span className="community-note__initials">{t.initials}</span>
+                  <div>
+                    <div className="community-note__author">{t.author}</div>
+                    <div className="community-note__date mono">{t.date}</div>
+                  </div>
+                </div>
+                {t.tag && <span className="community-note__tag sticker sticker--paper">{t.tag}</span>}
               </div>
             ))}
           </div>
-
-          <p style={{ fontStyle: 'italic', color: 'var(--muted)', textAlign: 'center' }}>
-            [PHOTO COLLAGE PLACEHOLDER: 3-5 candid photographs of campus hackathon delegations, student meetings, and brand partners.]
-          </p>
         </section>
 
         {/* ============================================================
@@ -801,6 +708,22 @@ export function PrintedPortfolio() {
               </div>
             ))}
           </div>
+
+          {/* Certifications */}
+          <div className="stack-editorial__certs">
+            <h4 className="stack-editorial__col-header" style={{ marginBottom: '20px' }}>Certifications & Credentials</h4>
+            <div className="stack-editorial__cert-list">
+              {personalData.certifications.map((cert) => (
+                <div className="stack-editorial__cert-row" key={cert.name}>
+                  <span className="stack-editorial__cert-icon">{cert.icon}</span>
+                  <div>
+                    <div style={{ fontWeight: 600 }}>{cert.name}</div>
+                    <div className="mono" style={{ color: 'var(--muted)', fontSize: '11px' }}>{cert.issuer}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </section>
 
         {/* ============================================================
@@ -814,10 +737,7 @@ export function PrintedPortfolio() {
 
             <h2 className="footer-editorial__giant-heading">Let's build something.</h2>
 
-            <a
-              href={`mailto:${personalData.email}`}
-              className="footer-editorial__email-link"
-            >
+            <a href={`mailto:${personalData.email}`} className="footer-editorial__email-link">
               {personalData.email}
             </a>
 
@@ -827,17 +747,15 @@ export function PrintedPortfolio() {
                   <a
                     href={s.url}
                     key={s.label}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    target={s.url.startsWith('mailto') ? undefined : '_blank'}
+                    rel={s.url.startsWith('mailto') ? undefined : 'noopener noreferrer'}
                     className="footer-editorial__social-link"
                   >
                     {s.label} ↗
                   </a>
                 ))}
               </div>
-
-              <span>Bengaluru Local Time: {new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
-
+              <span>Bengaluru, India</span>
               <button
                 type="button"
                 className="footer-editorial__back-to-top"
