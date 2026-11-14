@@ -36,8 +36,6 @@ export function DealRoomPortfolio() {
 
   const [selectedBrandCategory, setSelectedBrandCategory] = useState<string>('All')
   const [copiedEmail, setCopiedEmail] = useState(false)
-  const [copiedPhone, setCopiedPhone] = useState(false)
-  const [soundMuted, setSoundMuted] = useState(false)
   const [cursorHover, setCursorHover] = useState(false)
   const [cursorLabel, setCursorLabel] = useState('')
 
