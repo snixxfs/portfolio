@@ -20,13 +20,7 @@ interface RepoLiveMeta {
 }
 
 export function DealRoomPortfolio() {
-  const [introDismissed, setIntroDismissed] = useState<boolean>(() => {
-    try {
-      return sessionStorage.getItem('deal_room_intro_seen') === 'true'
-    } catch {
-      return false
-    }
-  })
+  const [introDismissed, setIntroDismissed] = useState<boolean>(false)
   const [introSplitting, setIntroSplitting] = useState(false)
   const [introCounter, setIntroCounter] = useState(0)
 
@@ -106,76 +100,71 @@ export function DealRoomPortfolio() {
     return () => { isMounted = false }
   }, [])
 
-  // 3. Smooth Scroll (Lenis) synced with GSAP ScrollTrigger
+  // 3. Ultra-Smooth Scroll (Lenis) synced directly with GSAP Ticker
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.2,
+      duration: 1.35,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: true,
+      wheelMultiplier: 1.0,
+      touchMultiplier: 1.6,
+      infinite: false,
     })
 
-    function raf(time: number) {
-      lenis.raf(time)
-      ScrollTrigger.update()
-      requestAnimationFrame(raf)
+    lenis.on('scroll', ScrollTrigger.update)
+
+    const tickerCb = (time: number) => {
+      lenis.raf(time * 1000)
     }
-    const rafId = requestAnimationFrame(raf)
-
-    lenis.on('scroll', () => {
-      ScrollTrigger.update()
-    })
+    gsap.ticker.add(tickerCb)
+    gsap.ticker.lagSmoothing(0)
 
     return () => {
-      cancelAnimationFrame(rafId)
+      gsap.ticker.remove(tickerCb)
       lenis.destroy()
     }
   }, [])
 
-  // 4. Intro Curtain Animation (max 1.2s, skippable)
+  // 4. Cinematic Intro Curtain Animation (~1.8s)
   useEffect(() => {
     if (introDismissed) return
 
     let val = 0
     const countInterval = setInterval(() => {
-      val += Math.floor(Math.random() * 25) + 12
+      val += Math.floor(Math.random() * 4) + 2
       if (val >= 100) {
         val = 100
         clearInterval(countInterval)
         setIntroCounter(100)
-        setIntroSplitting(true)
         setTimeout(() => {
-          setIntroDismissed(true)
-          try {
-            sessionStorage.setItem('deal_room_intro_seen', 'true')
-          } catch {}
-        }, 650)
+          setIntroSplitting(true)
+          setTimeout(() => {
+            setIntroDismissed(true)
+          }, 850)
+        }, 220)
       } else {
         setIntroCounter(val)
       }
-    }, 45)
+    }, 28)
 
     const skipIntro = () => {
       clearInterval(countInterval)
+      setIntroCounter(100)
       setIntroSplitting(true)
       setTimeout(() => {
         setIntroDismissed(true)
-        try {
-          sessionStorage.setItem('deal_room_intro_seen', 'true')
-        } catch {}
-      }, 300)
+      }, 400)
     }
 
     window.addEventListener('keydown', skipIntro, { once: true })
-    window.addEventListener('wheel', skipIntro, { once: true })
-    window.addEventListener('touchstart', skipIntro, { once: true })
+    window.addEventListener('click', skipIntro, { once: true })
 
     return () => {
       clearInterval(countInterval)
       window.removeEventListener('keydown', skipIntro)
-      window.removeEventListener('wheel', skipIntro)
-      window.removeEventListener('touchstart', skipIntro)
+      window.removeEventListener('click', skipIntro)
     }
   }, [introDismissed])
 
@@ -434,17 +423,32 @@ export function DealRoomPortfolio() {
         <span className="deal-cursor__label">{cursorLabel}</span>
       </div>
 
-      {/* Intro Screen (1.2s maximum, split screen reveal) */}
+      {/* Intro Screen (Cinematic Split-Screen Opening Reveal) */}
       {!introDismissed && (
         <aside
           className={`deal-intro ${introSplitting ? 'deal-intro--split' : ''}`}
-          aria-label="Opening deal file"
+          aria-label="Opening executive dossier"
         >
           <div className="deal-intro__half deal-intro__top" />
           <div className="deal-intro__content">
+            <span className="deal-intro__tag">CONFIDENTIAL // EXECUTIVE DOSSIER 2026</span>
             <h1 className="deal-intro__name">Ayush S Kulkarni</h1>
-            <span className="deal-intro__tag">The Deal Room // Executive Dossier</span>
-            <span className="deal-intro__counter tabular">[{introCounter}%]</span>
+            <span className="deal-intro__sub">Applied AI Systems · ECell Presidency · Bengaluru</span>
+
+            {/* Expanding Hairline Progress Bar */}
+            <div className="deal-intro__bar-wrap">
+              <div
+                className="deal-intro__bar"
+                style={{ width: `${introCounter}%` }}
+              />
+            </div>
+
+            <div className="deal-intro__meta">
+              <span className="tabular">INITIALIZING THE DEAL ROOM</span>
+              <span className="deal-intro__counter tabular">[{introCounter.toString().padStart(2, '0')}%]</span>
+            </div>
+
+            <span className="deal-intro__skip-hint">Click or press any key to enter</span>
           </div>
           <div className="deal-intro__half deal-intro__bottom" />
         </aside>
